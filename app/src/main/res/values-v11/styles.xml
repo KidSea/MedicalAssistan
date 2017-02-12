@@ -1,0 +1,35 @@
+<resources>
+
+    <!--
+        Base application theme for API 11+. This theme completely replaces
+        AppBaseTheme from res/values/styles.xml on API 11+ devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
+        <!-- API 11 theme customizations can go here. -->
+    </style>
+    
+        <!--  -->
+    <style name="ActionBarBaseStyle" parent="@style/Widget.AppCompat.Light.ActionBar">
+        <item name="android:background">@color/actionbar_background</item>
+        <item name="android:titleTextStyle">@style/TitleStyle</item>
+        <item name="android:icon">@android:color/transparent</item>
+        <item name="android:subtitleTextStyle">@style/SubTitle</item>
+    </style>
+
+    <style name="ActionBarBaseTheme" parent="@style/Theme.AppCompat.Light">
+        <item name="android:windowBackground">@color/window_background</item>
+        <item name="android:actionBarStyle">@style/ActionBarBaseStyle</item>
+        <item name="android:popupMenuStyle">@style/PopupMenu.ListPopupWindow</item>
+        <item name="android:actionOverflowButtonStyle">@style/OverflowButton</item>
+        <item name="android:homeAsUpIndicator">@drawable/actionbar_back_icon_normal</item>
+        <item name="android:dropDownListViewStyle">@style/SpinnerDropDownListView</item>
+        <item name="popupMenuStyle">@style/mylistPopupWindowStyle</item>
+    </style>
+
+    <style name="ActionBarBaseTheme.Preview" parent="@style/ActionBarBaseTheme">
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:actionBarStyle">@style/ActionBarBaseStyle.Transparent</item>
+        <item name="android:windowActionBarOverlay">true</item>
+    </style>
+
+</resources>
