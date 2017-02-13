@@ -1,8 +1,9 @@
 package com.example.yuxuehai.medicalassistan.ui;
 
 
-import android.support.v7.app.ActionBar;
+import android.app.Activity;
 
+import com.example.yuxuehai.medicalassistan.AppManager;
 import com.example.yuxuehai.medicalassistan.R;
 import com.example.yuxuehai.medicalassistan.base.BaseActivity;
 
@@ -29,17 +30,18 @@ public class MainActivity extends BaseActivity {
 
     }
 
+    @Override
+    protected void beforeView() {
+        super.beforeView();
+        //防止第三方跳转出现双实例
+        Activity aty = AppManager.getActivity(MainActivity.class);
+        if(aty != null && !aty.isFinishing()){
+            finish();
+        }
+    }
 
     @Override
     protected void setupActionBar() {
         super.setupActionBar();
-        ActionBar actionBar = getSupportActionBar();
-        // 设置显示为标准模式, 还有NAVIGATION_MODE_LIST列表模式, NAVIGATION_MODE_TABS选项卡模式.
-        // 参见ApiDemos
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-        // 设置显示标题
-        actionBar.setDisplayShowTitleEnabled(true);
-        // 设置标题
-        actionBar.setTitle(mTitle);
     }
 }

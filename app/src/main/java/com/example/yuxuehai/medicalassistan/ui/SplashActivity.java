@@ -1,6 +1,5 @@
 package com.example.yuxuehai.medicalassistan.ui;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,7 +8,6 @@ import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 
-import com.example.yuxuehai.medicalassistan.AppManager;
 import com.example.yuxuehai.medicalassistan.R;
 import com.example.yuxuehai.medicalassistan.base.BaseActivity;
 
@@ -72,11 +70,6 @@ public class SplashActivity extends BaseActivity {
 
     protected void beforeView() {
         super.beforeView();
-        //防止第三方跳转出现双实例
-        Activity aty = AppManager.getActivity(SplashActivity.class);
-        if(aty != null && !aty.isFinishing()){
-            finish();
-        }
     }
 
     protected void redirectTo() {
