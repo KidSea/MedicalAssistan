@@ -1,9 +1,6 @@
 package com.example.yuxuehai.medicalassistan.ui;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -24,14 +21,6 @@ public class SplashActivity extends BaseActivity {
         return R.layout.activity_splash;
     }
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        beforeView();
-        setupActionBar();
-        initData();
-    }
-
     protected void initView() {
     }
 
@@ -49,7 +38,6 @@ public class SplashActivity extends BaseActivity {
             @Override
             public void onAnimationStart(Animation animation) {
                 // TODO Auto-generated method stub
-                Log.i("info","entry");
             }
 
             @Override
@@ -68,22 +56,13 @@ public class SplashActivity extends BaseActivity {
     }
 
 
-    protected void beforeView() {
-        super.beforeView();
-    }
 
     protected void redirectTo() {
         // TODO Auto-generated method stub
-        Log.i("info","entry");
-        Intent intent = new Intent(this, MainActivity.class);
+
+        Intent intent = new Intent(this, GuideActivity.class);
         startActivity(intent);
         finish();
     }
 
-    protected void setupActionBar() {
-        super.setupActionBar();
-        if(getSupportActionBar() != null){
-            getSupportActionBar().hide();
-        }
-    }
 }

@@ -21,8 +21,9 @@
     <color name="graywhite">#F5F5F5</color>
     <color name="grayslate">#708090</color>
     <color name="lightblue">#0083FF</color>
-
-    <color name="main_green">#40AA53</color>
+    <!--3bc06b 40AA53 0b751e 2aa155-->
+    <color name="guide_green">#3bc09b</color>
+    <color name="main_green">#3bc06b</color>
     <color name="main_gray">#9A9A9A</color>
     <color name="main_black">#333</color>
     <color name="main_purple">#576B95</color>
@@ -30,7 +31,9 @@
     <color name="transparent">#00000000</color>
     <color name="window_background">#EBEBEB</color>
 
+    <color name="white_apha">#90ffffff</color>
+    <color name="my_gray">#909A9A9A</color>
 
     <color name="actionbar_item_background_normal">@color/transparent</color>
-    <color name="actionbar_item_background_pressed">#0b751e</color>
+    <color name="actionbar_item_background_pressed">#2aa155</color>
 </resources>

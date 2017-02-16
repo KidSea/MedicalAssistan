@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center"
+              android:orientation="vertical"
+              android:background="@color/guide_green">
+    <TextView
+        android:id="@+id/tv_guide_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="这是第二个引导页"
+        android:textColor="@color/white"
+        android:textSize="20sp"/>
+
+</LinearLayout>

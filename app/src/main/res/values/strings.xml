@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">医疗助手</string>
+
+
+    <string name="actionbar_title_search">搜索</string>
+
+    <string name="btn_entry">立即体验</string>
+
 </resources>

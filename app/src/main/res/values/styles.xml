@@ -5,8 +5,23 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/main_green</item>
         <item name="colorPrimaryDark">@color/main_black</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/white</item>
+        <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item>
+        <item name="android:dropDownListViewStyle">@style/SpinnerDropDownListView</item>
     </style>
+
+
+    <style name="OverflowMenuStyle" parent="Widget.AppCompat.Light.PopupMenu.Overflow">
+    <item name="overlapAnchor">false</item>
+    <item name="android:dropDownWidth">?attr/actionBarSize</item>
+    </style>
+
+
+    <style name="SpinnerDropDownListView" parent="@style/Widget.AppCompat.Light.ListView.DropDown">
+        <item name="android:divider">@color/main_gray</item>
+        <item name="android:dividerHeight">1px</item>
+    </style>
+
 
 
 
