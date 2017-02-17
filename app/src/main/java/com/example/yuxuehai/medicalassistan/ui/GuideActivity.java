@@ -12,6 +12,8 @@ import android.widget.RelativeLayout;
 import com.example.yuxuehai.medicalassistan.R;
 import com.example.yuxuehai.medicalassistan.adapter.GuidePagerAdapter;
 import com.example.yuxuehai.medicalassistan.base.BaseActivity;
+import com.example.yuxuehai.medicalassistan.utlis.Constants;
+import com.example.yuxuehai.medicalassistan.utlis.SharePrefUtil;
 import com.example.yuxuehai.medicalassistan.utlis.UIUtils;
 
 import java.util.ArrayList;
@@ -79,7 +81,7 @@ public class GuideActivity extends BaseActivity implements View.OnClickListener 
     }
 
     private void entryHome() {
-
+        SharePrefUtil.setBoolean(this, Constants.sIsFirstRun,true);
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();

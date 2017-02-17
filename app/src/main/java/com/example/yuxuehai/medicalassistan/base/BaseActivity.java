@@ -64,7 +64,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         setupActionBar();
 
-        System.out.println("i");
     }
 
     private void initActionBar(ActionBar actionBar) {

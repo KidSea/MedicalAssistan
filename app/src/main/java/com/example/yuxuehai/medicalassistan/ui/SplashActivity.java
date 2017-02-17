@@ -7,6 +7,8 @@ import android.view.animation.Animation;
 
 import com.example.yuxuehai.medicalassistan.R;
 import com.example.yuxuehai.medicalassistan.base.BaseActivity;
+import com.example.yuxuehai.medicalassistan.utlis.Constants;
+import com.example.yuxuehai.medicalassistan.utlis.SharePrefUtil;
 
 /**
  * Created by yuxuehai on 2017/2/12.
@@ -30,8 +32,8 @@ public class SplashActivity extends BaseActivity {
         setContentView(mView);
 
 
-        AlphaAnimation ap = new AlphaAnimation(0.5f,1.0f);
-        ap.setDuration(800);
+        AlphaAnimation ap = new AlphaAnimation(0.3f, 1.0f);
+        ap.setDuration(3000);
         mView.startAnimation(ap);
         ap.setAnimationListener(new Animation.AnimationListener() {
 
@@ -56,13 +58,20 @@ public class SplashActivity extends BaseActivity {
     }
 
 
-
     protected void redirectTo() {
         // TODO Auto-generated method stub
+        boolean isfirst = SharePrefUtil.getBoolean(this, Constants.sIsFirstRun, false);
 
-        Intent intent = new Intent(this, GuideActivity.class);
-        startActivity(intent);
-        finish();
+        if (!isfirst) {
+            Intent intent = new Intent(this, GuideActivity.class);
+            startActivity(intent);
+            finish();
+        } else {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
     }
 
 }
