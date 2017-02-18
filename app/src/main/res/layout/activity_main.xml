@@ -59,13 +59,13 @@
                         android:layout_height="30dp">
 
                         <ImageView
-                            android:id="@+id/iv_home0"
+                            android:id="@+id/iv_home"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:src="@drawable/ic_home"/>
 
                         <ImageView
-                            android:id="@+id/iv_home"
+                            android:id="@+id/iv_home0"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:background="#FFFFFF"
@@ -96,7 +96,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/bottom_talk"
+                    android:id="@+id/bottom_mess"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -108,13 +108,13 @@
                         android:layout_height="30dp">
 
                         <ImageView
-                            android:id="@+id/iv_talk0"
+                            android:id="@+id/iv_mess"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:src="@drawable/ic_message"/>
 
                         <ImageView
-                            android:id="@+id/iv_talk"
+                            android:id="@+id/iv_mess0"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:background="#FFFFFF"
@@ -126,7 +126,7 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:id="@+id/tv_talk0"
+                            android:id="@+id/tv_mess0"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="对话"
@@ -134,7 +134,7 @@
                             android:textSize="12dp"/>
 
                         <TextView
-                            android:id="@+id/tv_talk"
+                            android:id="@+id/tv_mess"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="对话"
@@ -166,7 +166,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/bottom_find"
+                    android:id="@+id/bottom_explore"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -178,13 +178,13 @@
                         android:layout_height="30dp">
 
                         <ImageView
-                            android:id="@+id/iv_find0"
+                            android:id="@+id/iv_find"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:src="@drawable/ic_explore"/>
 
                         <ImageView
-                            android:id="@+id/iv_find"
+                            android:id="@+id/iv_find0"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:background="#FFFFFF"
@@ -215,7 +215,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/bottom_me"
+                    android:id="@+id/bottom_mime"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -227,13 +227,13 @@
                         android:layout_height="30dp">
 
                         <ImageView
-                            android:id="@+id/iv_me0"
+                            android:id="@+id/iv_me"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:src="@drawable/ic_mine"/>
 
                         <ImageView
-                            android:id="@+id/iv_me"
+                            android:id="@+id/iv_me0"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:background="#FFFFFF"
