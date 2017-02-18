@@ -113,10 +113,6 @@ public class NavigationDrawerFragment extends BaseFragment implements View.OnCli
 
     }
 
-    @Override
-    protected void load() {
-
-    }
 
     @Override
     public void onClick(View v) {

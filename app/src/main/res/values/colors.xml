@@ -39,4 +39,7 @@
 
     <color name="drawer_menu_item_background_normal">#e2e2e2</color>
     <color name="drawer_menu_item_background_pressed">#ebeceb</color>
+
+    <color name="list_item_background_normal">@color/white</color>
+    <color name="list_item_background_pressed">#efefef</color>
 </resources>

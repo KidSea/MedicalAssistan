@@ -15,7 +15,13 @@
     <string name="menu_exit">退出</string>
     <string name="gitapp">Git客户端</string>
 
+    <!-- navigation -->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
+
+    <!-- qucik option -->
+    <string name="quick_option_text">写入</string>
+    <string name="quick_option_album">读取</string>
+    <string name="quick_option_photo">拍照</string>
 </resources>

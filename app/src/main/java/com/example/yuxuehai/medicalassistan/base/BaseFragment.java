@@ -24,7 +24,6 @@ public abstract class BaseFragment extends Fragment{
 
     protected abstract void initData();
 
-    protected abstract void load();
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,7 +40,6 @@ public abstract class BaseFragment extends Fragment{
             initView(mMainView);
         }
         initData();
-        load();
 
         return mMainView;
     }

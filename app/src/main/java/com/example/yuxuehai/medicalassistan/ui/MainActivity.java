@@ -5,7 +5,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,10 +13,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.yuxuehai.medicalassistan.R;
-import com.example.yuxuehai.medicalassistan.adapter.GuidePagerAdapter;
+import com.example.yuxuehai.medicalassistan.adapter.MyFrgmentAdapter;
 import com.example.yuxuehai.medicalassistan.base.BaseActivity;
+import com.example.yuxuehai.medicalassistan.base.BaseFragment;
+import com.example.yuxuehai.medicalassistan.fragment.FragmentFactory;
 import com.example.yuxuehai.medicalassistan.fragment.NavigationDrawerFragment;
 import com.example.yuxuehai.medicalassistan.utlis.ToastUtil;
+import com.example.yuxuehai.medicalassistan.widget.QuickOptionDialog;
 
 import java.util.ArrayList;
 
@@ -68,7 +70,7 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
     private TextView mTv_mine;
     private TextView mTv_mine_selected;
 
-    private ArrayList<View> mViews;
+    private ArrayList<BaseFragment> mViews;
 
     @Override
     protected int getContentLayoutId() {
@@ -122,13 +124,13 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
 
         mViews = new ArrayList<>();
 
-        LayoutInflater inflater = LayoutInflater.from(this);
-        mViews.add(inflater.inflate(R.layout.home, null));
-        mViews.add(inflater.inflate(R.layout.home1, null));
-        mViews.add(inflater.inflate(R.layout.home2, null));
-        mViews.add(inflater.inflate(R.layout.home3, null));
+        mViews.add(FragmentFactory.getFragment(0));
+        mViews.add(FragmentFactory.getFragment(1));
+        mViews.add(FragmentFactory.getFragment(2));
+        mViews.add(FragmentFactory.getFragment(3));
 
-        mCotentPager.setAdapter(new GuidePagerAdapter(mViews));
+        mCotentPager.setAdapter(new MyFrgmentAdapter(getSupportFragmentManager(),mViews));
+
         mCotentPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -192,7 +194,7 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
                 mIv_message.setAlpha(0.0f);
                 mTv_message_selected.setAlpha(1.0f);
                 mTv_message.setAlpha(0.0f);
-            } else if (mIv_home_selected.getAlpha() == 1) {
+            } else if (mIv_message_selected.getAlpha() == 1) {
                 mIv_message_selected.setAlpha(0.0f);
                 mIv_message.setAlpha(1.0f);
                 mTv_message_selected.setAlpha(0.0f);
@@ -204,19 +206,19 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
                 mIv_explore.setAlpha(0.0f);
                 mTv_explore_selected.setAlpha(1.0f);
                 mTv_explore.setAlpha(0.0f);
-            } else if (mIv_home_selected.getAlpha() == 1) {
+            } else if (mIv_explore_selected.getAlpha() == 1) {
                 mIv_explore_selected.setAlpha(0.0f);
                 mIv_explore.setAlpha(1.0f);
                 mTv_explore_selected.setAlpha(0.0f);
                 mTv_explore.setAlpha(1.0f);
             }
         } else if (i == 3) {
-            if (mIv_home_selected.getAlpha() == 0) {
+            if (mIv_mine_selected.getAlpha() == 0) {
                 mIv_mine_selected.setAlpha(1.0f);
                 mIv_mine.setAlpha(0.0f);
                 mTv_mine_selected.setAlpha(1.0f);
                 mTv_mine.setAlpha(0.0f);
-            } else if (mIv_home_selected.getAlpha() == 1) {
+            } else if (mIv_mine_selected.getAlpha() == 1) {
                 mIv_mine_selected.setAlpha(0.0f);
                 mIv_mine.setAlpha(1.0f);
                 mTv_mine_selected.setAlpha(0.0f);
@@ -233,17 +235,6 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
             nextPosition = currPosition + 1;
         } else {
             nextPosition = currPosition - 1;
-        }
-
-//        滑动动画
-        if (nextPosition >= 0 && nextPosition < 4) {
-            mViews.get(currPosition).setAlpha(1 - progress);
-            mViews.get(nextPosition).setAlpha(progress);
-
-            mViews.get(currPosition).setScaleX(1 - (progress / 2));
-            mViews.get(currPosition).setScaleY(1 - (progress / 2));
-            mViews.get(nextPosition).setScaleX(0.5F + progress / 2);
-            mViews.get(nextPosition).setScaleY(0.5F + progress / 2);
         }
 
         switch (nextPosition) {
@@ -334,19 +325,10 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
     public void restoreActionBar() {
         ActionBar actionBar = getSupportActionBar();
         // 设置显示为标准模式, 还有NAVIGATION_MODE_LIST列表模式, NAVIGATION_MODE_TABS选项卡模式.
-        // 参见ApiDemos
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         // 设置显示标题
         actionBar.setDisplayShowTitleEnabled(true);
         // 设置标题
         actionBar.setTitle(mTitle);
-
-        // 1.通过设置自定义内容VIew
-        // actionBar.setNavigationMode(ActionBar.DISPLAY_SHOW_CUSTOM);
-        // actionBar.setDisplayShowHomeEnabled(true);
-        // actionBar.setDisplayHomeAsUpEnabled(true);
-        // View view = View.inflate(this, R.layout.layout_actionbar, null);
-        // actionBar.setCustomView(view);
     }
 
 
@@ -369,18 +351,30 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.bottom_home:
-                mCotentPager.setCurrentItem(0);
+                mCotentPager.setCurrentItem(0,false);
                 break;
             case R.id.bottom_mess:
-                mCotentPager.setCurrentItem(1);
+                mCotentPager.setCurrentItem(1,false);
                 break;
             case R.id.bottom_explore:
-                mCotentPager.setCurrentItem(2);
+                mCotentPager.setCurrentItem(2,false);
                 break;
             case R.id.bottom_mime:
-                mCotentPager.setCurrentItem(3);
+                mCotentPager.setCurrentItem(3,false);
+                break;
+            case R.id.iv_add:
+                showQuickOption();
                 break;
         }
+    }
+
+    // 显示快速操作界面
+    private void showQuickOption() {
+        // TODO Auto-generated method stub
+        final QuickOptionDialog dialog = new QuickOptionDialog(MainActivity.this);
+        dialog.setCancelable(true);
+        dialog.setCanceledOnTouchOutside(true);
+        dialog.show();
     }
 
 }
