@@ -9,6 +9,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.graphics.drawable.DrawerArrowDrawable;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -20,7 +21,6 @@ import android.widget.LinearLayout;
 
 import com.example.yuxuehai.medicalassistan.R;
 import com.example.yuxuehai.medicalassistan.base.BaseFragment;
-import com.example.yuxuehai.medicalassistan.widget.DrawerArrowDrawable;
 
 /**
  * Created by yuxuehai on 17-2-17.

@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/darker_gray"
+    android:background="@color/white"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="123"
-        android:textSize="53sp" />
+    <com.example.yuxuehai.medicalassistan.widget.AbSlidingPlayView
+        android:id="@+id/viewPager_menu"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="#00000000"
+    />
 
-</ScrollView>
+
+
+    <!--<View-->
+        <!---->
+        <!--android:id="@+id/divide_line"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="5dp"-->
+        <!--android:visibility="gone"-->
+        <!--android:layout_below="@+id/viewPager_menu"-->
+        <!--android:background="@color/graywhite"-->
+    <!--/>-->
+
+
+</RelativeLayout>
