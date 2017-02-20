@@ -38,9 +38,8 @@ public abstract class BaseFragment extends Fragment{
         if (mMainView == null || mMainView.getParent() != null) {
             mMainView = createView(inflater, container, savedInstanceState);
             initView(mMainView);
+            initData();
         }
-        initData();
-
         return mMainView;
     }
 

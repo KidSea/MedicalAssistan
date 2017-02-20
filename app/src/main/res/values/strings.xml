@@ -24,4 +24,9 @@
     <string name="quick_option_text">写入</string>
     <string name="quick_option_album">读取</string>
     <string name="quick_option_photo">拍照</string>
+
+    <string name="str_home">主页</string>
+    <string name="str_messages">消息</string>
+    <string name="str_explore">发现</string>
+    <string name="str_mine">我</string>
 </resources>

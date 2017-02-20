@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string-array name="home_title_arrays">
+        <item>信息管理</item>
+        <item>日常护理</item>
+        <item>体检评测</item>
+        <item>健康档案</item>
+        <item>热点资讯</item>
+        <item>用药助手</item>
+        <item>健康商城</item>
+        <item>健康百科</item>
+    </string-array>
+
+    <integer-array name="item_icon_array">
+
+        <item>@drawable/ic_item_icon_info</item>
+        <item>@drawable/ic_item_icon_dailycare</item>
+        <item>@drawable/ic_item_icon_pe</item>
+        <item>@drawable/ic_item_icon_file</item>
+        <item>@drawable/ic_item_icon_topnews</item>
+        <item>@drawable/ic_item_icon_medguide</item>
+        <item>@drawable/ic_item_icon_market</item>
+        <item>@drawable/ic_item_icon_encyclopedia</item>
+
+    </integer-array>
+
+    <integer-array name="images_ad">
+
+        <item>@drawable/photo_one</item>
+        <item>@drawable/photo_two</item>
+        <item>@drawable/photo_three</item>
+        <item>@drawable/photo_five</item>
+        <item>@drawable/photo_six</item>
+
+    </integer-array>
+
+
+</resources>

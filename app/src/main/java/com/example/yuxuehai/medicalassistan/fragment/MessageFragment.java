@@ -17,7 +17,7 @@ public class MessageFragment extends BaseFragment {
 
     @Override
     protected View createView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.home1, null);
+        View view = inflater.inflate(R.layout.fragment_layout_message, null);
         return view;
     }
 

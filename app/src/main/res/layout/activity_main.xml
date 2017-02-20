@@ -81,7 +81,7 @@
                             android:id="@+id/tv_home0"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="主页"
+                            android:text="@string/str_home"
                             android:textColor="#32CD32"
                             android:textSize="12dp"/>
 
@@ -89,7 +89,7 @@
                             android:id="@+id/tv_home"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="主页"
+                            android:text="@string/str_home"
                             android:textColor="#969696"
                             android:textSize="12dp"/>
 
@@ -130,7 +130,7 @@
                             android:id="@+id/tv_mess0"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="对话"
+                            android:text="@string/str_messages"
                             android:textColor="#32CD32"
                             android:textSize="12dp"/>
 
@@ -138,7 +138,7 @@
                             android:id="@+id/tv_mess"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="对话"
+                            android:text="@string/str_messages"
                             android:textColor="#969696"
                             android:textSize="12dp"/>
 
@@ -198,7 +198,7 @@
                             android:id="@+id/tv_find0"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="发现"
+                            android:text="@string/str_explore"
                             android:textColor="#32CD32"
                             android:textSize="12dp"/>
 
@@ -206,7 +206,7 @@
                             android:id="@+id/tv_find"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="发现"
+                            android:text="@string/str_explore"
                             android:textColor="#969696"
                             android:textSize="12dp"/>
 
@@ -247,7 +247,7 @@
                             android:id="@+id/tv_me0"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="我"
+                            android:text="@string/str_mine"
                             android:textColor="#32CD32"
                             android:textSize="12dp"/>
 
@@ -255,7 +255,7 @@
                             android:id="@+id/tv_me"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="我"
+                            android:text="@string/str_mine"
                             android:textColor="#969696"
                             android:textSize="12dp"/>
 

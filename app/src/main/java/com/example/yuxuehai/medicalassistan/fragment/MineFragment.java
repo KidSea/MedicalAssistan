@@ -16,7 +16,7 @@ public class MineFragment extends BaseFragment {
 
     @Override
     protected View createView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.home3, null);
+        View view = inflater.inflate(R.layout.fragment_layout_mine, null);
         return view;
     }
 
