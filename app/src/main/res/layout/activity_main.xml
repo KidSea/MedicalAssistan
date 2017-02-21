@@ -17,6 +17,35 @@
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme_PopupMenu">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"
+                    android:text="@string/app_name"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:id="@+id/toolbar_selectall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="0"
+                    android:scaleY="0"
+                    android:src="@drawable/ic_launcher"/>
+                <ImageView
+                    android:id="@+id/toolbar_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="0"
+                    android:scaleY="0"
+                    android:src="@drawable/ic_launcher"/>
+            </LinearLayout>
         </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
 
@@ -45,8 +74,8 @@
                 android:layout_alignParentBottom="true"
                 android:background="@color/white"
                 android:elevation="6dp"
-                android:padding="4dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:padding="4dp">
                 <LinearLayout
                     android:id="@+id/bottom_home"
                     android:layout_width="0dp"
@@ -148,11 +177,11 @@
                 <LinearLayout
                     android:id="@+id/bottom_add"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="48dp"
-                    android:padding="6dp"
+                    android:layout_weight="1"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="6dp">
 
                     <ImageView
                         android:id="@+id/iv_add"
@@ -180,14 +209,14 @@
                             android:id="@+id/iv_find"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
-                            android:src="@drawable/ic_explore"/>
+                            android:src="@drawable/ic_explore_two"/>
 
                         <ImageView
                             android:id="@+id/iv_find0"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:background="#FFFFFF"
-                            android:src="@drawable/ic_explore_selected"/>
+                            android:src="@drawable/ic_explore_two_selected"/>
                     </FrameLayout>
 
                     <FrameLayout

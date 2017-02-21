@@ -1,6 +1,5 @@
 package com.example.yuxuehai.medicalassistan.base;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,13 +8,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.yuxuehai.medicalassistan.ui.MainActivity;
+
 /**
  * Created by yuxuehai on 17-2-5.
  */
 
 public abstract class BaseFragment extends Fragment{
 
-    protected Activity mActivity;
+    protected MainActivity mActivity;
     private View mMainView = null;
 
     protected abstract View createView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState);
@@ -28,7 +29,7 @@ public abstract class BaseFragment extends Fragment{
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mActivity = getActivity();
+        mActivity = (MainActivity)getActivity();
     }
 
     @Nullable
@@ -42,6 +43,7 @@ public abstract class BaseFragment extends Fragment{
         }
         return mMainView;
     }
+
 
     protected Intent getIntent(){
         return mActivity.getIntent();

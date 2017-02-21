@@ -5,5 +5,5 @@
   	<item android:state_focused="true" android:drawable="@color/drawer_menu_item_background_pressed" />
   	<item android:state_selected="true" android:drawable="@color/drawer_menu_item_background_pressed" />
     <item android:state_pressed="true" android:drawable="@color/drawer_menu_item_background_pressed" />
-    <item android:drawable="@color/drawer_menu_item_background_normal" />
+    <item android:drawable="@color/white" />
 </selector>

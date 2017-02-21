@@ -105,4 +105,22 @@ public class HomePresenterDaoImpl extends BasePresenter implements HomePresenter
 
         }
     }
+
+    @Override
+    public void onmoreclickCall(View view) {
+        int id = view.getId();
+        switch (id){
+            case R.id.tv_daily_more:
+                mHomeView.showClick(id);
+                break;
+            case R.id.tv_news_more:
+                mHomeView.showClick(id);
+                break;
+            case R.id.tv_mall_more:
+                mHomeView.showClick(id);
+            default:
+                break;
+
+        }
+    }
 }

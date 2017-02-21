@@ -1,6 +1,7 @@
 package com.example.yuxuehai.medicalassistan.adapter;
 
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,12 +17,12 @@ import java.util.ArrayList;
  * Created by yuxuehai on 17-2-20.
  */
 
-public class MyDailyCareAdapter extends BaseRecyclerAdapter<String,MyDailyCareAdapter.MyViewHolder> {
+public class MyMallRecAdapter extends BaseRecyclerAdapter<String,MyMallRecAdapter.MyViewHolder> {
 
 
     private Context mContext;
 
-    public MyDailyCareAdapter(Context context, ArrayList<String> data) {
+    public MyMallRecAdapter(Context context, ArrayList<String> data) {
         this.mContext = context;
         addDatas(data);
     }
@@ -31,7 +32,6 @@ public class MyDailyCareAdapter extends BaseRecyclerAdapter<String,MyDailyCareAd
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rec_item_layout, parent, false);
 
         MyViewHolder mHolder = new MyViewHolder(view);
-
 
 
 
@@ -48,8 +48,7 @@ public class MyDailyCareAdapter extends BaseRecyclerAdapter<String,MyDailyCareAd
 
 
 
-    public static class MyViewHolder extends BaseRecyclerAdapter.Holder {
-
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         public TextView mTextView;
         public ImageView mImageView;

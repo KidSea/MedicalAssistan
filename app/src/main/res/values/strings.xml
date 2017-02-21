@@ -7,13 +7,13 @@
     <string name="btn_entry">立即体验</string>
 
     <!-- slide menu -->
-    <string name="menu_rss">订阅</string>
-    <string name="menu_opensoft">开源软件</string>
-    <string name="menu_blog">博客区</string>
-    <string name="menu_quests">技术问答</string>
+    <string name="menu_rss">信息管理</string>
+    <string name="menu_opensoft">关于</string>
+    <string name="menu_blog">热点资讯</string>
+    <string name="menu_quests">消息</string>
     <string name="menu_setting">设置</string>
     <string name="menu_exit">退出</string>
-    <string name="gitapp">Git客户端</string>
+    <string name="gitapp">Git项目地址</string>
 
     <!-- navigation -->
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -29,4 +29,10 @@
     <string name="str_messages">消息</string>
     <string name="str_explore">发现</string>
     <string name="str_mine">我</string>
+
+    <!--title -->
+    <string name="str_dailycare">日常护理</string>
+    <string name="str_topnews">头条资讯</string>
+    <string name="str_mallrec">商城推荐</string>
+    <string name="str_more">更多</string>
 </resources>

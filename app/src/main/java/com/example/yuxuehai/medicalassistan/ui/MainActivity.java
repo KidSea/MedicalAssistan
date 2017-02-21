@@ -40,7 +40,7 @@ import static com.example.yuxuehai.medicalassistan.R.id.tv_me0;
  * Created by yuxuehai on 2017/2/12.
  * 主界面
  */
-public class MainActivity extends BaseActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks,View.OnClickListener{
+public class MainActivity extends BaseActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks, View.OnClickListener {
 
     private CharSequence mTitle;
 
@@ -61,6 +61,8 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
     private ImageView mIv_mine;
     private ImageView mIv_mine_selected;
     private ImageView mAddView;
+    private ImageView mToolBar_selectAll;
+    private ImageView mToolBar_delete;
     private TextView mTv_home;
     private TextView mTv_home_selected;
     private TextView mTv_message;
@@ -99,6 +101,8 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
         mIv_explore_selected = (ImageView) findViewById(iv_find);
         mIv_mine = (ImageView) findViewById(iv_me0);
         mIv_mine_selected = (ImageView) findViewById(iv_me);
+        mToolBar_selectAll = (ImageView) findViewById(R.id.toolbar_selectall);
+        mToolBar_delete = (ImageView) findViewById(R.id.toolbar_delete);
 
         mTv_home = (TextView) findViewById(tv_home0);
         mTv_home_selected = (TextView) findViewById(tv_home);
@@ -129,18 +133,33 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
         mViews.add(FragmentFactory.getFragment(2));
         mViews.add(FragmentFactory.getFragment(3));
 
-        mCotentPager.setAdapter(new MyFrgmentAdapter(getSupportFragmentManager(),mViews));
+        mCotentPager.setAdapter(new MyFrgmentAdapter(getSupportFragmentManager(), mViews));
 
         mCotentPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 changeAlpha(position, positionOffsetPixels, positionOffset);
+//                if (position == 1) {
+//                    mToolBar_delete.animate().scaleX(1).scaleY(1).start();
+//                    mToolBar_selectAll.animate().scaleX(1).scaleY(1).start();
+//                } else {
+//                    mToolBar_delete.animate().scaleX(0).scaleY(0).start();
+//                    mToolBar_selectAll.animate().scaleX(0).scaleY(0).start();
+//                }
             }
 
             @Override
             public void onPageSelected(int position) {
                 initAlpha();
                 changeAlpha(position);
+
+//                if (position == 1) {
+//                    mToolBar_delete.animate().scaleX(1).scaleY(1).start();
+//                    mToolBar_selectAll.animate().scaleX(1).scaleY(1).start();
+//                } else {
+//                    mToolBar_delete.animate().scaleX(0).scaleY(0).start();
+//                    mToolBar_selectAll.animate().scaleX(0).scaleY(0).start();
+//                }
             }
 
             @Override
@@ -297,7 +316,8 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
         }
 
     }
-        @Override
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_activity_menu, menu);
         if (!mNavigationDrawerFragment.isDrawerOpen()) {
@@ -351,16 +371,16 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.bottom_home:
-                mCotentPager.setCurrentItem(0,false);
+                mCotentPager.setCurrentItem(0, false);
                 break;
             case R.id.bottom_mess:
-                mCotentPager.setCurrentItem(1,false);
+                mCotentPager.setCurrentItem(1, false);
                 break;
             case R.id.bottom_explore:
-                mCotentPager.setCurrentItem(2,false);
+                mCotentPager.setCurrentItem(2, false);
                 break;
             case R.id.bottom_mime:
-                mCotentPager.setCurrentItem(3,false);
+                mCotentPager.setCurrentItem(3, false);
                 break;
             case R.id.iv_add:
                 showQuickOption();

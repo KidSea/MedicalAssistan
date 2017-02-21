@@ -42,13 +42,15 @@ public class Decoration extends RecyclerView.ItemDecoration {
     }
 
     @Override
-    public void onDraw(Canvas c, RecyclerView parent) {
+    public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
         if (mOrientation == VERTICAL_LIST) {
             drawVertical(c, parent);
         } else {
             drawHorizontal(c, parent);
         }
     }
+
+
 
     public void drawVertical(Canvas c, RecyclerView parent) {
         final int left = parent.getPaddingLeft();
@@ -81,6 +83,8 @@ public class Decoration extends RecyclerView.ItemDecoration {
             mDivider.draw(c);
         }
     }
+
+
 
     @Override
     public void getItemOffsets(Rect outRect, int itemPosition, RecyclerView parent) {

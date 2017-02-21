@@ -9,10 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.yuxuehai.medicalassistan.R;
 import com.example.yuxuehai.medicalassistan.adapter.MyDailyCareAdapter;
 import com.example.yuxuehai.medicalassistan.adapter.MyGrideViewAdapter;
+import com.example.yuxuehai.medicalassistan.adapter.MyMallRecAdapter;
+import com.example.yuxuehai.medicalassistan.adapter.MyTopNewsAdapter;
 import com.example.yuxuehai.medicalassistan.base.BaseFragment;
 import com.example.yuxuehai.medicalassistan.bean.ItemData;
 import com.example.yuxuehai.medicalassistan.dao.AbOnItemClickListener;
@@ -22,6 +25,7 @@ import com.example.yuxuehai.medicalassistan.utlis.UIUtils;
 import com.example.yuxuehai.medicalassistan.view.HomeView;
 import com.example.yuxuehai.medicalassistan.widget.AbSlidingPlayView;
 import com.example.yuxuehai.medicalassistan.widget.Decoration;
+import com.example.yuxuehai.medicalassistan.widget.GrideViewDec;
 import com.example.yuxuehai.medicalassistan.widget.MyGridView;
 
 import java.util.ArrayList;
@@ -30,7 +34,8 @@ import java.util.ArrayList;
  * Created by yuxuehai on 17-2-18.
  */
 
-public class HomeFragment extends BaseFragment implements HomeView,AdapterView.OnItemClickListener{
+public class HomeFragment extends BaseFragment implements HomeView,
+        AdapterView.OnItemClickListener, View.OnClickListener {
 
     private AbSlidingPlayView mPlayView;
     /**
@@ -46,6 +51,16 @@ public class HomeFragment extends BaseFragment implements HomeView,AdapterView.O
     private RecyclerView mRecommendView;
     private ArrayList<String> mList;
 
+    private View mMyTopNewsHeadView;
+    private View mMyDailyHeadView;
+    private View mMyMallRecHeadView;
+    private MyDailyCareAdapter mMyDailyCareAdapter;
+    private MyTopNewsAdapter mTopNewsAdapter;
+    private MyMallRecAdapter mMyMallRecAdapter;
+    private TextView mDailyMore;
+    private TextView mNewsMore;
+    private TextView mMallMore;
+
 
     @Override
     protected View createView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -57,35 +72,47 @@ public class HomeFragment extends BaseFragment implements HomeView,AdapterView.O
 
     @Override
     protected void initView(View rootView) {
-        mHomePresenterDao = new HomePresenterDaoImpl(getContext(),this);
+        mHomePresenterDao = new HomePresenterDaoImpl(getContext(), this);
         mItemDatas = new ArrayList<>();
+
         mPlayView = (AbSlidingPlayView) rootView.findViewById(R.id.viewPager_menu);
         mGridView = (MyGridView) rootView.findViewById(R.id.my_gridview);
         mDailyCareView = (RecyclerView) rootView.findViewById(R.id.recycler_dailycare);
         mTopNewsView = (RecyclerView) rootView.findViewById(R.id.recycler_topnews);
         mRecommendView = (RecyclerView) rootView.findViewById(R.id.recycler_recommend);
 
+        mMyDailyHeadView = LayoutInflater.from(getActivity()).inflate(R.layout.recycler_daliycare_item_head, null);
+        mMyTopNewsHeadView = LayoutInflater.from(getActivity()).inflate(R.layout.recycler_topnews_item_head, null);
+        mMyMallRecHeadView = LayoutInflater.from(getActivity()).inflate(R.layout.recycler_mallrec_item_head, null);
+
+        mDailyMore = (TextView) mMyDailyHeadView.findViewById(R.id.tv_daily_more);
+        mNewsMore = (TextView) mMyTopNewsHeadView.findViewById(R.id.tv_news_more);
+        mMallMore = (TextView) mMyMallRecHeadView.findViewById(R.id.tv_mall_more);
+
         // 创建一个线性布局管理器
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-
         mDailyCareView.setLayoutManager(layoutManager);
         mDailyCareView.addItemDecoration(new Decoration(getContext(), LinearLayout.VERTICAL));
-
 
         // 创建一个线性布局管理器
         LinearLayoutManager layoutManager1 = new LinearLayoutManager(getContext());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         mTopNewsView.setLayoutManager(layoutManager1);
-
         mTopNewsView.addItemDecoration(new Decoration(getContext(), LinearLayout.VERTICAL));
 
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(),2);
+        // 创建一个网格布局管理器
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
         mRecommendView.setHasFixedSize(true);
+        mRecommendView.addItemDecoration(new GrideViewDec(getContext()));
         mRecommendView.setLayoutManager(gridLayoutManager);
 
         mGrideViewAdapter = new MyGrideViewAdapter(mItemDatas, getContext());
         mGridView.setOnItemClickListener(this);
+        mDailyMore.setOnClickListener(this);
+        mNewsMore.setOnClickListener(this);
+        mMallMore.setOnClickListener(this);
+
 
         //设置播放方式为顺序播放
         mPlayView.setPlayType(1);
@@ -102,19 +129,48 @@ public class HomeFragment extends BaseFragment implements HomeView,AdapterView.O
             String str = "data" + i;
             mList.add(str);
         }
+        mMyDailyCareAdapter = new MyDailyCareAdapter(getContext(), mList);
+        mTopNewsAdapter = new MyTopNewsAdapter(getContext(), mList);
+        mMyMallRecAdapter = new MyMallRecAdapter(getContext(), mList);
 
         mHomePresenterDao.initIcons(mItemDatas);
         mHomePresenterDao.initAds();
 
+        mMyDailyCareAdapter.setHeaderView(mMyDailyHeadView);
+        mTopNewsAdapter.setHeaderView(mMyTopNewsHeadView);
+        mMyMallRecAdapter.setHeaderView(mMyMallRecHeadView);
+
+        mMyDailyCareAdapter.setOnItemClickListener(new MyDailyCareAdapter.OnItemClickListener<String>() {
+            @Override
+            public void onItemClick(int position, String data) {
+                mHomePresenterDao.onclickCall(position);
+            }
+
+        });
+
+        mTopNewsAdapter.setOnItemClickListener(new MyDailyCareAdapter.OnItemClickListener<String>() {
+            @Override
+            public void onItemClick(int position, String data) {
+                mHomePresenterDao.onclickCall(position);
+            }
+
+        });
+
+        mMyMallRecAdapter.setOnItemClickListener(new MyDailyCareAdapter.OnItemClickListener<String>() {
+            @Override
+            public void onItemClick(int position, String data) {
+                mHomePresenterDao.onclickCall(position);
+            }
+
+        });
+
         mGridView.setAdapter(mGrideViewAdapter);
-        mDailyCareView.setAdapter(new MyDailyCareAdapter(getContext(),mList));
-        mTopNewsView.setAdapter(new MyDailyCareAdapter(getContext(),mList));
-        mRecommendView.setAdapter(new MyDailyCareAdapter(getContext(),mList));
+        mDailyCareView.setAdapter(mMyDailyCareAdapter);
+        mTopNewsView.setAdapter(mTopNewsAdapter);
+        mRecommendView.setAdapter(mMyMallRecAdapter);
+
 
     }
-
-
-
 
 
     @Override
@@ -134,11 +190,17 @@ public class HomeFragment extends BaseFragment implements HomeView,AdapterView.O
 
     @Override
     public void showClick(int position) {
-        ToastUtil.showToast(getContext(),"第" + position + "个Item被点击了");
+        ToastUtil.showToast(getContext(), "第" + position + "个Item被点击了");
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         mHomePresenterDao.onclickCall(position);
     }
+
+    @Override
+    public void onClick(View v) {
+        mHomePresenterDao.onmoreclickCall(v);
+    }
+
 }

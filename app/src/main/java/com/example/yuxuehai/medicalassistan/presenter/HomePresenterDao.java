@@ -1,5 +1,7 @@
 package com.example.yuxuehai.medicalassistan.presenter;
 
+import android.view.View;
+
 import com.example.yuxuehai.medicalassistan.bean.ItemData;
 
 import java.util.ArrayList;
@@ -14,6 +16,6 @@ public interface HomePresenterDao {
     public void initIcons(ArrayList<ItemData> itemDatas);
 
     public void onclickCall(int position);
-
+    public void onmoreclickCall(View view);
 
 }
