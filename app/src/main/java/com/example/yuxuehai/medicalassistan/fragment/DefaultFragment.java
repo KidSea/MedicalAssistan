@@ -31,7 +31,7 @@ public class DefaultFragment extends BaseFragment {
 
     @Override
     protected View createView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_layout_mine, null);
+        View view = inflater.inflate(R.layout.fragment_layout_default, null);
         return view;
     }
 

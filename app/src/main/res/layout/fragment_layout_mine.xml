@@ -1,15 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.yuxuehai.medicalassistan.widget.CustomerScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
-    android:orientation="vertical">
+    android:background="@android:color/white">
 
-    <TextView
-        android:id="@+id/tv_content"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="123"
-        android:textSize="53sp" />
+        >
 
-</ScrollView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@color/main_green"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="150dp">
+            <ImageView
+                android:id="@+id/iv_mine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_unlogin"
+            />
+
+            <com.example.yuxuehai.medicalassistan.widget.RoundButton
+                android:layout_marginTop="@dimen/space_8"
+                android:id="@+id/btn_login"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_below="@+id/iv_mine"
+                android:layout_centerHorizontal="true"
+                android:background="@color/white"
+                android:textColor="@color/main_green"
+                android:textSize="@dimen/text_size_16"
+                android:text="登入/注册"/>
+
+            <TextView
+                android:layout_marginTop="@dimen/space_8"
+                android:gravity="center"
+                android:id="@+id/tv_phone_num"
+                android:visibility="gone"
+                android:textSize="@dimen/text_size_16"
+                android:textColor="@android:color/white"
+                android:text="1581929120 \n 福州博爱医院"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</com.example.yuxuehai.medicalassistan.widget.CustomerScrollView>
