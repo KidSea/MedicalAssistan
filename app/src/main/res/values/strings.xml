@@ -35,4 +35,18 @@
     <string name="str_topnews">头条资讯</string>
     <string name="str_mallrec">商城推荐</string>
     <string name="str_more">更多</string>
+
+    <!-- explore menu -->
+    <string name="active">护士圈</string>
+    <string name="activities">活动</string>
+    <string name="scan">扫一扫</string>
+    <string name="find_oscer">找人</string>
+    <string name="shake">摇一摇</string>
+
+    <!--error layout -->
+    <string name="error_view_click_to_refresh">点击屏幕,重新加载</string>
+    <string name="error_view_network_error_click_to_refresh">没有可用的网络</string>
+    <string name="error_view_loading">加载中…</string>
+    <string name="error_view_no_data">暂无内容</string>
+
 </resources>

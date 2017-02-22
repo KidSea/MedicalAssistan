@@ -13,16 +13,22 @@
         <item>健康百科</item>
     </string-array>
 
+    <string-array name="mes_viewpage_arrays">
+        <item>紧急消息</item>
+        <item>普通消息</item>
+    </string-array>
+
+
     <integer-array name="item_icon_array">
 
-        <item>@drawable/ic_item_icon_info</item>
-        <item>@drawable/ic_item_icon_dailycare</item>
-        <item>@drawable/ic_item_icon_pe</item>
-        <item>@drawable/ic_item_icon_file</item>
-        <item>@drawable/ic_item_icon_topnews</item>
-        <item>@drawable/ic_item_icon_medguide</item>
-        <item>@drawable/ic_item_icon_market</item>
-        <item>@drawable/ic_item_icon_encyclopedia</item>
+        <item>@drawable/ic_icon_info</item>
+        <item>@drawable/ic_icon_dailycare</item>
+        <item>@drawable/ic_icon_pe</item>
+        <item>@drawable/ic_icon_file</item>
+        <item>@drawable/ic_icon_topnews</item>
+        <item>@drawable/ic_icon_medguide</item>
+        <item>@drawable/ic_icon_market</item>
+        <item>@drawable/ic_icon_encyclopedia</item>
 
     </integer-array>
 

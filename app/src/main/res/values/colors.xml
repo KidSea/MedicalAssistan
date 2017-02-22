@@ -42,4 +42,7 @@
 
     <color name="list_item_background_normal">@color/white</color>
     <color name="list_item_background_pressed">#efefef</color>
+
+    <color name="main_background">#ffebedf0</color>
+
 </resources>

@@ -4,16 +4,24 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.example.yuxuehai.medicalassistan.R;
 import com.example.yuxuehai.medicalassistan.base.BaseFragment;
+import com.example.yuxuehai.medicalassistan.utlis.ToastUtil;
 
 /**
  * Created by yuxuehai on 17-2-18.
  */
 
-public class ExploreFragment extends BaseFragment {
+public class ExploreFragment extends BaseFragment implements View.OnClickListener{
 
+
+    private LinearLayout mFriends;
+    private LinearLayout mActivities;
+    private LinearLayout mFinds;
+    private LinearLayout mScans;
+    private LinearLayout mShakes;
 
     @Override
     protected View createView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -24,10 +32,48 @@ public class ExploreFragment extends BaseFragment {
     @Override
     protected void initView(View rootView) {
 
+        mFriends = (LinearLayout) rootView.findViewById(R.id.rl_active);
+        mActivities = (LinearLayout) rootView.findViewById(R.id.rl_activities);
+        mFinds = (LinearLayout) rootView.findViewById(R.id.rl_find_osc);
+        mScans = (LinearLayout) rootView.findViewById(R.id.rl_scan);
+        mShakes = (LinearLayout) rootView.findViewById(R.id.rl_shake);
+
+        mFriends.setOnClickListener(this);
+        mActivities.setOnClickListener(this);
+        mFinds.setOnClickListener(this);
+        mScans.setOnClickListener(this);
+        mShakes.setOnClickListener(this);
+
     }
 
     @Override
     protected void initData() {
 
+    }
+
+    @Override
+    public void onClick(View view) {
+        int id = view.getId();
+        switch (id){
+            case R.id.rl_active:
+                showClick(id);
+                break;
+            case R.id.rl_activities:
+                showClick(id);
+                break;
+            case R.id.rl_find_osc:
+                showClick(id);
+            case R.id.rl_scan:
+                showClick(id);
+            case R.id.rl_shake:
+                showClick(id);
+            default:
+                break;
+
+        }
+    }
+
+    public void showClick(int position) {
+        ToastUtil.showToast(getContext(), "第" + position + "个Item被点击了");
     }
 }

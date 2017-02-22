@@ -7,4 +7,7 @@ package com.example.yuxuehai.medicalassistan.utlis;
 public class Constants {
 
     public final static String sIsFirstRun = "is_first_run";
+
+    public final static String ENGENCY_MES = "engency_mes";
+    public final static String NORMAL_MES = "normal_mes";
 }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+    <com.example.yuxuehai.medicalassistan.widget.PagerSlidingTabStrip
+        android:id="@+id/vp_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sliding_tab_strip_background"
+        app:allowWidthFull="true"
+        app:slidingBlock="@drawable/image_sliding_block"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_mes_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/vp_indicator"/>
+
+    <com.example.yuxuehai.medicalassistan.widget.EmptyLayout
+        android:id="@+id/layout_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+
+</RelativeLayout>
