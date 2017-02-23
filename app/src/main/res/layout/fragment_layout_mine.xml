@@ -3,9 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white">
+    android:background="@color/graywhite">
 
-    <RelativeLayout
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
@@ -37,19 +38,125 @@
                 android:text="登入/注册"/>
 
             <TextView
-                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginTop="@dimen/space_5"
                 android:gravity="center"
                 android:id="@+id/tv_phone_num"
                 android:visibility="gone"
                 android:textSize="@dimen/text_size_16"
                 android:textColor="@android:color/white"
-                android:text="1581929120 \n 福州博爱医院"
+                android:text="1581929120"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_marginTop="@dimen/space_1"
+                android:gravity="center"
+                android:id="@+id/tv_hospital"
+                android:visibility="gone"
+                android:textSize="@dimen/text_size_16"
+                android:textColor="@android:color/white"
+                android:text="福州博爱医院"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
 
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    </RelativeLayout>
+            <LinearLayout
+                android:id="@+id/rl_collection"
+                style="@style/option_item_rl"
+            >
+
+                <ImageView
+                    style="@style/option_item_img"
+                    android:layout_marginRight="@dimen/space_10"
+                    android:background="@drawable/ic_collection"
+                    android:contentDescription="@null"/>
+
+                <TextView
+                    style="@style/option_item_text"
+                    android:text="@string/collection"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_1"
+                android:background="@color/graywhite"/>
+
+            <LinearLayout
+                android:id="@+id/rl_account"
+                style="@style/option_item_rl"
+            >
+
+                <ImageView
+                    style="@style/option_item_img"
+                    android:layout_marginRight="@dimen/space_10"
+                    android:background="@drawable/ic_account"
+                    android:contentDescription="@null"/>
+
+                <TextView
+                    style="@style/option_item_text"
+                    android:text="@string/account"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_20"
+                android:background="@color/graywhite"/>
+
+            <LinearLayout
+                android:id="@+id/rl_recommond"
+                style="@style/option_item_rl"
+            >
+
+                <ImageView
+                    style="@style/option_item_img"
+                    android:layout_marginRight="@dimen/space_10"
+                    android:background="@drawable/ic_recommond"
+                    android:contentDescription="@null"/>
+
+                <TextView
+                    style="@style/option_item_text"
+                    android:text="@string/recommend"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_1"
+                android:background="@color/graywhite"/>
+
+            <LinearLayout
+                android:id="@+id/rl_settings"
+                style="@style/option_item_rl"
+            >
+
+                <ImageView
+                    style="@style/option_item_img"
+                    android:layout_marginRight="@dimen/space_10"
+                    android:background="@drawable/ic_setting"
+                    android:contentDescription="@null"/>
+
+                <TextView
+                    style="@style/option_item_text"
+                    android:text="@string/setting"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_20"
+                android:background="@color/graywhite"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
 
 
 </com.example.yuxuehai.medicalassistan.widget.CustomerScrollView>

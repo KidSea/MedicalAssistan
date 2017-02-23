@@ -65,43 +65,5 @@
         android:layout_width="match_parent"
         android:layout_height="1px"
         android:background="#d2d2d2" />
-    
-    <LinearLayout
-        android:id="@+id/menu_item_gitapp"
-        style="@style/MenuItemLayoutStyle" >
-
-        <ImageView
-            style="@style/MenuItemImageViewStyle"
-            android:background="@drawable/drawer_menu_icon_gitapp"
-            android:contentDescription="@null" />
-
-        <TextView
-            style="@style/MenuItemTextViewStyle"
-            android:text="@string/gitapp" />
-    </LinearLayout>
-    
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="#d2d2d2" />
-
-    <LinearLayout
-        android:id="@+id/menu_item_opensoft"
-        style="@style/MenuItemLayoutStyle" >
-
-        <ImageView
-            style="@style/MenuItemImageViewStyle"
-            android:background="@drawable/drawer_menu_icon_opensoft"
-            android:contentDescription="@null" />
-
-        <TextView
-            style="@style/MenuItemTextViewStyle"
-            android:text="@string/menu_opensoft" />
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="#d2d2d2" />
 
 </LinearLayout>

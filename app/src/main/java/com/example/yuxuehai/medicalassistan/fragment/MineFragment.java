@@ -20,6 +20,7 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
     private ImageView mIv_mine;
     private Button mBtn_login;
     private TextView mTv_phone;
+    private TextView mTv_hospital;
 
     @Override
     protected View createView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -32,6 +33,7 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
         mIv_mine = (ImageView) rootView.findViewById(R.id.iv_mine);
         mBtn_login = (Button) rootView.findViewById(R.id.btn_login);
         mTv_phone = (TextView) rootView.findViewById(R.id.tv_phone_num);
+        mTv_hospital = (TextView) rootView.findViewById(R.id.tv_hospital);
 
         mBtn_login.setOnClickListener(this);
     }
@@ -48,6 +50,7 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
             case R.id.btn_login:
                 mBtn_login.setVisibility(View.GONE);
                 mTv_phone.setVisibility(View.VISIBLE);
+                mTv_hospital.setVisibility(View.VISIBLE);
                 break;
             default:
                 break;

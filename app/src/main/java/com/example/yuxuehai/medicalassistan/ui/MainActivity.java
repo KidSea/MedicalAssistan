@@ -388,6 +388,12 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
         }
     }
 
+    @Override
+    public void onBackPressed() {
+
+        moveTaskToBack(true);
+    }
+
     // 显示快速操作界面
     private void showQuickOption() {
         // TODO Auto-generated method stub

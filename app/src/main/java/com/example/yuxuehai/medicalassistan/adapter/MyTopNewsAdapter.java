@@ -40,7 +40,7 @@ public class MyTopNewsAdapter extends BaseRecyclerAdapter<String,MyTopNewsAdapte
 
     @Override
     public void onBind(MyViewHolder viewHolder, int RealPosition, String data) {
-        (viewHolder).mImageView.setImageResource(R.drawable.ic_launcher);
+        (viewHolder).mImageView.setImageResource(R.drawable.ic_logo);
         (viewHolder).mTextView.setText(data);
     }
 

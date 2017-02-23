@@ -50,9 +50,7 @@ public class NavigationDrawerFragment extends BaseFragment implements View.OnCli
     private View mDrawerListView;
     private View mFragmentContainerView;
     private LinearLayout mMenu_item_quests;
-    private LinearLayout mMenu_item_opensoft;
     private LinearLayout mMenu_item_blog;
-    private LinearLayout mMenu_item_gitapp;
     private LinearLayout mMenu_item_rss;
     private LinearLayout mMenu_item_setting;
     private LinearLayout mMenu_item_exit;
@@ -90,18 +88,14 @@ public class NavigationDrawerFragment extends BaseFragment implements View.OnCli
     protected void initView(View rootView) {
 
         mMenu_item_quests = (LinearLayout) rootView.findViewById(R.id.menu_item_quests);
-        mMenu_item_opensoft = (LinearLayout) rootView.findViewById(R.id.menu_item_opensoft);
         mMenu_item_blog = (LinearLayout) rootView.findViewById(R.id.menu_item_blog);
-        mMenu_item_gitapp = (LinearLayout) rootView.findViewById(R.id.menu_item_gitapp);
         mMenu_item_rss = (LinearLayout) rootView.findViewById(R.id.menu_item_rss);
         mMenu_item_setting = (LinearLayout) rootView.findViewById(R.id.menu_item_setting);
         mMenu_item_exit = (LinearLayout) rootView.findViewById(R.id.menu_item_exit);
 
         mDrawerListView.setOnClickListener(this);
         mMenu_item_quests.setOnClickListener(this);
-        mMenu_item_opensoft.setOnClickListener(this);
         mMenu_item_blog.setOnClickListener(this);
-        mMenu_item_gitapp.setOnClickListener(this);
         mMenu_item_rss.setOnClickListener(this);
         mMenu_item_setting.setOnClickListener(this);
         mMenu_item_exit.setOnClickListener(this);
@@ -120,11 +114,7 @@ public class NavigationDrawerFragment extends BaseFragment implements View.OnCli
         switch (id) {
             case R.id.menu_item_quests:
                 break;
-            case R.id.menu_item_opensoft:
-                break;
             case R.id.menu_item_blog:
-                break;
-            case R.id.menu_item_gitapp:
                 break;
             case R.id.menu_item_rss:
                 break;
