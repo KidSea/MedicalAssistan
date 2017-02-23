@@ -3,6 +3,7 @@
 
 
     <string name="actionbar_title_search">搜索</string>
+    <string name="actionbar_title_add">添加</string>
 
     <string name="btn_entry">立即体验</string>
 
@@ -35,6 +36,9 @@
     <string name="str_topnews">头条资讯</string>
     <string name="str_mallrec">商城推荐</string>
     <string name="str_more">更多</string>
+    <string name="str_info">信息查看</string>
+    <string name="str_daily">日常护理</string>
+
 
     <!-- explore menu -->
     <string name="active">护士圈</string>

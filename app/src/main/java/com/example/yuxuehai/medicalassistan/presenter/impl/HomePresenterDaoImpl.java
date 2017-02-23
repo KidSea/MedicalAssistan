@@ -9,6 +9,8 @@ import com.example.yuxuehai.medicalassistan.R;
 import com.example.yuxuehai.medicalassistan.base.BasePresenter;
 import com.example.yuxuehai.medicalassistan.bean.ItemData;
 import com.example.yuxuehai.medicalassistan.presenter.HomePresenterDao;
+import com.example.yuxuehai.medicalassistan.ui.DailycareDetailActivity;
+import com.example.yuxuehai.medicalassistan.ui.InformationDetailActivity;
 import com.example.yuxuehai.medicalassistan.utlis.UIUtils;
 import com.example.yuxuehai.medicalassistan.view.HomeView;
 
@@ -77,10 +79,10 @@ public class HomePresenterDaoImpl extends BasePresenter implements HomePresenter
 
         switch (position){
             case 0:
-                mHomeView.showClick(position);
+                mHomeView.jumptoActivity(InformationDetailActivity.class);
                 break;
             case 1:
-                mHomeView.showClick(position);
+                mHomeView.jumptoActivity(DailycareDetailActivity.class);
                 break;
             case 2:
                 mHomeView.showClick(position);

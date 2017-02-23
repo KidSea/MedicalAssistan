@@ -3,7 +3,7 @@
 
 
     <string-array name="home_title_arrays">
-        <item>信息管理</item>
+        <item>信息查看</item>
         <item>日常护理</item>
         <item>体检评测</item>
         <item>健康档案</item>
@@ -16,6 +16,11 @@
     <string-array name="mes_viewpage_arrays">
         <item>紧急消息</item>
         <item>普通消息</item>
+    </string-array>
+
+    <string-array name="info_viewpage_arrays">
+        <item>病房信息</item>
+        <item>病人信息</item>
     </string-array>
 
 

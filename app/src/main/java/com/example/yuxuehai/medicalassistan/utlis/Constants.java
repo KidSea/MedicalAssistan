@@ -10,4 +10,7 @@ public class Constants {
 
     public final static String ENGENCY_MES = "engency_mes";
     public final static String NORMAL_MES = "normal_mes";
+
+    public final static String PATIENT_INFO = "patient_info";
+    public final static String WARD_INFO = "ward_info";
 }

@@ -1,5 +1,6 @@
 package com.example.yuxuehai.medicalassistan.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -194,9 +195,18 @@ public class HomeFragment extends BaseFragment implements HomeView,
     }
 
     @Override
+    public void jumptoActivity(Class clazz) {
+        Intent intent = new Intent(getContext(), clazz);
+        startActivity(intent);
+    }
+
+    @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         mHomePresenterDao.onclickCall(position);
     }
+
+
+
 
     @Override
     public void onClick(View v) {

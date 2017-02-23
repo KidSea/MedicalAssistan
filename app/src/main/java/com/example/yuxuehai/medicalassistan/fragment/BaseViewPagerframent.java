@@ -22,6 +22,7 @@ public abstract class BaseViewPagerframent extends BaseFragment {
     protected ViewPager mViewPager; // 展示内容用的滚动布局ViewPager
     protected ViewPageFragmentAdapter mTabsAdapter; // 封装了数据集合的ViewPager适配器
     protected EmptyLayout mEmptyLayout;// 布局加载异常时, 显示的空布局.
+    
 
     @Override
     protected View createView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

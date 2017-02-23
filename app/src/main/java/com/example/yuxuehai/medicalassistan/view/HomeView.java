@@ -12,4 +12,6 @@ public interface HomeView {
 
     public void startAd(ArrayList<View> allListView);
     public void showClick(int position);
+
+    public void jumptoActivity(Class clazz);
 }

@@ -29,7 +29,10 @@ public abstract class BaseFragment extends Fragment{
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mActivity = (MainActivity)getActivity();
+        if(getActivity() instanceof MainActivity){
+            mActivity = (MainActivity)getActivity();
+        }
+
     }
 
     @Nullable
