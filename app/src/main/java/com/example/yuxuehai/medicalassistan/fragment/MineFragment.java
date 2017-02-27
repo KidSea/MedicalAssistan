@@ -1,5 +1,6 @@
 package com.example.yuxuehai.medicalassistan.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,8 @@ import android.widget.TextView;
 
 import com.example.yuxuehai.medicalassistan.R;
 import com.example.yuxuehai.medicalassistan.base.BaseFragment;
+import com.example.yuxuehai.medicalassistan.ui.LoginActivity;
+import com.example.yuxuehai.medicalassistan.utlis.Constants;
 
 /**
  * Created by yuxuehai on 17-2-18.
@@ -48,14 +51,28 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
         int id = view.getId();
         switch (id) {
             case R.id.btn_login:
-                mBtn_login.setVisibility(View.GONE);
-                mTv_phone.setVisibility(View.VISIBLE);
-                mTv_hospital.setVisibility(View.VISIBLE);
+                Intent intent = new Intent(getContext(), LoginActivity.class);
+                startActivityForResult(intent, Constants.RESULT_UPDATE_INFO);
                 break;
             default:
                 break;
 
 
         }
+    }
+
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode){
+            //登入
+            case Constants.RESULT_UPDATE_INFO:
+                mBtn_login.setVisibility(View.GONE);
+                mTv_phone.setVisibility(View.VISIBLE);
+                mTv_hospital.setVisibility(View.VISIBLE);
+                break;
+        }
+
+        super.onActivityResult(requestCode, resultCode, data);
     }
 }

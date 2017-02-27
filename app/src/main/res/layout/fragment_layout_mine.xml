@@ -53,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/space_1"
                 android:gravity="center"
-                android:text="福州博爱医院"
+                android:text="我爱罗/福州博爱医院"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/text_size_16"
                 android:visibility="gone"/>

@@ -59,4 +59,13 @@
     <string name="error_view_loading">加载中…</string>
     <string name="error_view_no_data">暂无内容</string>
 
+    <!--login-->
+    <string name="text_keep_password">记住密码</string>
+    <string name="str_login">记住密码</string>
+    <string name="hint_phone_num">手机号</string>
+    <string name="hint_passwd">密码</string>
+    <string name="text_login">登入</string>
+    <string name="text_find_password">找回密码</string>
+    <string name="text_registered">注册密码</string>
+
 </resources>
