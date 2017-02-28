@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/w_match_h_match"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/dialog_white_bg"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ProgressBar
+            style="@style/w_wrap_h_wrap"
+            android:indeterminateDrawable="@drawable/progress_small"/>
+
+        <TextView
+            style="@style/w_wrap_h_wrap"
+            android:textColor="@color/main_green"
+            android:layout_marginTop="10dp"
+            android:text="@string/text_now_login"/>
+
+    </LinearLayout>
+
+</LinearLayout>

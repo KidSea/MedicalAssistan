@@ -73,16 +73,16 @@ public class GuideActivity extends BaseActivity implements View.OnClickListener 
 
         switch (id) {
             case R.id.btn_entry:
-                entryHome();
+                entryLogin();
                 break;
             default:
                 break;
         }
     }
 
-    private void entryHome() {
-        SharePrefUtil.setBoolean(this, Constants.sIsFirstRun,true);
-        Intent intent = new Intent(this, MainActivity.class);
+    private void entryLogin() {
+        SharePrefUtil.setBoolean(this, Constants.IsFirstRun,true);
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         finish();
     }

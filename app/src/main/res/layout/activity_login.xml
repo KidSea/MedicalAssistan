@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              style="@style/w_match_h_match"
-              android:background="@color/white"
-              android:gravity="center">
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                style="@style/w_match_h_match"
+                android:background="@color/white"
+                android:gravity="center">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/acbar_layout"
-        android:layout_alignParentTop="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/tb_mytb"
@@ -22,45 +22,51 @@
     </android.support.design.widget.AppBarLayout>
 
     <LinearLayout
-        android:layout_below="@id/acbar_layout"
         style="@style/w_match_h_match"
-        android:padding="@dimen/space_20"
+        android:layout_below="@id/acbar_layout"
         android:layout_marginTop="@dimen/space_20"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="@dimen/space_20">
 
-        <EditText
+        <com.example.yuxuehai.medicalassistan.widget.ClearEditText
             android:id="@+id/et_phone"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:background="@drawable/edittext_bg"
+            android:phoneNumber="true"
             android:hint="@string/hint_phone_num"
+            android:textColor="@color/main_gray"
             android:paddingLeft="20dp"
             android:textSize="16sp"/>
 
-        <EditText
+        <com.example.yuxuehai.medicalassistan.widget.ClearEditText
             android:id="@+id/et_password"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/edittext_bg"
             android:hint="@string/hint_passwd"
+            android:maxLength="16"
             android:inputType="textPassword"
+            android:textColor="@color/main_gray"
             android:paddingLeft="20dp"
             android:textSize="16sp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:layout_marginRight="5dp"
+            android:layout_marginBottom="@dimen/space_5"
             android:orientation="vertical">
 
             <CheckBox
                 android:id="@+id/keep_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
+                style="@style/w_wrap_h_wrap"
+                android:layout_gravity="start"
+                android:buttonTint="@color/main_green"
                 android:text="@string/text_keep_password"
-                android:textColor="@color/colorAccent"/>
+                android:textColor="@color/main_green"/>
         </LinearLayout>
 
         <com.example.yuxuehai.medicalassistan.widget.RoundButton
@@ -78,23 +84,16 @@
         style="@style/w_match_h_wrap"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp">
+        android:layout_marginBottom="@dimen/space_20"
+        android:layout_marginLeft="@dimen/space_20"
+        android:layout_marginRight="@dimen/space_20">
 
         <TextView
             android:id="@+id/tv_forget"
             style="@style/w_wrap_h_wrap"
-            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
             android:text="@string/text_find_password"
-            android:textColor="@color/colorAccent"/>
-
-        <TextView
-            android:id="@+id/tv_registered"
-            style="@style/w_wrap_h_wrap"
-            android:layout_alignParentRight="true"
-            android:layout_gravity="right"
-            android:text="@string/text_registered"
-            android:textColor="@color/colorAccent"/>
+            android:textColor="@color/main_green"/>
 
     </RelativeLayout>
 

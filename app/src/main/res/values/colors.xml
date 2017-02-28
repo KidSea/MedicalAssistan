@@ -23,6 +23,7 @@
     <color name="lightblue">#0083FF</color>
     <!--3bc06b 40AA53 0b751e 2aa155-->
     <color name="guide_green">#3bc09b</color>
+    <color name="main_green_transparent">#503bc06b</color>
     <color name="main_green">#3bc06b</color>
     <color name="main_gray">#9A9A9A</color>
     <color name="main_black">#333</color>

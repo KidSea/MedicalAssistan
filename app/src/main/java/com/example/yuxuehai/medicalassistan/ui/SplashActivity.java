@@ -60,17 +60,27 @@ public class SplashActivity extends BaseActivity {
 
     protected void redirectTo() {
         // TODO Auto-generated method stub
-        boolean isfirst = SharePrefUtil.getBoolean(this, Constants.sIsFirstRun, false);
+        boolean isFirst = SharePrefUtil.getBoolean(this, Constants.IsFirstRun, false);
+        boolean isLogin = SharePrefUtil.getBoolean(this, Constants.IsLogin, false);
 
-        if (!isfirst) {
-            Intent intent = new Intent(this, GuideActivity.class);
-            startActivity(intent);
-            finish();
-        } else {
+
+        if(isLogin){
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             finish();
+        }else {
+            if (!isFirst) {
+                Intent intent = new Intent(this, GuideActivity.class);
+                startActivity(intent);
+                finish();
+            } else {
+                Intent intent = new Intent(this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
         }
+
+
 
     }
 

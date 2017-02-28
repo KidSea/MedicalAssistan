@@ -19,4 +19,5 @@ public abstract class BasePresenter {
     public Context getContext() {
         return mContext;
     }
+
 }

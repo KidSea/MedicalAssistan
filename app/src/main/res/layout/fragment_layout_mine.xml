@@ -25,18 +25,6 @@
                 android:src="@drawable/ic_unlogin"
             />
 
-            <com.example.yuxuehai.medicalassistan.widget.RoundButton
-                android:id="@+id/btn_login"
-                android:layout_width="100dp"
-                android:layout_height="30dp"
-                android:layout_below="@+id/iv_mine"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/space_8"
-                android:background="@color/white"
-                android:text="登入/注册"
-                android:textColor="@color/main_green"
-                android:textSize="@dimen/text_size_16"/>
-
             <TextView
                 android:id="@+id/tv_phone_num"
                 android:layout_width="wrap_content"

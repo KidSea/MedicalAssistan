@@ -15,9 +15,23 @@ public class ToastUtil {
 	 */
 	public static void showToast(Context context,String text){
 		if(toast==null){
-			toast = Toast.makeText(context, text, 0);
+			toast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
 		}
 		toast.setText(text);//将text文本设置给吐司
 		toast.show();
+	}
+
+	/**
+	 * 短时间显示Toast
+	 */
+	public static void showShort(Context context, CharSequence message) {
+		Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+	}
+
+	/**
+	 * 长时间显示Toast
+	 */
+	public static void showLong(Context context, CharSequence message) {
+		Toast.makeText(context, message, Toast.LENGTH_LONG).show();
 	}
 }

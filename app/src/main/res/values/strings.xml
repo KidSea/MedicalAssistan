@@ -61,11 +61,23 @@
 
     <!--login-->
     <string name="text_keep_password">记住密码</string>
-    <string name="str_login">记住密码</string>
+    <string name="str_login">登录</string>
     <string name="hint_phone_num">手机号</string>
     <string name="hint_passwd">密码</string>
-    <string name="text_login">登入</string>
-    <string name="text_find_password">找回密码</string>
-    <string name="text_registered">注册密码</string>
+    <string name="text_login">登录</string>
+    <string name="text_find_password">忘记密码?</string>
+    <string name="text_now_login">正在登录…</string>
+
+    <!-- change passwd-->
+    <string name="text_now_password">旧密码</string>
+    <string name="text_new_password">新密码</string>
+    <string name="text_password_again">再次输入新密码</string>
+    <string name="text_editor_password">重置密码</string>
+
+    <!--find passwd-->
+    <string name="text_setting_password">重置密码</string>
+    <string name="text_phone">请输入登记时的手机号码</string>
+    <string name="str_find_passwd">找回密码</string>
+
 
 </resources>

@@ -121,6 +121,7 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
 
         initAlpha();
         changeAlpha(0);
+
     }
 
     @Override
@@ -157,6 +158,8 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
         mNavigationDrawerFragment.setUp(R.id.navigation_drawer, mDrawerLayout, mToolbar);
 
         mTitle = getTitle();
+
+        mCotentPager.setCurrentItem(3);
     }
 
     protected void initAlpha() {
