@@ -7,6 +7,8 @@ import android.widget.TextView;
 
 import com.example.yuxuehai.medicalassistan.R;
 import com.example.yuxuehai.medicalassistan.base.BaseActivity;
+import com.example.yuxuehai.medicalassistan.presenter.impl.FindPsPresenterDaoImpl;
+import com.example.yuxuehai.medicalassistan.view.FindPasswdView;
 import com.example.yuxuehai.medicalassistan.widget.ClearEditText;
 import com.example.yuxuehai.medicalassistan.widget.RoundButton;
 
@@ -14,7 +16,7 @@ import com.example.yuxuehai.medicalassistan.widget.RoundButton;
  * Created by yuxuehai on 17-2-28.
  */
 
-public class FindPasswdActivity extends BaseActivity implements View.OnClickListener{
+public class FindPasswdActivity extends BaseActivity implements View.OnClickListener,FindPasswdView{
 
     private Toolbar mToolbar;
     private ClearEditText mPhone;
@@ -23,7 +25,7 @@ public class FindPasswdActivity extends BaseActivity implements View.OnClickList
     private ClearEditText mConfirmPasswd;
     private TextView mVerifcode_tv;
     private RoundButton mButton;
-
+    private FindPsPresenterDaoImpl mPresenterDao = null;
 
     public <T extends View> T $(int id) {
         return (T) findViewById(id);
@@ -34,11 +36,23 @@ public class FindPasswdActivity extends BaseActivity implements View.OnClickList
         int id = view.getId();
         switch (id){
             case R.id.tv_code:
-
+                String phoneNum = mPhone.getText().toString().trim();
+                mPresenterDao.cofirmSMS(phoneNum);
                 break;
             case R.id.btn_reset_password:
                 break;
         }
+    }
+
+
+    @Override
+    public void setResend(long time) {
+        mVerifcode_tv.setText((time / 1000) +"秒后重发");
+    }
+
+    @Override
+    public void setTvText() {
+        mVerifcode_tv.setText(getString(R.string.text_reset_sms_code));
     }
 
     @Override
@@ -74,6 +88,8 @@ public class FindPasswdActivity extends BaseActivity implements View.OnClickList
 
     @Override
     protected void initData() {
-
+        mPresenterDao = new FindPsPresenterDaoImpl(this,this);
     }
+
+
 }

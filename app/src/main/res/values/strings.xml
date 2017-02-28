@@ -78,6 +78,9 @@
     <string name="text_setting_password">重置密码</string>
     <string name="text_phone">请输入登记时的手机号码</string>
     <string name="str_find_passwd">找回密码</string>
+    <string name="text_reset_sms_code">重新发送验证码</string>
+    <string name="text_tost_empty">输入框不能为空</string>
+    <string name="text_sms_code_reset_successfully">验证码发送成功</string>
 
 
 </resources>
