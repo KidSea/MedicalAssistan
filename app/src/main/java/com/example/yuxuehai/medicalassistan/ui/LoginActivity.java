@@ -46,7 +46,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
             case R.id.btn_login:
                 String phone = mPhoneNum.getText().toString().trim();
                 String password = mPassWd.getText().toString().trim();
-
+                // 保存状态
+                SharePrefUtil.setBoolean(this, Constants.IsKeepWord, mIsKeepWd.isChecked());
                 mLoginPresenter.login(phone, password);
                 break;
             default:
@@ -122,6 +123,14 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
         mLoginPresenter = new LoginPresenterImpl(this, this);
 
         mLoginPresenter.isChecked();
+
+        String phone = SharePrefUtil.getString(this, Constants.sPHONE, "");
+        String password = SharePrefUtil.getString(this, Constants.sPASSWORD, "");
+        if(!phone.equals("") && !password.equals("")){
+            mPhoneNum.setText(phone);
+            mPassWd.setText(password);
+        }
+
     }
 
     /**

@@ -74,21 +74,29 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity
             android:name=".ui.InformationDetailActivity"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".ui.MainActivity">
+            android:parentActivityName=".ui.MainActivity"
+            android:screenOrientation="portrait">
         </activity>
 
         <activity android:name=".ui.DailycareDetailActivity"
-                  android:screenOrientation="portrait"
-                  android:parentActivityName=".ui.MainActivity"/>
+                  android:parentActivityName=".ui.MainActivity"
+                  android:screenOrientation="portrait"/>
 
         <activity android:name=".ui.LoginActivity"
-                  android:screenOrientation="portrait"
-                  android:parentActivityName=".ui.MainActivity"/>
+                  android:launchMode="singleTask"
+                  android:screenOrientation="portrait"/>
 
         <activity android:name=".ui.FindPasswdActivity"
-                  android:screenOrientation="portrait"
-                  android:parentActivityName=".ui.MainActivity"/>
+                  android:parentActivityName=".ui.LoginActivity"
+                  android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui.SettingsActivity"
+                  android:parentActivityName=".ui.MainActivity"
+                  android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui.ChangePasswdActivity"
+                  android:parentActivityName=".ui.SettingsActivity"
+                  android:screenOrientation="portrait"/>
 
     </application>
 

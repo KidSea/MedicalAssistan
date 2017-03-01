@@ -10,8 +10,6 @@ public class Constants {
     public final static String IsLogin = "is_login";
     public final static String IsKeepWord = "is_keep_word";
 
-    public static final int sEDMODE_CLEAR = 1;
-    public static final int sEDMODE_PASSWD = 2;
 
     public final static String ENGENCY_MES = "engency_mes";
     public final static String NORMAL_MES = "normal_mes";

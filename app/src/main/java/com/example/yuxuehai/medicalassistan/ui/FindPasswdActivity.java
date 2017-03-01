@@ -16,7 +16,7 @@ import com.example.yuxuehai.medicalassistan.widget.RoundButton;
  * Created by yuxuehai on 17-2-28.
  */
 
-public class FindPasswdActivity extends BaseActivity implements View.OnClickListener,FindPasswdView{
+public class FindPasswdActivity extends BaseActivity implements View.OnClickListener, FindPasswdView {
 
     private Toolbar mToolbar;
     private ClearEditText mPhone;
@@ -34,12 +34,17 @@ public class FindPasswdActivity extends BaseActivity implements View.OnClickList
     @Override
     public void onClick(View view) {
         int id = view.getId();
-        switch (id){
+        switch (id) {
             case R.id.tv_code:
                 String phoneNum = mPhone.getText().toString().trim();
                 mPresenterDao.cofirmSMS(phoneNum);
                 break;
             case R.id.btn_reset_password:
+                String code = mVerifcode.getText().toString().trim();
+                String newPass = mPasswd.getText().toString().trim();
+                String newPassword = mConfirmPasswd.getText().toString().trim();
+
+                mPresenterDao.resetPassword(code, newPass, newPassword);
                 break;
         }
     }
@@ -47,12 +52,17 @@ public class FindPasswdActivity extends BaseActivity implements View.OnClickList
 
     @Override
     public void setResend(long time) {
-        mVerifcode_tv.setText((time / 1000) +"秒后重发");
+        mVerifcode_tv.setText((time / 1000) + "秒后重发");
     }
 
     @Override
     public void setTvText() {
         mVerifcode_tv.setText(getString(R.string.text_reset_sms_code));
+    }
+
+    @Override
+    public void finishAc() {
+        this.finish();
     }
 
     @Override
@@ -88,7 +98,7 @@ public class FindPasswdActivity extends BaseActivity implements View.OnClickList
 
     @Override
     protected void initData() {
-        mPresenterDao = new FindPsPresenterDaoImpl(this,this);
+        mPresenterDao = new FindPsPresenterDaoImpl(this, this);
     }
 
 

@@ -2,6 +2,7 @@ package com.example.yuxuehai.medicalassistan.presenter.impl;
 
 import android.content.Context;
 import android.os.CountDownTimer;
+import android.text.TextUtils;
 
 import com.example.yuxuehai.medicalassistan.R;
 import com.example.yuxuehai.medicalassistan.base.BasePresenter;
@@ -12,8 +13,10 @@ import com.example.yuxuehai.medicalassistan.view.FindPasswdView;
 
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.QueryListener;
+import cn.bmob.v3.listener.UpdateListener;
 
 import static cn.bmob.v3.Bmob.getApplicationContext;
+import static com.example.yuxuehai.medicalassistan.utlis.UIUtils.getString;
 
 /**
  * Created by yuxuehai on 17-2-28.
@@ -47,12 +50,37 @@ public class FindPsPresenterDaoImpl extends BasePresenter implements FindPsPrese
                 if (e == null) {//验证码发送成功
                     ToastUtil.showShort(getApplicationContext(),
                             mContext.getString(R.string.text_sms_code_reset_successfully));
-
                 } else {
                 }
             }
         });
 
+    }
+
+    @Override
+    public void resetPassword(String code, String newPass, String newPassword) {
+        if(!TextUtils.isEmpty(newPass) & !TextUtils.isEmpty(newPassword)){
+            if(newPass.equals(newPassword)) {
+                mDataModelDao.resetPasswdBySMS(code, newPassword, new UpdateListener() {
+                    @Override
+                    public void done(BmobException e) {
+                        if(e==null){
+                            ToastUtil.showShort(mContext, getString(R.string.reset_successfully));
+                            mPasswdView.finishAc();
+                        }else{
+                            ToastUtil.showShort(mContext,
+                                    getString(R.string.reset_failed)+"+:code ="
+                                            +e.getErrorCode()+",msg = "+e.getLocalizedMessage());
+                        }
+                    }
+                });
+            }else {
+                ToastUtil.showShort(mContext,
+                        getString(R.string.text_two_input_not_consistent));
+            }
+        }else {
+            ToastUtil.showShort(mContext, getString(R.string.text_tost_empty));
+        }
     }
 
 

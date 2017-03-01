@@ -81,6 +81,14 @@
     <string name="text_reset_sms_code">重新发送验证码</string>
     <string name="text_tost_empty">输入框不能为空</string>
     <string name="text_sms_code_reset_successfully">验证码发送成功</string>
+    <string name="text_two_input_not_consistent">两次输入的密码不一致</string>
+    <string name="reset_successfully">重置密码成功</string>
+    <string name="reset_failed">重置密码失败</string>
 
-
+    <!--settings-->
+    <string name="exit">退出账号</string>
+    <string name="change_passwd">修改密码</string>
+    <string name="about_me">关于我</string>
+    <string name="str_settings">设置</string>
+    <string name="str_change_passwd">密码修改</string>
 </resources>

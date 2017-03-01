@@ -47,7 +47,7 @@ public class LoginPresenterImpl extends BasePresenter implements LoginPresenterD
     }
 
     @Override
-    public void login(String phone, String password) {
+    public void login(final String phone, final String password) {
         if (!TextUtils.isEmpty(phone) & !TextUtils.isEmpty(password)) {
             mLoginView.openDialog();
             mDataModelDao.checkLogin(phone, password, new LogInListener<UserBean>() {
@@ -55,6 +55,14 @@ public class LoginPresenterImpl extends BasePresenter implements LoginPresenterD
                 public void done(UserBean userBean, BmobException e) {
                     mLoginView.closeDialog();
                     if(userBean != null){
+                        // 记住用户名和密码
+                        boolean iskeep = SharePrefUtil.getBoolean(mContext, Constants.IsKeepWord, false);
+                        if(iskeep){
+                            // 记住用户名和密码
+                            SharePrefUtil.setString(mContext, Constants.sPHONE, phone);
+                            SharePrefUtil.setString(mContext, Constants.sPASSWORD, password);
+                        }
+
                         mLoginView.jumptoMain();
                     }else {
                         ToastUtil.showShort(mContext, "登录失败" + e.toString());

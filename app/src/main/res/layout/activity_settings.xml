@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tb_mytb"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme_PopupMenu">
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:background="@color/white"
+                      android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/rl_change"
+                style="@style/option_item_rl"
+            >
+
+                <TextView
+
+                    style="@style/option_item_text"
+                    android:text="@string/change_passwd"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_1"
+                android:background="@color/graywhite"/>
+
+            <LinearLayout
+                android:id="@+id/rl_about"
+                style="@style/option_item_rl"
+            >
+
+                <TextView
+
+                    style="@style/option_item_text"
+                    android:text="@string/about_me"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_20"
+                android:background="@color/graywhite"/>
+
+
+            <LinearLayout
+                android:id="@+id/rl_exit"
+                style="@style/option_item_rl"
+            >
+
+                <TextView
+
+                    style="@style/option_item_text"
+                    android:text="@string/exit"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

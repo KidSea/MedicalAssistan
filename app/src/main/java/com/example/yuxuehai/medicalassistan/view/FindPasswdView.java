@@ -8,4 +8,6 @@ public interface FindPasswdView {
 
     public void setResend(long time);
     public void setTvText();
+
+    public void finishAc();
 }

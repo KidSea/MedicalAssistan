@@ -6,19 +6,20 @@ import cn.bmob.v3.BmobSMS;
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.listener.LogInListener;
 import cn.bmob.v3.listener.QueryListener;
+import cn.bmob.v3.listener.UpdateListener;
 
 /**
  * Created by yuxuehai on 17-2-28.
  */
 
-public class DataModelDaoImpl implements DataModelDao{
+public class DataModelDaoImpl implements DataModelDao {
 
     private static DataModelDaoImpl mDataDao;
 
 
-    public static synchronized DataModelDaoImpl getInstance(){
+    public static synchronized DataModelDaoImpl getInstance() {
 
-        if(mDataDao == null){
+        if (mDataDao == null) {
             mDataDao = new DataModelDaoImpl();
         }
 
@@ -35,4 +36,11 @@ public class DataModelDaoImpl implements DataModelDao{
     public void requestSMS(String phone, String str, QueryListener listener) {
         BmobSMS.requestSMSCode(phone, str, listener);
     }
+
+    @Override
+    public void resetPasswdBySMS(String code, String passwd, UpdateListener listener) {
+        BmobUser.resetPasswordBySMSCode(code, passwd, listener);
+    }
+
+
 }

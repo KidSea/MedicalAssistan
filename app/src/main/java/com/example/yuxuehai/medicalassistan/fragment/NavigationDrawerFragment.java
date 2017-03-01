@@ -1,6 +1,7 @@
 package com.example.yuxuehai.medicalassistan.fragment;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -21,6 +22,8 @@ import android.widget.LinearLayout;
 
 import com.example.yuxuehai.medicalassistan.R;
 import com.example.yuxuehai.medicalassistan.base.BaseFragment;
+import com.example.yuxuehai.medicalassistan.ui.LoginActivity;
+import com.example.yuxuehai.medicalassistan.ui.SettingsActivity;
 
 /**
  * Created by yuxuehai on 17-2-17.
@@ -119,8 +122,11 @@ public class NavigationDrawerFragment extends BaseFragment implements View.OnCli
             case R.id.menu_item_rss:
                 break;
             case R.id.menu_item_setting:
+                startActivity(new Intent(getContext(), SettingsActivity.class));
                 break;
             case R.id.menu_item_exit:
+                startActivity(new Intent(getContext(), LoginActivity.class));
+                getActivity().finish();
                 break;
             default:
                 break;
