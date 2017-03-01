@@ -46,4 +46,6 @@
 
     <color name="main_background">#ffebedf0</color>
 
+    <color name="color_border">#66666666</color>
+
 </resources>

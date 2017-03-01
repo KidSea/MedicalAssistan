@@ -9,34 +9,9 @@ import cn.bmob.v3.datatype.BmobFile;
 
 public class UserBean extends BmobUser {
 
-    private String name;
-    private String phone;
-    private String des;
     private BmobFile photo;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getDes() {
-        return des;
-    }
-
-    public void setDes(String des) {
-        this.des = des;
-    }
+    private String hospital;
 
     public BmobFile getPhoto() {
         return photo;
@@ -45,4 +20,13 @@ public class UserBean extends BmobUser {
     public void setPhoto(BmobFile photo) {
         this.photo = photo;
     }
+
+    public String getHospital() {
+        return hospital;
+    }
+
+    public void setHospital(String hospital) {
+        this.hospital = hospital;
+    }
+
 }

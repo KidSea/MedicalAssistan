@@ -9,6 +9,8 @@ import android.widget.LinearLayout;
 import com.example.yuxuehai.medicalassistan.R;
 import com.example.yuxuehai.medicalassistan.base.BaseActivity;
 
+import cn.bmob.v3.BmobUser;
+
 /**
  * Created by yuxuehai on 17-3-1.
  */
@@ -31,6 +33,7 @@ public class SettingsActivity extends BaseActivity implements View.OnClickListen
 
         switch (id){
             case R.id.rl_exit:
+                BmobUser.getCurrentUser().logOut();
                 startActivity(new Intent(this, LoginActivity.class));
                 finish();
                 break;

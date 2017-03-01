@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.example.yuxuehai.medicalassistan.widget.CustomerScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/graywhite">
@@ -13,17 +14,16 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="160dp"
             android:background="@color/main_green"
             android:gravity="center"
             android:orientation="vertical">
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/iv_mine"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
                 android:layout_centerInParent="true"
-                android:src="@drawable/ic_unlogin"
-            />
+                android:src="@drawable/ic_unlogin"/>
 
             <TextView
                 android:id="@+id/tv_phone_num"
@@ -33,18 +33,16 @@
                 android:gravity="center"
                 android:text="1581929120"
                 android:textColor="@android:color/white"
-                android:textSize="@dimen/text_size_16"
-                android:visibility="gone"/>
+                android:textSize="@dimen/text_size_16"/>
             <TextView
-                android:id="@+id/tv_hospital"
+                android:id="@+id/tv_des"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/space_1"
                 android:gravity="center"
                 android:text="我爱罗/福州博爱医院"
                 android:textColor="@android:color/white"
-                android:textSize="@dimen/text_size_16"
-                android:visibility="gone"/>
+                android:textSize="@dimen/text_size_16"/>
         </LinearLayout>
 
         <LinearLayout

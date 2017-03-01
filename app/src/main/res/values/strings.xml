@@ -52,6 +52,8 @@
     <string name="account">账户管理</string>
     <string name="setting">设置</string>
     <string name="recommend">意见反馈</string>
+    <string name="avatar_editor_success">头像更新成功</string>
+    <string name="avatar_editor_failure">头像更新失败</string>
 
     <!--error layout -->
     <string name="error_view_click_to_refresh">点击屏幕,重新加载</string>
@@ -91,4 +93,5 @@
     <string name="about_me">关于我</string>
     <string name="str_settings">设置</string>
     <string name="str_change_passwd">密码修改</string>
+
 </resources>

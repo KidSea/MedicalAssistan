@@ -25,6 +25,8 @@ import com.example.yuxuehai.medicalassistan.base.BaseFragment;
 import com.example.yuxuehai.medicalassistan.ui.LoginActivity;
 import com.example.yuxuehai.medicalassistan.ui.SettingsActivity;
 
+import cn.bmob.v3.BmobUser;
+
 /**
  * Created by yuxuehai on 17-2-17.
  */
@@ -125,6 +127,7 @@ public class NavigationDrawerFragment extends BaseFragment implements View.OnCli
                 startActivity(new Intent(getContext(), SettingsActivity.class));
                 break;
             case R.id.menu_item_exit:
+                BmobUser.getCurrentUser().logOut();
                 startActivity(new Intent(getContext(), LoginActivity.class));
                 getActivity().finish();
                 break;

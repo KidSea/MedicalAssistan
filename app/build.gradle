@@ -32,6 +32,11 @@ dependencies {
     compile 'com.android.support.test.espresso:espresso-core:2.2.2'
     compile 'com.android.support:recyclerview-v7:25.2.0'
 
+    //圆角图片CircleImageView
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    //图片加载库Glide
+    compile 'com.github.bumptech.glide:glide:3.5.2'
+
     //以下SDK开发者请根据需要自行选择
     //bmob-sdk：Bmob的android sdk包，包含了Bmob的数据存储、文件等服务，以下是最新的bmob-sdk:
     //3.5.0：请务必查看下面注释[1]
