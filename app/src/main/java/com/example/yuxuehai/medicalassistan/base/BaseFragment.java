@@ -19,7 +19,8 @@ public abstract class BaseFragment extends Fragment{
     protected MainActivity mActivity;
     private View mMainView = null;
 
-    protected abstract View createView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState);
+    protected abstract View createView(LayoutInflater inflater, ViewGroup container,
+                                       Bundle savedInstanceState);
 
     protected abstract void initView(View rootView);
 
@@ -37,7 +38,8 @@ public abstract class BaseFragment extends Fragment{
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
 
         if (mMainView == null || mMainView.getParent() != null) {
             mMainView = createView(inflater, container, savedInstanceState);

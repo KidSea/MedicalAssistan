@@ -1,13 +1,15 @@
 package com.example.yuxuehai.medicalassistan;
 
-import android.content.Context;
-import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
+import android.util.Log;
+
+import com.example.yuxuehai.medicalassistan.bean.Ward;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static org.junit.Assert.*;
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.SaveListener;
 
 /**
  * Instrumentation test, which will execute on an Android device.
@@ -18,9 +20,22 @@ import static org.junit.Assert.*;
 public class ExampleInstrumentedTest {
     @Test
     public void useAppContext() throws Exception {
-        // Context of the app under test.
-        Context appContext = InstrumentationRegistry.getTargetContext();
+        Ward ward = new Ward();
+        ward.setRoomName("501");
+        ward.setPatientNum(5);
+        ward.setLocation("主楼-胃肠科-501");
+        ward.setCategory("胃肠科");
+        ward.setDoctor("李四");
 
-        assertEquals("com.example.yuxuehai.medicalassistan", appContext.getPackageName());
+        ward.save(new SaveListener<String>() {
+            @Override
+            public void done(String s, BmobException e) {
+                if(e==null){
+                    Log.i("bmob","创建数据成功：" + s);
+                }else{
+                    Log.i("bmob","失败："+e.getMessage()+","+e.getErrorCode());
+                }
+            }
+        });
     }
 }

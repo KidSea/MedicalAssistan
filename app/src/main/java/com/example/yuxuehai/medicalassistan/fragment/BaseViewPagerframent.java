@@ -25,7 +25,8 @@ public abstract class BaseViewPagerframent extends BaseFragment {
     
 
     @Override
-    protected View createView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    protected View createView(LayoutInflater inflater, ViewGroup container,
+                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.base_viewpage_fragment, null);
 

@@ -14,7 +14,8 @@ public class BaseListFragment extends BaseFragment {
 
 
     @Override
-    protected View createView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    protected View createView(LayoutInflater inflater, ViewGroup container,
+                              Bundle savedInstanceState) {
         return null;
     }
 

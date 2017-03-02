@@ -16,7 +16,8 @@ import java.util.ArrayList;
  * Created by yuxuehai on 17-2-20.
  */
 
-public class MyDailyCareAdapter extends BaseRecyclerAdapter<String,MyDailyCareAdapter.MyViewHolder> {
+public class MyDailyCareAdapter extends BaseRecyclerAdapter<String,
+        MyDailyCareAdapter.MyViewHolder> {
 
 
     private Context mContext;
@@ -28,7 +29,8 @@ public class MyDailyCareAdapter extends BaseRecyclerAdapter<String,MyDailyCareAd
 
     @Override
     public MyViewHolder onCreate(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rec_item_layout, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).
+                inflate(R.layout.rec_item_layout, parent, false);
 
         MyViewHolder mHolder = new MyViewHolder(view);
 

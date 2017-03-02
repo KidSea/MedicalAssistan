@@ -40,7 +40,8 @@ import static com.example.yuxuehai.medicalassistan.R.id.tv_me0;
  * Created by yuxuehai on 2017/2/12.
  * 主界面
  */
-public class MainActivity extends BaseActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks, View.OnClickListener {
+public class MainActivity extends BaseActivity implements NavigationDrawerFragment.
+        NavigationDrawerCallbacks, View.OnClickListener {
 
     private CharSequence mTitle;
 
@@ -138,7 +139,8 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
 
         mCotentPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            public void onPageScrolled(int position, float positionOffset,
+                                       int positionOffsetPixels) {
                 changeAlpha(position, positionOffsetPixels, positionOffset);
             }
 
@@ -191,15 +193,19 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
             }
         } else if (i == 1) {
             if (mIv_message_selected.getAlpha() == 0) {
-                setselectedAlpha(mIv_message_selected, mIv_message, mTv_message_selected, mTv_message);
+                setselectedAlpha(mIv_message_selected, mIv_message,
+                        mTv_message_selected, mTv_message);
             } else if (mIv_message_selected.getAlpha() == 1) {
-                setunselectedAlpha(mIv_message_selected, mIv_message, mTv_message_selected, mTv_message);
+                setunselectedAlpha(mIv_message_selected, mIv_message,
+                        mTv_message_selected, mTv_message);
             }
         } else if (i == 2) {
             if (mIv_explore_selected.getAlpha() == 0) {
-                setselectedAlpha(mIv_explore_selected, mIv_explore, mTv_explore_selected, mTv_explore);
+                setselectedAlpha(mIv_explore_selected, mIv_explore,
+                        mTv_explore_selected, mTv_explore);
             } else if (mIv_explore_selected.getAlpha() == 1) {
-                setunselectedAlpha(mIv_explore_selected, mIv_explore, mTv_explore_selected, mTv_explore);
+                setunselectedAlpha(mIv_explore_selected, mIv_explore,
+                        mTv_explore_selected, mTv_explore);
             }
         } else if (i == 3) {
             if (mIv_mine_selected.getAlpha() == 0) {
@@ -224,27 +230,35 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
             case 0:
                 setAlphaProgress(mIv_home_selected, mIv_home, mTv_home_selected, mTv_home,progress);
 
-                setunAlphaProgress(mIv_message_selected, mIv_message, mTv_message_selected, mTv_message,progress);
+                setunAlphaProgress(mIv_message_selected, mIv_message,
+                        mTv_message_selected, mTv_message,progress);
                 break;
             case 1:
-                setAlphaProgress(mIv_message_selected, mIv_message, mTv_message_selected, mTv_message,progress);
+                setAlphaProgress(mIv_message_selected, mIv_message,
+                        mTv_message_selected, mTv_message,progress);
                 if (currPosition == 0) {
-                    setunAlphaProgress(mIv_home_selected, mIv_home, mTv_home_selected, mTv_home,progress);
+                    setunAlphaProgress(mIv_home_selected, mIv_home,
+                            mTv_home_selected, mTv_home,progress);
                 } else {
-                    setunAlphaProgress(mIv_explore_selected, mIv_explore, mTv_explore_selected, mTv_explore,progress);
+                    setunAlphaProgress(mIv_explore_selected, mIv_explore,
+                            mTv_explore_selected, mTv_explore,progress);
                 }
                 break;
             case 2:
-                setAlphaProgress(mIv_explore_selected, mIv_explore, mTv_explore_selected, mTv_explore,progress);
+                setAlphaProgress(mIv_explore_selected, mIv_explore,
+                        mTv_explore_selected, mTv_explore,progress);
                 if (currPosition == 1) {
-                    setunAlphaProgress(mIv_message_selected, mIv_message, mTv_message_selected, mTv_message,progress);
+                    setunAlphaProgress(mIv_message_selected, mIv_message,
+                            mTv_message_selected, mTv_message,progress);
                 } else {
-                    setunAlphaProgress(mIv_mine_selected, mIv_mine, mTv_mine_selected, mTv_mine,progress);
+                    setunAlphaProgress(mIv_mine_selected, mIv_mine,
+                            mTv_mine_selected, mTv_mine,progress);
                 }
                 break;
             case 3:
                 setAlphaProgress(mIv_mine_selected, mIv_mine, mTv_mine_selected, mTv_mine,progress);
-                setunAlphaProgress(mIv_explore_selected, mIv_explore, mTv_explore_selected, mTv_explore,progress);
+                setunAlphaProgress(mIv_explore_selected, mIv_explore,
+                        mTv_explore_selected, mTv_explore,progress);
                 break;
         }
 
@@ -336,28 +350,32 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
         dialog.show();
     }
 
-    private void setselectedAlpha(ImageView im_se, ImageView im_unse, TextView tv_se, TextView tv_unse) {
+    private void setselectedAlpha(ImageView im_se, ImageView im_unse,
+                                  TextView tv_se, TextView tv_unse) {
         im_se.setAlpha(1.0f);
         im_unse.setAlpha(0.0f);
         tv_se.setAlpha(1.0f);
         tv_unse.setAlpha(0.0f);
     }
 
-    private void setunselectedAlpha(ImageView im_se, ImageView im_unse, TextView tv_se, TextView tv_unse) {
+    private void setunselectedAlpha(ImageView im_se, ImageView im_unse,
+                                    TextView tv_se, TextView tv_unse) {
         im_se.setAlpha(0.0f);
         im_unse.setAlpha(1.0f);
         tv_se.setAlpha(0.0f);
         tv_unse.setAlpha(1.0f);
     }
 
-    private void setAlphaProgress(ImageView im_se, ImageView im_unse, TextView tv_se, TextView tv_unse, float progress) {
+    private void setAlphaProgress(ImageView im_se, ImageView im_unse, TextView tv_se,
+                                  TextView tv_unse, float progress) {
         tv_unse.setAlpha(progress);
         tv_se.setAlpha(1 - progress);
         im_unse.setAlpha(progress);
         im_se.setAlpha(1 - progress);
     }
 
-    private void setunAlphaProgress(ImageView im_se, ImageView im_unse, TextView tv_se, TextView tv_unse, float progress) {
+    private void setunAlphaProgress(ImageView im_se, ImageView im_unse, TextView tv_se,
+                                    TextView tv_unse, float progress) {
         tv_se.setAlpha(progress);
         tv_unse.setAlpha(1 - progress);
         im_se.setAlpha(progress);

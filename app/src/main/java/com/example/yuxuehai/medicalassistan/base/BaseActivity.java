@@ -101,7 +101,8 @@ public abstract class BaseActivity extends AppCompatActivity {
             if (titleRes != 0) {
                 mTvActionTitle.setText(titleRes);
             }
-            ActionBar.LayoutParams params = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT,
+            ActionBar.LayoutParams params = new ActionBar.LayoutParams(ActionBar.LayoutParams.
+                    MATCH_PARENT,
                     ActionBar.LayoutParams.MATCH_PARENT);
 
             // ------------------------------------------------- 创建自定义布局 ↑

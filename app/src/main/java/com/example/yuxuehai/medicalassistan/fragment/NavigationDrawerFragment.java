@@ -9,6 +9,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.drawable.DrawerArrowDrawable;
 import android.support.v7.widget.Toolbar;
@@ -18,10 +19,13 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.example.yuxuehai.medicalassistan.R;
 import com.example.yuxuehai.medicalassistan.base.BaseFragment;
+import com.example.yuxuehai.medicalassistan.bean.UserBean;
 import com.example.yuxuehai.medicalassistan.ui.LoginActivity;
 import com.example.yuxuehai.medicalassistan.ui.SettingsActivity;
 
@@ -127,9 +131,7 @@ public class NavigationDrawerFragment extends BaseFragment implements View.OnCli
                 startActivity(new Intent(getContext(), SettingsActivity.class));
                 break;
             case R.id.menu_item_exit:
-                BmobUser.getCurrentUser().logOut();
-                startActivity(new Intent(getContext(), LoginActivity.class));
-                getActivity().finish();
+                onExitUser();
                 break;
             default:
                 break;
@@ -163,10 +165,8 @@ public class NavigationDrawerFragment extends BaseFragment implements View.OnCli
      * Users of this fragment must call this method to set up the navigation
      * drawer interactions.
      *
-     * @param fragmentId
-     *            The android:id of this fragment in its activity's layout.
-     * @param drawerLayout
-     *            The DrawerLayout containing this fragment's UI.
+     * @param fragmentId   The android:id of this fragment in its activity's layout.
+     * @param drawerLayout The DrawerLayout containing this fragment's UI.
      */
     public void setUp(int fragmentId, DrawerLayout drawerLayout, Toolbar toolbar) {
         mFragmentContainerView = getActivity().findViewById(fragmentId);
@@ -179,13 +179,6 @@ public class NavigationDrawerFragment extends BaseFragment implements View.OnCli
                 GravityCompat.START);
         // set up the drawer's list view with items and click listener
 
-//        ActionBar actionBar = getActionBar();
-//        // 设置返回按钮可以显示 (向左的小箭头)// 默认不显示
-//        actionBar.setDisplayHomeAsUpEnabled(true);
-//        // 设置返回按钮可以点击
-//        actionBar.setHomeButtonEnabled(true);
-//
-//        actionBar.setDisplayShowHomeEnabled(true);
 
         // 创建自定义返回按钮内容
         drawerArrow = new DrawerArrowDrawable(getActivity()) {
@@ -224,7 +217,6 @@ public class NavigationDrawerFragment extends BaseFragment implements View.OnCli
     public void openDrawerMenu() {
         mDrawerLayout.openDrawer(mFragmentContainerView);
     }
-
 
 
     @Override
@@ -277,5 +269,37 @@ public class NavigationDrawerFragment extends BaseFragment implements View.OnCli
 
     public static interface NavigationDrawerCallbacks {
         void onNavigationDrawerItemSelected(int position);
+    }
+
+    private void onExitUser() {
+
+        LayoutInflater inflater = LayoutInflater.from(getContext());
+        RelativeLayout inflate = (RelativeLayout) inflater.inflate(R.layout.dialog_exit, null);
+
+        final AlertDialog dialog = new AlertDialog.Builder(getContext()).create();
+        dialog.show();
+
+        Window window = dialog.getWindow();
+        window.setContentView(inflate); // 修改整个dialog窗口的显示
+
+        dialog.findViewById(R.id.tv_cancel).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.findViewById(R.id.tv_confirm).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //清除缓存对象
+                UserBean.logOut();
+                // 现在的currentUser是null了
+                BmobUser currentUser = UserBean.getCurrentUser();
+                startActivity(new Intent(getContext(), LoginActivity.class));
+                getActivity().finish();
+            }
+        });
+
     }
 }

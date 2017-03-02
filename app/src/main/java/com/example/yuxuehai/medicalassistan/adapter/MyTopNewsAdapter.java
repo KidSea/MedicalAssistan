@@ -29,7 +29,8 @@ public class MyTopNewsAdapter extends BaseRecyclerAdapter<String,MyTopNewsAdapte
 
     @Override
     public MyViewHolder onCreate(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rec_item_layout, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rec_item_layout,
+                parent, false);
 
         MyViewHolder mHolder = new MyViewHolder(view);
 

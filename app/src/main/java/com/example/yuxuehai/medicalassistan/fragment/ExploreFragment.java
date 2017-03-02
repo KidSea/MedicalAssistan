@@ -24,7 +24,8 @@ public class ExploreFragment extends BaseFragment implements View.OnClickListene
     private LinearLayout mShakes;
 
     @Override
-    protected View createView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    protected View createView(LayoutInflater inflater, ViewGroup container,
+                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_layout_explore, null);
         return view;
     }

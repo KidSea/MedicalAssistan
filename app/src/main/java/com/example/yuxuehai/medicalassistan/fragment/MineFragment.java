@@ -138,6 +138,21 @@ public class MineFragment extends BaseFragment implements View.OnClickListener,M
 
 
     @Override
+    public void onResume() {
+        super.onResume();
+        if(BmobUser.getCurrentUser() != null){
+            System.out.println(UserBean.getCurrentUser());
+            UserBean userEntity = BmobUser.getCurrentUser(UserBean.class);
+            System.out.println(userEntity);
+            if(userEntity.getPhoto() != null){
+                Glide.with(getActivity()).load(userEntity.getPhoto().getFileUrl()).into(mIv_mine);
+            }
+            mTv_phone.setText(userEntity.getMobilePhoneNumber());
+            mTv_des.setText(userEntity.getUsername()+"/"+userEntity.getHospital());
+        }
+    }
+
+    @Override
     protected View createView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_layout_mine, null);
         return view;
@@ -159,14 +174,6 @@ public class MineFragment extends BaseFragment implements View.OnClickListener,M
     @Override
     protected void initData() {
         mMinePresenterDao = new MinePresenterDaoImpl(getContext(),this);
-        if(BmobUser.getCurrentUser() != null){
-            UserBean userEntity = BmobUser.getCurrentUser(UserBean.class);
-            if(userEntity.getPhoto() != null){
-                Glide.with(getActivity()).load(userEntity.getPhoto().getFileUrl()).into(mIv_mine);
-            }
-            mTv_phone.setText(userEntity.getMobilePhoneNumber());
-            mTv_des.setText(userEntity.getUsername()+"/"+userEntity.getHospital());
-        }
     }
 
     @Override
@@ -194,12 +201,15 @@ public class MineFragment extends BaseFragment implements View.OnClickListener,M
 
     private void requestWESPermission() {
         if (Build.VERSION.SDK_INT >= 23) {
-            int checkCallPhonePermission = ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE);
+            int checkCallPhonePermission = ContextCompat.checkSelfPermission(getActivity(),
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE);
             if (checkCallPhonePermission != PackageManager.PERMISSION_GRANTED) {
                 // 判断是否需要 向用户解释，为什么要申请该权限
-                if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE))
+                if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE))
                     ToastUtil.showShort(getActivity(),"Need write external storage permission.");
-                ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_BLUETOOTH_PERMISSION);
+                ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.
+                        WRITE_EXTERNAL_STORAGE}, REQUEST_BLUETOOTH_PERMISSION);
                 return;
             } else {
             }

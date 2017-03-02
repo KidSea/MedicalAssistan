@@ -12,7 +12,8 @@ import java.util.ArrayList;
  * Created by yuxuehai on 17-2-21.
  */
 
-public abstract class BaseRecyclerAdapter<T, D extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public abstract class BaseRecyclerAdapter<T, D extends RecyclerView.ViewHolder>
+        extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     public static final int TYPE_HEADER = 0;
     public static final int TYPE_NORMAL = 1;
