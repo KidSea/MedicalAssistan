@@ -38,7 +38,7 @@ public abstract class BaseRecyclerAdapter<T, D extends RecyclerView.ViewHolder>
     }
 
     public void addDatas(ArrayList<T> datas) {
-        mDatas.addAll(datas);
+        mDatas = datas;
         notifyDataSetChanged();
     }
 

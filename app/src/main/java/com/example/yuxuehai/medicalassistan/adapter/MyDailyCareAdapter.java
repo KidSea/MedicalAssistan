@@ -68,5 +68,4 @@ public class MyDailyCareAdapter extends BaseRecyclerAdapter<String,
 
 
 
-
 }

@@ -14,10 +14,11 @@ public class Patient extends BmobObject {
     private String gender;
     private String phoneNum;
 
-    private String roomNum;
     private String num;
     private String pathology;
     private BmobFile photo;
+
+    private Ward mWard;
 
     private String detail;
 
@@ -53,14 +54,6 @@ public class Patient extends BmobObject {
         this.phoneNum = phoneNum;
     }
 
-    public String getRoomNum() {
-        return roomNum;
-    }
-
-    public void setRoomNum(String roomNum) {
-        this.roomNum = roomNum;
-    }
-
     public String getNum() {
         return num;
     }
@@ -93,5 +86,12 @@ public class Patient extends BmobObject {
         this.detail = detail;
     }
 
+    public Ward getWard() {
+        return mWard;
+    }
+
+    public void setWard(Ward ward) {
+        mWard = ward;
+    }
 
 }

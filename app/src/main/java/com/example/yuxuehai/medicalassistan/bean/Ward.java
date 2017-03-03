@@ -1,6 +1,7 @@
 package com.example.yuxuehai.medicalassistan.bean;
 
 import cn.bmob.v3.BmobObject;
+import cn.bmob.v3.BmobUser;
 
 /**
  * Created by yuxuehai on 17-3-2.
@@ -14,6 +15,8 @@ public class Ward extends BmobObject {
     private Integer patientNum;
     private String location;
     private String doctor;
+
+    private BmobUser user;
 
     public String getRoomName() {
         return roomName;
@@ -53,6 +56,14 @@ public class Ward extends BmobObject {
 
     public void setDoctor(String doctor) {
         this.doctor = doctor;
+    }
+
+    public BmobUser getUser() {
+        return user;
+    }
+
+    public void setUser(BmobUser user) {
+        this.user = user;
     }
 
 }

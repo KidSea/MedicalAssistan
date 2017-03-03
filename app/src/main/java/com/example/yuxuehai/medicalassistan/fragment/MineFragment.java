@@ -141,9 +141,9 @@ public class MineFragment extends BaseFragment implements View.OnClickListener,M
     public void onResume() {
         super.onResume();
         if(BmobUser.getCurrentUser() != null){
-            System.out.println(UserBean.getCurrentUser());
+            //System.out.println(UserBean.getCurrentUser());
             UserBean userEntity = BmobUser.getCurrentUser(UserBean.class);
-            System.out.println(userEntity);
+            //System.out.println(userEntity);
             if(userEntity.getPhoto() != null){
                 Glide.with(getActivity()).load(userEntity.getPhoto().getFileUrl()).into(mIv_mine);
             }
