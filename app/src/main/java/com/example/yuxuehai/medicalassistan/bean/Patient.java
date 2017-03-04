@@ -9,18 +9,15 @@ import cn.bmob.v3.datatype.BmobFile;
 
 public class Patient extends BmobObject {
 
-    private String patientName;
-    private Integer age;
-    private String gender;
-    private String phoneNum;
-
-    private String num;
-    private String pathology;
     private BmobFile photo;
-
+    private String phoneNum;
+    private String patientName;
+    private String pathology;
+    private String num;
     private Ward mWard;
-
+    private String gender;
     private String detail;
+    private Integer age;
 
     public String getPatientName() {
         return patientName;

@@ -10,13 +10,13 @@ import cn.bmob.v3.BmobUser;
 public class Ward extends BmobObject {
 
     private String roomName;
-
-    private String category;
     private Integer patientNum;
+    private BmobUser nurse;
     private String location;
     private String doctor;
+    private String category;
 
-    private BmobUser user;
+
 
     public String getRoomName() {
         return roomName;
@@ -59,11 +59,11 @@ public class Ward extends BmobObject {
     }
 
     public BmobUser getUser() {
-        return user;
+        return nurse;
     }
 
     public void setUser(BmobUser user) {
-        this.user = user;
+        this.nurse = user;
     }
 
 }
