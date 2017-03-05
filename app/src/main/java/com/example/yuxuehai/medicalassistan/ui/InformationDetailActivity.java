@@ -1,7 +1,8 @@
 package com.example.yuxuehai.medicalassistan.ui;
 
 import android.support.v7.app.ActionBar;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
@@ -10,9 +11,9 @@ import com.example.yuxuehai.medicalassistan.adapter.MyInformationAdapter;
 import com.example.yuxuehai.medicalassistan.base.BaseActivity;
 import com.example.yuxuehai.medicalassistan.bean.SampleBean;
 import com.example.yuxuehai.medicalassistan.presenter.impl.InformationPresenterDaoImpl;
-import com.example.yuxuehai.medicalassistan.utlis.UIUtils;
+import com.example.yuxuehai.medicalassistan.utlis.ToastUtil;
 import com.example.yuxuehai.medicalassistan.view.InformationView;
-import com.xdandroid.simplerecyclerview.Divider;
+import com.xdandroid.simplerecyclerview.OnItemClickListener;
 import com.xdandroid.simplerecyclerview.SimpleRecyclerView;
 import com.xdandroid.simplerecyclerview.SimpleSwipeRefreshLayout;
 
@@ -78,17 +79,10 @@ public class InformationDetailActivity extends BaseActivity implements Informati
         mSwipeRefreshLayout.setOnRefreshListener(this::refreshData);
         mSwipeRefreshLayout.setRefreshing(true);
 
-        mRecyclerView.addItemDecoration(new Divider(
-                //分割线宽1dp
-                UIUtils.dip2px(1),
-                //分割线颜色#DDDDDD
-                UIUtils.getColor(R.color.graywhite),
-                false,
-                //分割线左侧留出20dp的空白，不绘制
-                UIUtils.dip2px(20), 0, 0, 0)
-        );
 
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        GridLayoutManager gm = new GridLayoutManager(this, 2);
+       // gm.setSpanSizeLookup(mAdapter.getSpanSizeLookup(2));
+        mRecyclerView.setLayoutManager(gm);
         mAdapter = new MyInformationAdapter(){
 
             @Override
@@ -101,6 +95,12 @@ public class InformationDetailActivity extends BaseActivity implements Informati
             }
         };
         mRecyclerView.setAdapter(mAdapter);
+        mAdapter.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(RecyclerView.ViewHolder holder, View v, int position, int viewType) {
+                ToastUtil.showToast(getcontext(),"第"+position+"个item被点击了");
+            }
+        });
 
 
     }

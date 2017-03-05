@@ -36,7 +36,7 @@
     <string name="str_topnews">头条资讯</string>
     <string name="str_mallrec">商城推荐</string>
     <string name="str_more">更多</string>
-    <string name="str_info">信息查看</string>
+    <string name="str_info">病房信息</string>
     <string name="str_daily">日常护理</string>
 
 
@@ -98,4 +98,7 @@
     <string name="dialog_message">确定退出?</string>
     <string name="dialog_confirm">确定</string>
     <string name="dialog_cancel">取消</string>
+
+    <!--ward item-->
+    <string name="ward_num">房号 : </string>
 </resources>

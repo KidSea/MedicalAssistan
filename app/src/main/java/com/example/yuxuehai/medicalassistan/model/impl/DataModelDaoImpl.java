@@ -3,9 +3,7 @@ package com.example.yuxuehai.medicalassistan.model.impl;
 import com.example.yuxuehai.medicalassistan.bean.Patient;
 import com.example.yuxuehai.medicalassistan.bean.Ward;
 import com.example.yuxuehai.medicalassistan.model.DataModelDao;
-import com.example.yuxuehai.medicalassistan.utlis.LogUtils;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import cn.bmob.v3.BmobQuery;
@@ -24,8 +22,7 @@ import cn.bmob.v3.listener.UpdateListener;
 public class DataModelDaoImpl implements DataModelDao {
 
     private static DataModelDaoImpl mDataDao;
-    private List<Ward> mWards = new ArrayList<>();
-    private List<Patient> mPatients = new ArrayList<>();
+
 
 
     public static synchronized DataModelDaoImpl getInstance() {
@@ -55,9 +52,7 @@ public class DataModelDaoImpl implements DataModelDao {
 
     @Override
     public List<Ward> queryWard(int limit, FindListener findListener) {
-        LogUtils.e("开始查询");
         BmobQuery<Ward> query = new BmobQuery<>();
-        //query.addWhereEqualTo("nurse", new BmobPointer(BmobUser.getCurrentUser()));
         query.order("roomName");
         query.include("nurse");
         query.setLimit(limit);
