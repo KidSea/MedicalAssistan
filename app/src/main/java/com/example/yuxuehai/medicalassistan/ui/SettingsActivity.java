@@ -13,6 +13,8 @@ import android.widget.RelativeLayout;
 import com.example.yuxuehai.medicalassistan.R;
 import com.example.yuxuehai.medicalassistan.base.BaseActivity;
 import com.example.yuxuehai.medicalassistan.bean.UserBean;
+import com.example.yuxuehai.medicalassistan.utlis.Constants;
+import com.example.yuxuehai.medicalassistan.utlis.SharePrefUtil;
 
 import cn.bmob.v3.BmobUser;
 
@@ -103,11 +105,12 @@ public class SettingsActivity extends BaseActivity implements View.OnClickListen
             public void onClick(View view) {
                 //清除缓存对象
                 UserBean.logOut();
-                System.out.println(UserBean.getCurrentUser());
+                SharePrefUtil.setBoolean(getActivityContext(), Constants.IsLogin, false);
+                //System.out.println(UserBean.getCurrentUser());
                 // 现在的currentUser是null了
                 BmobUser currentUser = UserBean.getCurrentUser();
-                System.out.println(BmobUser.getCurrentUser());
-                startActivity(new Intent(getcontext(), LoginActivity.class));
+                //System.out.println(BmobUser.getCurrentUser());
+                startActivity(new Intent(SettingsActivity.this, LoginActivity.class));
                 finish();
             }
         });

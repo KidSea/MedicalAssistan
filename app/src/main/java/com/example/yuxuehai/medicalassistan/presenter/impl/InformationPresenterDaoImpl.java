@@ -3,6 +3,7 @@ package com.example.yuxuehai.medicalassistan.presenter.impl;
 import android.content.Context;
 
 import com.example.yuxuehai.medicalassistan.base.BasePresenter;
+import com.example.yuxuehai.medicalassistan.bean.Patient;
 import com.example.yuxuehai.medicalassistan.bean.SampleBean;
 import com.example.yuxuehai.medicalassistan.bean.Ward;
 import com.example.yuxuehai.medicalassistan.model.impl.DataModelDaoImpl;
@@ -37,20 +38,39 @@ public class InformationPresenterDaoImpl extends BasePresenter implements Inform
 
 
     @Override
-    public void getListFromServer() {
-        mList.clear();
+    public synchronized void getListFromServer() {
         mDataModelDao.queryWard(limit, new FindListener<Ward>() {
 
             @Override
             public void done(List<Ward> list, BmobException e) {
+                mList.clear();
                 for (Ward ward : list) {
                     if (ward.getUser().getUsername().equals(BmobUser.getCurrentUser().getUsername())) {
                         SampleBean wardbean = new SampleBean(SampleBean.TYPE_WARD, ward);
                         mList.add(wardbean);
-                        mView.setData(mList);
                     }
                 }
+                mView.setData(mList);
             }
         });
+    }
+
+    @Override
+    public synchronized void getPatientsFromServer(Ward ward) {
+
+        mDataModelDao.queryPatients(limit, ward, new FindListener<Patient>() {
+            @Override
+            public void done(List<Patient> list, BmobException e) {
+                mList.clear();
+                for (Patient patient: list) {
+
+                    SampleBean patientbean = new SampleBean(SampleBean.TYPE_PATIENT, patient);
+                    mList.add(patientbean);
+                }
+                mView.setData(mList);
+            }
+
+        });
+
     }
 }

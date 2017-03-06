@@ -74,29 +74,40 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity
             android:name=".ui.InformationDetailActivity"
+            android:launchMode="singleTop"
             android:parentActivityName=".ui.MainActivity"
             android:screenOrientation="portrait">
         </activity>
 
-        <activity android:name=".ui.DailycareDetailActivity"
-                  android:parentActivityName=".ui.MainActivity"
-                  android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.DailycareDetailActivity"
+            android:parentActivityName=".ui.MainActivity"
+            android:screenOrientation="portrait"/>
 
-        <activity android:name=".ui.LoginActivity"
-                  android:launchMode="singleTask"
-                  android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.LoginActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
 
-        <activity android:name=".ui.FindPasswdActivity"
-                  android:parentActivityName=".ui.LoginActivity"
-                  android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.FindPasswdActivity"
+            android:parentActivityName=".ui.LoginActivity"
+            android:screenOrientation="portrait"/>
 
-        <activity android:name=".ui.SettingsActivity"
-                  android:parentActivityName=".ui.MainActivity"
-                  android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.SettingsActivity"
+            android:parentActivityName=".ui.MainActivity"
+            android:screenOrientation="portrait"/>
 
-        <activity android:name=".ui.ChangePasswdActivity"
-                  android:parentActivityName=".ui.SettingsActivity"
-                  android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.ChangePasswdActivity"
+            android:parentActivityName=".ui.SettingsActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".ui.PatientsInfoActivity"
+            android:parentActivityName=".ui.InformationDetailActivity"
+            android:screenOrientation="portrait"/>
 
     </application>
 

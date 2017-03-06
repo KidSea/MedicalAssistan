@@ -100,5 +100,13 @@
     <string name="dialog_cancel">取消</string>
 
     <!--ward item-->
-    <string name="ward_num">房号 : </string>
+    <string name="roomnum">房间号：</string>
+    <string name="category">科目：</string>
+    <string name="doctor">医生：</string>
+    <string name="nurse">护士：</string>
+    <string name="patientnum">病人数：</string>
+    <string name="location">位置：</string>
+
+    <!--patients info-->
+    <string name="str_patients"></string>
 </resources>

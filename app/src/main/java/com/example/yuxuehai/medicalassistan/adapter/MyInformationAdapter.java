@@ -37,8 +37,14 @@ public abstract class MyInformationAdapter extends Adapter{
     protected void onViewHolderBind(RecyclerView.ViewHolder holder, int position, int viewType) {
         MyViewHolder myViewHolder = (MyViewHolder) holder;
         (myViewHolder).mImageView.setImageResource(R.drawable.ic_logo);
-        Ward ward = (Ward) mSampleBeen.get(position).mBmobObject;
-        (myViewHolder).mTextView.setText(ward.getRoomName()+ward.getLocation());
+        Ward ward = (Ward) mSampleBeen.get(myViewHolder.getAdapterPosition()).mBmobObject;
+        (myViewHolder).mRoomnum.setText(ward.getRoomName());
+        (myViewHolder).mCategory.setText(ward.getCategory());
+        (myViewHolder).mDoctor.setText(ward.getDoctor());
+        (myViewHolder).mNurse.setText(ward.getUser().getUsername());
+        (myViewHolder).mPatientnum.setText(String.valueOf(ward.getPatientNum()));
+        (myViewHolder).mLocation.setText(ward.getLocation());
+
     }
 
     @Override
@@ -62,17 +68,31 @@ public abstract class MyInformationAdapter extends Adapter{
         notifyDataSetChanged();
     }
 
+    public Ward getBean(int position){
+        return (Ward)mSampleBeen.get(position).mBmobObject;
+    }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
 
-        public TextView mTextView;
+        public TextView mRoomnum;
+        public TextView mCategory;
+        public TextView mDoctor;
+        public TextView mNurse;
+        public TextView mPatientnum;
+        public TextView mLocation;
+
         public ImageView mImageView;
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            mTextView = (TextView) itemView.findViewById(R.id.tv_res);
+            mRoomnum = (TextView) itemView.findViewById(R.id.tv_roomnum);
             mImageView = (ImageView) itemView.findViewById(R.id.im_icon);
+            mCategory = (TextView) itemView.findViewById(R.id.tv_category);
+            mDoctor = (TextView) itemView.findViewById(R.id.tv_doctor);
+            mNurse = (TextView) itemView.findViewById(R.id.tv_nurse);
+            mPatientnum = (TextView) itemView.findViewById(R.id.tv_patientnum);
+            mLocation = (TextView) itemView.findViewById(R.id.tv_location);
         }
     }
 

@@ -11,39 +11,174 @@
         android:id="@+id/card_grid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/space_8"
-        android:paddingBottom="@dimen/space_8"
         android:layout_gravity="center"
         android:layout_margin="8dp"
         android:foreground="?attr/selectableItemBackground"
+        android:paddingBottom="@dimen/space_8"
+        android:paddingTop="@dimen/space_8"
         card_view:cardCornerRadius="2dp"
         card_view:cardElevation="4dp"
         card_view:cardPreventCornerOverlap="false">
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:gravity="center"
-            android:orientation="vertical"
-            android:layout_height="match_parent">
+            android:orientation="vertical">
 
             <ImageView
-                android:layout_marginTop="@dimen/space_5"
                 android:id="@+id/im_icon"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:id="@+id/tv_res"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@android:color/white"
-                android:gravity="center"
-                android:textSize="15sp"/>
+                android:layout_marginTop="@dimen/space_8"/>
+
+
+            <LinearLayout
+                android:layout_marginLeft="@dimen/space_8"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:text="@string/roomnum"
+                    android:gravity="center"
+                    android:textSize="15sp"/>
+
+
+                <TextView
+                    android:id="@+id/tv_roomnum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:gravity="center"
+                    android:textSize="15sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginLeft="@dimen/space_8"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:text="@string/category"
+                    android:gravity="center"
+                    android:textSize="15sp"/>
+
+
+                <TextView
+                    android:id="@+id/tv_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:gravity="center"
+                    android:textSize="15sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginLeft="@dimen/space_8"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:text="@string/doctor"
+                    android:gravity="center"
+                    android:textSize="15sp"/>
+
+
+                <TextView
+                    android:id="@+id/tv_doctor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:gravity="center"
+                    android:textSize="15sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginLeft="@dimen/space_8"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:text="@string/nurse"
+                    android:gravity="center"
+                    android:textSize="15sp"/>
+
+
+                <TextView
+                    android:id="@+id/tv_nurse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:gravity="center"
+                    android:textSize="15sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginLeft="@dimen/space_8"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:text="@string/patientnum"
+                    android:gravity="center"
+                    android:textSize="15sp"/>
+
+
+                <TextView
+                    android:id="@+id/tv_patientnum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:gravity="center"
+                    android:textSize="15sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginLeft="@dimen/space_8"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginBottom="@dimen/space_8"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:gravity="center"
+                    android:textSize="15sp"/>
+            </LinearLayout>
+
 
         </LinearLayout>
 
     </android.support.v7.widget.CardView>
-
 
 
 </FrameLayout>

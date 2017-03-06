@@ -28,6 +28,8 @@ import com.example.yuxuehai.medicalassistan.base.BaseFragment;
 import com.example.yuxuehai.medicalassistan.bean.UserBean;
 import com.example.yuxuehai.medicalassistan.ui.LoginActivity;
 import com.example.yuxuehai.medicalassistan.ui.SettingsActivity;
+import com.example.yuxuehai.medicalassistan.utlis.Constants;
+import com.example.yuxuehai.medicalassistan.utlis.SharePrefUtil;
 
 import cn.bmob.v3.BmobUser;
 
@@ -137,13 +139,7 @@ public class NavigationDrawerFragment extends BaseFragment implements View.OnCli
                 break;
 
         }
-        mDrawerLayout.postDelayed(new Runnable() {
-
-            @Override
-            public void run() {
-                mDrawerLayout.closeDrawers();
-            }
-        }, 800);
+        mDrawerLayout.postDelayed(() -> mDrawerLayout.closeDrawers(), 800);
     }
 
     private void selectItem(int position) {
@@ -294,6 +290,7 @@ public class NavigationDrawerFragment extends BaseFragment implements View.OnCli
             public void onClick(View view) {
                 //清除缓存对象
                 UserBean.logOut();
+                SharePrefUtil.setBoolean(getActivity(), Constants.IsLogin, false);
                 // 现在的currentUser是null了
                 BmobUser currentUser = UserBean.getCurrentUser();
                 startActivity(new Intent(getContext(), LoginActivity.class));

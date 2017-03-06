@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import com.example.yuxuehai.medicalassistan.AppManager;
 import com.example.yuxuehai.medicalassistan.R;
 import com.example.yuxuehai.medicalassistan.base.BaseActivity;
 import com.example.yuxuehai.medicalassistan.presenter.impl.LoginPresenterImpl;
@@ -100,6 +101,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
     }
 
     @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
+    }
+
+    @Override
     protected void initView() {
         mToolbar = $(R.id.tb_mytb);
         mLoginBuntton = (Button) findViewById(R.id.btn_login);
@@ -120,6 +126,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
 
     @Override
     protected void initData() {
+        AppManager.getAppManager().addActivity(this);
         mLoginPresenter = new LoginPresenterImpl(this, this);
 
         mLoginPresenter.isChecked();

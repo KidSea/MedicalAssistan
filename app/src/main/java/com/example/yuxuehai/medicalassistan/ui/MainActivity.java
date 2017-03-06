@@ -12,12 +12,15 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.yuxuehai.medicalassistan.AppManager;
 import com.example.yuxuehai.medicalassistan.R;
 import com.example.yuxuehai.medicalassistan.adapter.MyFrgmentAdapter;
 import com.example.yuxuehai.medicalassistan.base.BaseActivity;
 import com.example.yuxuehai.medicalassistan.base.BaseFragment;
 import com.example.yuxuehai.medicalassistan.fragment.FragmentFactory;
 import com.example.yuxuehai.medicalassistan.fragment.NavigationDrawerFragment;
+import com.example.yuxuehai.medicalassistan.utlis.Constants;
+import com.example.yuxuehai.medicalassistan.utlis.SharePrefUtil;
 import com.example.yuxuehai.medicalassistan.utlis.ToastUtil;
 import com.example.yuxuehai.medicalassistan.widget.QuickOptionDialog;
 
@@ -125,8 +128,12 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
 
     }
 
+
     @Override
     protected void initData() {
+        AppManager.getAppManager().addActivity(MainActivity.this);
+        SharePrefUtil.setBoolean(this, Constants.IsLogin, true);
+
 
         mViews = new ArrayList<>();
 
