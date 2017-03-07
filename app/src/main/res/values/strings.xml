@@ -101,12 +101,19 @@
 
     <!--ward item-->
     <string name="roomnum">房间号：</string>
-    <string name="category">科目：</string>
-    <string name="doctor">医生：</string>
-    <string name="nurse">护士：</string>
+    <string name="category">科 目：</string>
+    <string name="doctor">医 生：</string>
+    <string name="nurse">护 士：</string>
     <string name="patientnum">病人数：</string>
-    <string name="location">位置：</string>
+    <string name="location">位 置：</string>
 
     <!--patients info-->
-    <string name="str_patients"></string>
+    <string name="str_patients">病人详情</string>
+    <string name="str_define">诊 断：</string>
+    <string name="patient_name">姓 名：</string>
+    <string name="patient_gender">性 别：</string>
+    <string name="patient_phone">电 话：</string>
+    <string name="patient_age">年 龄：</string>
+
+
 </resources>

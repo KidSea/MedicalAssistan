@@ -18,6 +18,15 @@ public class Patient extends BmobObject {
     private String gender;
     private String detail;
     private Integer age;
+    private String entryTime;
+
+    public String getEntryTime() {
+        return entryTime;
+    }
+
+    public void setEntryTime(String entryTime) {
+        this.entryTime = entryTime;
+    }
 
     public String getPatientName() {
         return patientName;

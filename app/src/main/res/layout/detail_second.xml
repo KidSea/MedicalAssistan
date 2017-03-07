@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:background="@color/white"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_margin="@dimen/space_5"
+        android:layout_width="0dp"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginLeft="@dimen/space_10"
+            android:layout_width="wrap_content"
+            android:text="@string/patient_gender"
+            android:textSize="@dimen/text_size_16"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_patient_gender"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="@dimen/space_5"
+            android:textSize="@dimen/text_size_16"
+            android:textColor="@color/main_black"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_gravity="center"
+        android:layout_width="@dimen/space_1"
+        android:layout_height="match_parent"
+        android:background="@color/graywhite"/>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_margin="@dimen/space_5"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginLeft="@dimen/space_10"
+            android:layout_width="wrap_content"
+            android:text="@string/patient_age"
+            android:textSize="@dimen/text_size_16"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_patient_age"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="@dimen/space_5"
+            android:textSize="@dimen/text_size_16"
+            android:textColor="@color/main_black"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -107,7 +107,14 @@
         <activity
             android:name=".ui.PatientsInfoActivity"
             android:parentActivityName=".ui.InformationDetailActivity"
+            android:launchMode="singleTop"
             android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui.PatientsDetailActivity"
+                  android:parentActivityName=".ui.PatientsInfoActivity"
+                  android:launchMode="singleTop"
+                  android:screenOrientation="portrait"/>
+
 
     </application>
 

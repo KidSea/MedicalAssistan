@@ -21,7 +21,7 @@ import cn.bmob.v3.listener.FindListener;
  * Created by yuxuehai on 17-3-4.
  */
 
-public class InformationPresenterDaoImpl extends BasePresenter implements InformationPresenterDao {
+public class PatientsPresenterDaoImpl extends BasePresenter implements InformationPresenterDao {
 
     private InformationView mView;
     private DataModelDaoImpl mDataModelDao = DataModelDaoImpl.getInstance();
@@ -30,7 +30,7 @@ public class InformationPresenterDaoImpl extends BasePresenter implements Inform
 
     private int limit = 50;
 
-    public InformationPresenterDaoImpl(Context context, InformationView view) {
+    public PatientsPresenterDaoImpl(Context context, InformationView view) {
         super(context);
         this.mView = view;
         mList = new ArrayList<>();
