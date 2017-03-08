@@ -19,6 +19,9 @@ public class Patient extends BmobObject {
     private String detail;
     private Integer age;
     private String entryTime;
+    private Boolean hasRecord;
+
+    private String record;
 
     public String getEntryTime() {
         return entryTime;
@@ -100,4 +103,20 @@ public class Patient extends BmobObject {
         mWard = ward;
     }
 
+
+    public Boolean getHasRecord() {
+        return hasRecord;
+    }
+
+    public void setHasRecord(Boolean hasRecord) {
+        this.hasRecord = hasRecord;
+    }
+
+    public String getRecord() {
+        return record;
+    }
+
+    public void setRecord(String record) {
+        this.record = record;
+    }
 }

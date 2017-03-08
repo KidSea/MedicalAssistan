@@ -6,9 +6,9 @@
               android:orientation="horizontal">
 
     <LinearLayout
+        android:layout_gravity="center_vertical"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
         android:layout_margin="@dimen/space_5"
         android:layout_weight="1"
         android:orientation="horizontal">
@@ -17,11 +17,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_8"
-            android:text="@string/patient_gender"
+            android:text="@string/patient_doctor"
             android:textSize="@dimen/text_size_14"/>
 
         <TextView
-            android:id="@+id/tv_patient_gender"
+            android:id="@+id/tv_patient_doctor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_4"
@@ -37,9 +37,9 @@
         android:background="@color/graywhite"/>
 
     <LinearLayout
+        android:layout_gravity="center_vertical"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
         android:layout_margin="@dimen/space_5"
         android:layout_weight="1">
 
@@ -47,11 +47,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_8"
-            android:text="@string/patient_age"
+            android:text="@string/patient_nurse"
             android:textSize="@dimen/text_size_14"/>
 
         <TextView
-            android:id="@+id/tv_patient_age"
+            android:id="@+id/tv_patient_nurse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_4"

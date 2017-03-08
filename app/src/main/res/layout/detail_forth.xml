@@ -17,11 +17,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_8"
-            android:text="@string/patient_gender"
+            android:text="@string/patient_code"
             android:textSize="@dimen/text_size_14"/>
 
         <TextView
-            android:id="@+id/tv_patient_gender"
+            android:id="@+id/tv_patient_code"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_4"
@@ -47,11 +47,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_8"
-            android:text="@string/patient_age"
+            android:text="@string/patient_entrytime"
             android:textSize="@dimen/text_size_14"/>
 
         <TextView
-            android:id="@+id/tv_patient_age"
+            android:id="@+id/tv_patient_entrytime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_4"

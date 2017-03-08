@@ -5,12 +5,11 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/main_green</item>
         <item name="colorPrimaryDark">@color/main_black</item>
-        <item name="colorAccent">@color/main_green</item>
+        <item name="colorAccent">@color/transparent</item>
         <item name="android:textColorPrimary">@color/white</item>
         <item name="android:textColorSecondary">@color/white</item>
         <item name="android:listDivider">@drawable/divider</item>
     </style>
-
 
     <style name="AppTheme_PopupMenu" parent="Theme.AppCompat.Light">
         <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item>

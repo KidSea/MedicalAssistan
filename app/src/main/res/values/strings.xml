@@ -114,6 +114,13 @@
     <string name="patient_gender">性 别：</string>
     <string name="patient_phone">电 话：</string>
     <string name="patient_age">年 龄：</string>
-
+    <string name="patient_doctor">医 生：</string>
+    <string name="patient_nurse">护 士：</string>
+    <string name="patient_entrytime">就 诊：</string>
+    <string name="patient_code">住院号：</string>
+    <string name="patient_pathology">诊 断：</string>
+    <string name="patient_judge">有无过往病史?：</string>
+    <string name="patient_record">病史记录：</string>
+    <string name="patient_detail">基本情况：</string>
 
 </resources>

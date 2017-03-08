@@ -1,28 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
+<com.example.yuxuehai.medicalassistan.widget.CustomerScrollView xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <View
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/space_20"
-        android:background="@color/graywhite"/>
-
-    <include layout="@layout/detail_first"/>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/space_1"
-        android:background="@color/graywhite"/>
-
-    <include layout="@layout/detail_second"/>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/space_1"
-        android:background="@color/graywhite"/>
+        android:layout_height="match_parent">
 
 
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:background="@color/main_green"
+            android:layout_height="120dp">
 
-</LinearLayout>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_patient_icon"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_unlogin"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_20"
+            android:background="@color/graywhite"/>
+
+        <include layout="@layout/detail_first"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_1"
+            android:background="@color/graywhite"/>
+
+        <include layout="@layout/detail_second"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_1"
+            android:background="@color/graywhite"/>
+
+        <include layout="@layout/detail_third"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_1"
+            android:background="@color/graywhite"/>
+
+
+        <include layout="@layout/detail_forth"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_20"
+            android:background="@color/graywhite"/>
+
+        <include layout="@layout/detail_fifth"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_1"
+            android:background="@color/graywhite"/>
+
+        <include layout="@layout/detail_sixth"/>
+
+
+
+    </LinearLayout>
+
+
+</com.example.yuxuehai.medicalassistan.widget.CustomerScrollView>
