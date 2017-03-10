@@ -24,7 +24,7 @@
     <!-- qucik option -->
     <string name="quick_option_text">写入</string>
     <string name="quick_option_album">读取</string>
-    <string name="quick_option_photo">拍照</string>
+    <string name="quick_option_photo">清除</string>
 
     <string name="str_home">主页</string>
     <string name="str_messages">消息</string>
@@ -123,4 +123,9 @@
     <string name="patient_record">病史记录：</string>
     <string name="patient_detail">基本情况：</string>
 
+    <!--nfc-->
+    <string name="start_write">开始写入</string>
+    <string name="patient_id">请输入病人住院号</string>
+    <string name="nfc_writer">信息写入</string>
+    <string name="hint">请选择类型</string>
 </resources>

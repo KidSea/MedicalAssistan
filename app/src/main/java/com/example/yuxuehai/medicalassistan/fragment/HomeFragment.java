@@ -145,7 +145,7 @@ public class HomeFragment extends BaseFragment implements HomeView,
         mMyDailyCareAdapter.setOnItemClickListener(new MyDailyCareAdapter.OnItemClickListener<String>() {
             @Override
             public void onItemClick(int position, String data) {
-                mHomePresenterDao.onclickCall(position);
+                showClick(position);
             }
 
         });
@@ -153,7 +153,7 @@ public class HomeFragment extends BaseFragment implements HomeView,
         mTopNewsAdapter.setOnItemClickListener(new MyDailyCareAdapter.OnItemClickListener<String>() {
             @Override
             public void onItemClick(int position, String data) {
-                mHomePresenterDao.onclickCall(position);
+                showClick(position);
             }
 
         });
@@ -161,7 +161,7 @@ public class HomeFragment extends BaseFragment implements HomeView,
         mMyMallRecAdapter.setOnItemClickListener(new MyDailyCareAdapter.OnItemClickListener<String>() {
             @Override
             public void onItemClick(int position, String data) {
-                mHomePresenterDao.onclickCall(position);
+                showClick(position);
             }
 
         });

@@ -106,14 +106,24 @@
 
         <activity
             android:name=".ui.PatientsInfoActivity"
-            android:parentActivityName=".ui.InformationDetailActivity"
             android:launchMode="singleTop"
+            android:parentActivityName=".ui.InformationDetailActivity"
             android:screenOrientation="portrait"/>
 
-        <activity android:name=".ui.PatientsDetailActivity"
-                  android:parentActivityName=".ui.PatientsInfoActivity"
-                  android:launchMode="singleTop"
-                  android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.PatientsDetailActivity"
+            android:launchMode="singleTop"
+            android:parentActivityName=".ui.PatientsInfoActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.NfcWriterActivity"
+            android:parentActivityName=".ui.PatientsInfoActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".ui.NfcReaderActivity"
+            android:parentActivityName=".ui.PatientsInfoActivity"
+            android:screenOrientation="portrait"/>
 
 
     </application>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+          android:id="@android:id/text1"
+          android:layout_width="match_parent"
+          android:layout_height="40dp"
+          android:hint="请选择类型"
+          android:textColorHint="@color/my_gray_two"
+          android:ellipsize="marquee"
+          android:gravity="left"
+          android:padding="@dimen/text_size_8"
+          android:layout_marginTop="@dimen/space_5"
+          android:singleLine="true"
+          android:textColor="@color/my_gray"
+          android:textSize="@dimen/text_size_18"
+          />

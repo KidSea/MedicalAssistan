@@ -44,7 +44,7 @@ public class QuickOptionDialog extends Dialog implements View.OnClickListener{
                 this);
         contentView.findViewById(R.id.ly_quick_option_album)
                 .setOnClickListener(this);
-        contentView.findViewById(R.id.ly_quick_option_photo)
+        contentView.findViewById(R.id.ly_quick_option_clear)
                 .setOnClickListener(this);
         mClose = (ImageView) contentView.findViewById(R.id.iv_close);
 
@@ -97,21 +97,6 @@ public class QuickOptionDialog extends Dialog implements View.OnClickListener{
     public void onClick(View v) {
         // TODO Auto-generated method stub
         int id = v.getId();
-        switch (id) {
-            case R.id.ly_quick_option_text:
-
-                break;
-            case R.id.ly_quick_option_album:
-                break;
-            case R.id.ly_quick_option_photo:
-                break;
-            case R.id.iv_close:
-                dismiss();
-                break;
-
-            default:
-                break;
-        }
         if (mListener != null) {
             mListener.onQuickOptionClick(id);
         }

@@ -37,10 +37,9 @@
 
             <TextView
                 android:id="@+id/tv_patient_name"
-                android:layout_width="wrap_content"
+                android:layout_width="56dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:gravity="center"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_size_16"/>
 
@@ -49,7 +48,7 @@
                 android:id="@+id/tv_patient_gender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="8dp"
                 android:gravity="center"
                 android:text="男"
                 android:textSize="@dimen/text_size_14"/>
@@ -61,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="20"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="8dp"
                 android:textSize="@dimen/text_size_14"/>
         </RelativeLayout>
 
@@ -69,7 +68,7 @@
             android:layout_marginLeft="@dimen/space_5"
             android:layout_width="match_parent"
             android:orientation="horizontal"
-            android:layout_marginTop="@dimen/space_2"
+            android:layout_marginTop="@dimen/space_5"
             android:layout_height="wrap_content">
 
             <TextView
@@ -85,7 +84,7 @@
                 android:id="@+id/tv_patient_pathology"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="16dp"
                 android:gravity="center"
                 android:textSize="@dimen/text_size_14"/>
         </LinearLayout>
@@ -93,7 +92,7 @@
 
         <TextView
             android:layout_marginLeft="@dimen/space_15"
-            android:layout_marginTop="@dimen/space_2"
+            android:layout_marginTop="@dimen/space_5"
             android:id="@+id/tv_patient_entrytime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -110,9 +109,12 @@
 
         <TextView
             android:id="@+id/tv_room_num"
+            android:padding="@dimen/space_2"
+            android:background="@color/main_green"
             android:textSize="@dimen/text_size_16"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:layout_width="wrap_content"
+            android:drawableStart="@drawable/ic_bed"
             android:layout_height="wrap_content"/>
 
     </LinearLayout>

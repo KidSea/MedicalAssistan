@@ -34,6 +34,7 @@
 
     <color name="white_apha">#90ffffff</color>
     <color name="my_gray">#909A9A9A</color>
+    <color name="my_gray_two">#50808080</color>
 
     <color name="actionbar_item_background_normal">@color/transparent</color>
     <color name="actionbar_item_background_pressed">#2aa155</color>

@@ -45,7 +45,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/ly_quick_option_photo"
+                android:id="@+id/ly_quick_option_clear"
                 style="@style/quick_option_item" >
 
                 <ImageView

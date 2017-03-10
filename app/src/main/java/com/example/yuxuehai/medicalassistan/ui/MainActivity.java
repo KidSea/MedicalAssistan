@@ -1,6 +1,7 @@
 package com.example.yuxuehai.medicalassistan.ui;
 
 
+import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -17,6 +18,7 @@ import com.example.yuxuehai.medicalassistan.R;
 import com.example.yuxuehai.medicalassistan.adapter.MyFrgmentAdapter;
 import com.example.yuxuehai.medicalassistan.base.BaseActivity;
 import com.example.yuxuehai.medicalassistan.base.BaseFragment;
+import com.example.yuxuehai.medicalassistan.dao.OnQuickOptionformClick;
 import com.example.yuxuehai.medicalassistan.fragment.FragmentFactory;
 import com.example.yuxuehai.medicalassistan.fragment.NavigationDrawerFragment;
 import com.example.yuxuehai.medicalassistan.utlis.Constants;
@@ -354,6 +356,27 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
         final QuickOptionDialog dialog = new QuickOptionDialog(MainActivity.this);
         dialog.setCancelable(true);
         dialog.setCanceledOnTouchOutside(true);
+        dialog.setOnQuickOptionformClickListener(new OnQuickOptionformClick() {
+            @Override
+            public void onQuickOptionClick(int id) {
+                switch (id) {
+                    case R.id.ly_quick_option_text:
+                        Intent intent = new Intent(MainActivity.this, NfcWriterActivity.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.ly_quick_option_album:
+                        break;
+                    case R.id.ly_quick_option_clear:
+                        break;
+                    case R.id.iv_close:
+                        dialog.dismiss();
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+        });
         dialog.show();
     }
 

@@ -13,6 +13,12 @@
         <item>健康百科</item>
     </string-array>
 
+    <string-array name="nfc_category">
+        <item>请选择类型</item>
+        <item>病人</item>
+        <item>药品</item>
+    </string-array>
+
     <string-array name="mes_viewpage_arrays">
         <item>紧急消息</item>
         <item>普通消息</item>
