@@ -14,7 +14,6 @@
     </string-array>
 
     <string-array name="nfc_category">
-        <item>请选择类型</item>
         <item>病人</item>
         <item>药品</item>
     </string-array>

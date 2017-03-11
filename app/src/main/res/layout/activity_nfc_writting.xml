@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+    <ImageView
+        android:layout_marginTop="56dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_nfc_writting"/>
+
+    <TextView
+        android:layout_marginTop="@dimen/text_size_16"
+        android:text="将NFC兼容标签与设备后盖碰触"
+        android:gravity="center"
+        android:textSize="@dimen/text_size_18"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.example.yuxuehai.medicalassistan.widget.RoundButton
+        android:id="@+id/btn_cancel"
+        android:layout_marginTop="48dp"
+        android:layout_width="176dp"
+        android:background="@color/main_green"
+        android:text="取消写入"
+        android:textSize="@dimen/text_size_16"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="48dp"/>
+</LinearLayout>

@@ -11,6 +11,7 @@
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.NFC"/>
     <uses-permission android:name="android.permission.READ_PROFILE"/>
     <!--读取Log -->
     <uses-permission android:name="android.permission.READ_LOGS"/>
@@ -123,6 +124,17 @@
         <activity
             android:name=".ui.NfcReaderActivity"
             android:parentActivityName=".ui.PatientsInfoActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.nfc.action.TECH_DISCOVERED"/>
+                <!-- 添加这一条默认设置，能拦截当前页面所有扫描NFC的配置 -->
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"></data>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.NfcWrittingActivity"
             android:screenOrientation="portrait"/>
 
 

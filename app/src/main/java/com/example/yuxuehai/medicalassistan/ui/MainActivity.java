@@ -365,6 +365,8 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
                         startActivity(intent);
                         break;
                     case R.id.ly_quick_option_album:
+                        intent = new Intent(MainActivity.this, NfcReaderActivity.class);
+                        startActivity(intent);
                         break;
                     case R.id.ly_quick_option_clear:
                         break;

@@ -46,9 +46,10 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="@color/main_green"
+            android:textCursorDrawable="@drawable/cursor"
             android:hint="@string/patient_id"
             android:textColor="@color/main_gray"
-            android:textColorHint="@color/my_gray_two"
+            android:textColorHint="@color/main_gray"
         />
 
     </LinearLayout>
