@@ -4,9 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MedicalAssistan.iml" filepath="$PROJECT_DIR$/MedicalAssistan.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/simplerecyclerview/simplerecyclerview.iml" filepath="$PROJECT_DIR$/simplerecyclerview/simplerecyclerview.iml" />
-      <module fileurl="file://$PROJECT_DIR$/simplerecyclerview/simplerecyclerview.iml" filepath="$PROJECT_DIR$/simplerecyclerview/simplerecyclerview.iml" />
       <module fileurl="file://$PROJECT_DIR$/xxx.iml" filepath="$PROJECT_DIR$/xxx.iml" />
     </modules>
   </component>
