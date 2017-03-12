@@ -1,4 +1,4 @@
-package service;
+package com.example.yuxuehai.medicalassistan.service;
 
 import android.app.Activity;
 import android.nfc.NdefMessage;
