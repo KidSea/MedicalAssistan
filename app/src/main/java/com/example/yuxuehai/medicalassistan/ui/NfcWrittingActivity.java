@@ -18,7 +18,7 @@ import com.example.yuxuehai.medicalassistan.utlis.BobNdefMessage;
 import com.example.yuxuehai.medicalassistan.utlis.SimpleNfcInfoConverter;
 import com.example.yuxuehai.medicalassistan.utlis.ToastUtil;
 
-import service.WriteTask;
+import com.example.yuxuehai.medicalassistan.service.WriteTask;
 
 /**
  * Created by yuxuehai on 17-3-11.
