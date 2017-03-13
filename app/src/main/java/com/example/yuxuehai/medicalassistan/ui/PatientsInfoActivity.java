@@ -97,7 +97,7 @@ public class PatientsInfoActivity extends BaseActivity implements InformationVie
         mSwipeRefreshLayout = $(R.id.swipe_container);
         mRecyclerView = $(R.id.recycler_view);
 
-        mSwipeRefreshLayout.setOnRefreshListener(this::refreshData);
+        mSwipeRefreshLayout.setOnRefreshListener(() -> refreshData());
         mSwipeRefreshLayout.setRefreshing(true);
 
         //添加Divider

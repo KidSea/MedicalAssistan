@@ -8,6 +8,8 @@ import android.nfc.NdefRecord;
 import android.nfc.NfcAdapter;
 import android.nfc.tech.Ndef;
 import android.nfc.tech.NdefFormatable;
+import android.os.Handler;
+import android.os.Message;
 import android.os.Parcelable;
 import android.support.test.espresso.core.deps.guava.base.Preconditions;
 import android.support.v7.app.ActionBar;
@@ -18,6 +20,7 @@ import android.widget.TextView;
 import com.example.yuxuehai.medicalassistan.R;
 import com.example.yuxuehai.medicalassistan.base.BaseActivity;
 import com.example.yuxuehai.medicalassistan.bean.NfcWriteBean;
+import com.example.yuxuehai.medicalassistan.utlis.Constants;
 import com.example.yuxuehai.medicalassistan.utlis.SimpleNfcInfoConverter;
 import com.example.yuxuehai.medicalassistan.utlis.ToastUtil;
 
@@ -44,6 +47,24 @@ public class NfcReaderActivity extends BaseActivity {
     private IntentFilter ndef;
     private NfcAdapter mNfcAdapter;
     private NfcWriteBean mWriteBean;
+
+    private Handler mHandler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+
+            switch (msg.what){
+                case Constants.READ_NFC_FAILE:
+                    mNfcInfo.setText("标签数据为空");
+                    break;
+                case Constants.READ_NFC_SUCCESS:
+                    mNfcInfo.setText(readResult);
+                    break;
+
+            }
+            super.handleMessage(msg);
+
+        }
+    };
 
     public <T extends View> T $(int id) {
         return (T) findViewById(id);
@@ -85,13 +106,21 @@ public class NfcReaderActivity extends BaseActivity {
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
+
         if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(intent.getAction())||
                 NfcAdapter.ACTION_TECH_DISCOVERED.equals(intent.getAction())) {
-            if (readFromTag(intent)) {
-                mNfcInfo.setText(readResult);
-            } else {
-                mNfcInfo.setText("标签数据为空");
-            }
+
+            new Thread(() -> {
+
+                Message message = new Message();
+                if (readFromTag(intent)) {
+                    message.what = Constants.READ_NFC_SUCCESS;
+
+                }else {
+                    message.what = Constants.READ_NFC_FAILE;
+                }
+                mHandler.sendMessage(message);
+            }).start();
         }
     }
 
@@ -128,42 +157,21 @@ public class NfcReaderActivity extends BaseActivity {
                 }
         };
 
-        if (isFirst) {
-            if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(getIntent()
-                    .getAction())) {
-                if (readFromTag(getIntent())) {
-                    mNfcInfo.setText(readResult);
-                } else {
-                    mNfcInfo.setText("标签数据为空");
-                }
-            }
-            isFirst = false;
-        }
+//        if (isFirst) {
+//            if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(getIntent()
+//                    .getAction())) {
+//                if (readFromTag(getIntent())) {
+//                    mNfcInfo.setText(readResult);
+//                } else {
+//                    mNfcInfo.setText("标签数据为空");
+//                }
+//            }
+//            isFirst = false;
+//        }
 
     }
 
 
-    /**
-     * 读取NFC标签数据的操作
-     */
-    private boolean readFromTag1(Intent intent) {
-        Parcelable[] rawArray = intent
-                .getParcelableArrayExtra(NfcAdapter.EXTRA_NDEF_MESSAGES);
-        if (rawArray != null) {
-            NdefMessage mNdefMsg = (NdefMessage) rawArray[0];
-            NdefRecord mNdefRecord = mNdefMsg.getRecords()[0];
-            try {
-                if (mNdefRecord != null) {
-                    readResult = new String(mNdefRecord.getPayload(), "UTF-8");
-                    return true;
-                }
-            } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
-            }
-            return false;
-        }
-        return false;
-    }
 
     /**
      * 读取NFC标签数据的操作

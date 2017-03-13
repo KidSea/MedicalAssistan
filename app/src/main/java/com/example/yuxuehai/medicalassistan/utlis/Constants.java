@@ -20,6 +20,9 @@ public class Constants {
     public final static String sPHONE = "phone";
     public final static String sPASSWORD = "password";
 
+    public final static int READ_NFC_SUCCESS = 1;
+    public final static int READ_NFC_FAILE = 0;
+
     //Bmob应用appID
     public final static String BMOB_APP_ID = "2c1c69227537786e8b5495cc96419057";
 
