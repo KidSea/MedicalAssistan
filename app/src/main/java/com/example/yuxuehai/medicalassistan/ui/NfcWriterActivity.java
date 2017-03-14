@@ -25,7 +25,7 @@ import me.srodrigo.androidhintspinner.HintSpinner;
 /**
  * Created by yuxuehai on 17-3-10.
  */
-
+@SuppressWarnings("unchecked")
 public class NfcWriterActivity extends BaseActivity implements View.OnClickListener {
 
 
@@ -37,7 +37,6 @@ public class NfcWriterActivity extends BaseActivity implements View.OnClickListe
     private Button mWriteButton;
     private HintSpinner mHintSpinner;
     private NfcWriteBean mWriteBean;
-
 
     public <T extends View> T $(int id) {
         return (T) findViewById(id);
@@ -67,10 +66,13 @@ public class NfcWriterActivity extends BaseActivity implements View.OnClickListe
         super.setupActionBar();
         setSupportActionBar(mToolbar);
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        // 设置返回按钮可以点击
-        actionBar.setHomeButtonEnabled(true);
-        actionBar.setTitle(R.string.nfc_writer);
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            // 设置返回按钮可以点击
+            actionBar.setHomeButtonEnabled(true);
+            actionBar.setTitle(R.string.nfc_writer);
+        }
+
     }
 
     @Override
@@ -115,9 +117,12 @@ public class NfcWriterActivity extends BaseActivity implements View.OnClickListe
     private void initSpinner() {
         ArrayList<String> list = new ArrayList<>(Arrays.asList(spinnerStr));
         HintAdapter hintAdapter = new HintAdapter(this, R.string.hint, list);
-        mHintSpinner = new HintSpinner(mCategory, hintAdapter, (position, itemAtPosition) -> {
-            ToastUtil.showShort(getcontext(), (String) mCategory.getSelectedItem());
-            mWriteBean.setCategory((String) mCategory.getSelectedItem());
+        mHintSpinner = new HintSpinner(mCategory, hintAdapter, new HintSpinner.Callback() {
+            @Override
+            public void onItemSelected(int position, Object itemAtPosition) {
+                ToastUtil.showShort(getcontext(), (String) mCategory.getSelectedItem());
+                mWriteBean.setCategory((String) mCategory.getSelectedItem());
+            }
         });
         mHintSpinner.init();
 

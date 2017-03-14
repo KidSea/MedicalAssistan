@@ -25,4 +25,6 @@ public interface DataModelDao {
     public List<Ward> queryWard(int limit, FindListener findListener);
 
     public List<Patient> queryPatients(int limit, Ward ward, FindListener findListener);
+
+    public Patient queryPatient (String Id, QueryListener listener);
 }

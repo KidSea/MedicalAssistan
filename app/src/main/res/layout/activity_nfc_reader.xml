@@ -22,10 +22,72 @@
     </android.support.design.widget.AppBarLayout>
 
 
-    <TextView
-        android:id="@+id/ifo_NFC"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_nfc_icon"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="@dimen/space_8"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:text="标签号："
+            android:textColor="@color/black"
+            android:textSize="@dimen/space_18"/>
+
+        <TextView
+            android:id="@+id/edt_nfc_id"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_16"
+            android:drawableBottom="@drawable/line"
+            android:layout_marginRight="@dimen/text_size_24"
+            android:textColor="@color/main_gray"
+        />
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:text="类    型："
+            android:textColor="@color/black"
+            android:textSize="@dimen/space_18"/>
+
+        <TextView
+            android:id="@+id/edt_category"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/main_green"
+            android:drawableBottom="@drawable/line"
+            android:textSize="@dimen/text_size_16"
+            android:layout_marginRight="@dimen/text_size_24"
+            android:textColor="@color/main_gray"
+        />
+
+    </LinearLayout>
+
+    <com.example.yuxuehai.medicalassistan.widget.RoundButton
+        android:id="@+id/btn_query"
+        android:layout_width="176dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/space_24"
+        android:background="@color/main_green"
+        android:text="@string/query"/>
 
 
 </LinearLayout>

@@ -46,6 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="@color/main_green"
+            android:layout_marginRight="@dimen/text_size_16"
             android:textCursorDrawable="@drawable/cursor"
             android:hint="@string/patient_id"
             android:textColor="@color/main_gray"
@@ -84,7 +85,7 @@
         android:layout_width="176dp"
         android:layout_height="48dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/space_8"
+        android:layout_marginTop="@dimen/space_24"
         android:background="@color/main_green"
         android:text="@string/start_write"/>
 

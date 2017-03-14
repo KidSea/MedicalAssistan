@@ -73,6 +73,15 @@ public class DataModelDaoImpl implements DataModelDao {
         return null;
     }
 
+    @Override
+    public Patient queryPatient(String Id, QueryListener listener) {
+
+        BmobQuery<Patient> query = new BmobQuery<>();
+        query.include("mWard");
+        query.getObject(Id, listener);
+
+        return null;
+    }
 
 
 }

@@ -118,12 +118,12 @@
             android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.NfcWriterActivity"
-            android:parentActivityName=".ui.PatientsInfoActivity"
+            android:parentActivityName=".ui.MainActivity"
             android:screenOrientation="portrait"/>
 
         <activity
             android:name=".ui.NfcReaderActivity"
-            android:parentActivityName=".ui.PatientsInfoActivity"
+            android:parentActivityName=".ui.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.nfc.action.TECH_DISCOVERED"/>

@@ -129,4 +129,5 @@
     <string name="nfc_writer">信息写入</string>
     <string name="nfc_reader">信息读取</string>
     <string name="hint">请选择类型</string>
+    <string name="query">查询详情</string>
 </resources>

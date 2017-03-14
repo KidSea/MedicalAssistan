@@ -20,24 +20,34 @@ import android.widget.TextView;
 import com.example.yuxuehai.medicalassistan.R;
 import com.example.yuxuehai.medicalassistan.base.BaseActivity;
 import com.example.yuxuehai.medicalassistan.bean.NfcWriteBean;
+import com.example.yuxuehai.medicalassistan.bean.Patient;
+import com.example.yuxuehai.medicalassistan.model.impl.DataModelDaoImpl;
 import com.example.yuxuehai.medicalassistan.utlis.Constants;
 import com.example.yuxuehai.medicalassistan.utlis.SimpleNfcInfoConverter;
 import com.example.yuxuehai.medicalassistan.utlis.ToastUtil;
+import com.example.yuxuehai.medicalassistan.widget.RoundButton;
 
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 import java.util.Arrays;
 
-import static com.example.yuxuehai.medicalassistan.R.id.ifo_NFC;
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.QueryListener;
+
+import static com.example.yuxuehai.medicalassistan.R.id.btn_query;
+import static com.example.yuxuehai.medicalassistan.R.id.edt_category;
+import static com.example.yuxuehai.medicalassistan.R.id.edt_nfc_id;
 
 /**
  * Created by yuxuehai on 17-3-10.
  */
-
-public class NfcReaderActivity extends BaseActivity {
+@SuppressWarnings("unchecked")
+public class NfcReaderActivity extends BaseActivity implements View.OnClickListener{
 
     private Toolbar mToolbar;
-    private TextView mNfcInfo;
+    private TextView mNfcId;
+    private TextView mCategory;
+    private RoundButton mQueryButton;
 
     private String readResult = "";
     private PendingIntent pendingIntent;
@@ -54,10 +64,11 @@ public class NfcReaderActivity extends BaseActivity {
 
             switch (msg.what){
                 case Constants.READ_NFC_FAILE:
-                    mNfcInfo.setText("标签数据为空");
+                    ToastUtil.showShort(getcontext(), "读取数据失败");
                     break;
                 case Constants.READ_NFC_SUCCESS:
-                    mNfcInfo.setText(readResult);
+                    mNfcId.setText(mWriteBean.getId());
+                    mCategory.setText(mWriteBean.getCategory());
                     break;
 
             }
@@ -77,9 +88,33 @@ public class NfcReaderActivity extends BaseActivity {
     }
 
     @Override
+    public void onClick(View view) {
+
+        if(mWriteBean != null){
+
+            if(!mWriteBean.getId().equals("")){
+                jumptoDetail();
+            }else {
+                ToastUtil.showShort(getcontext(), "扫描数据为空");
+            }
+
+
+        }else {
+            ToastUtil.showShort(getcontext(), "请先扫描数据");
+        }
+
+
+
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
         enableForegroundDispatch();
+        if (!isFirst){
+            mNfcId.setText("");
+            mCategory.setText("");
+        }
 
     }
 
@@ -87,6 +122,7 @@ public class NfcReaderActivity extends BaseActivity {
     protected void onPause() {
         super.onPause();
         disableForegroundDispatch();
+        isFirst = false;
     }
 
     @Override
@@ -94,10 +130,12 @@ public class NfcReaderActivity extends BaseActivity {
         super.setupActionBar();
         setSupportActionBar(mToolbar);
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        // 设置返回按钮可以点击
-        actionBar.setHomeButtonEnabled(true);
-        actionBar.setTitle(R.string.nfc_reader);
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            // 设置返回按钮可以点击
+            actionBar.setHomeButtonEnabled(true);
+            actionBar.setTitle(R.string.nfc_reader);
+        }
     }
 
     /*
@@ -132,7 +170,13 @@ public class NfcReaderActivity extends BaseActivity {
     @Override
     protected void initView() {
         mToolbar = $(R.id.tb_mytb);
-        mNfcInfo = $(ifo_NFC);
+
+        mNfcId = $(edt_nfc_id);
+        mCategory = $(edt_category);
+        mQueryButton = $(btn_query);
+
+        mQueryButton.setOnClickListener(this);
+
     }
 
 
@@ -157,17 +201,6 @@ public class NfcReaderActivity extends BaseActivity {
                 }
         };
 
-//        if (isFirst) {
-//            if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(getIntent()
-//                    .getAction())) {
-//                if (readFromTag(getIntent())) {
-//                    mNfcInfo.setText(readResult);
-//                } else {
-//                    mNfcInfo.setText("标签数据为空");
-//                }
-//            }
-//            isFirst = false;
-//        }
 
     }
 
@@ -260,10 +293,8 @@ public class NfcReaderActivity extends BaseActivity {
         }
 
         mWriteBean = SimpleNfcInfoConverter.fromString(payloadStr);
+
         if (mWriteBean != null){
-
-            readResult = mWriteBean.getId() + mWriteBean.getCategory();
-
             return true;
         }
 
@@ -282,4 +313,21 @@ public class NfcReaderActivity extends BaseActivity {
         }
     }
 
+    private void jumptoDetail(){
+
+        DataModelDaoImpl.getInstance().queryPatient(mWriteBean.getId(), new QueryListener<Patient>() {
+            @Override
+            public void done(Patient patient, BmobException e) {
+                if(e == null){
+                    Intent intent = new Intent(NfcReaderActivity.this, PatientsDetailActivity.class);
+                    intent.putExtra("patient", patient);
+                    startActivity(intent);
+                }else {
+                    ToastUtil.showToast(getcontext(), "数据获取异常");
+                }
+
+            }
+        });
+
+    }
 }
