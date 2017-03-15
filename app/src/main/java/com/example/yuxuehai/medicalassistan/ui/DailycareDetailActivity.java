@@ -7,16 +7,19 @@ import android.view.MenuItem;
 
 import com.example.yuxuehai.medicalassistan.R;
 import com.example.yuxuehai.medicalassistan.base.BaseActivity;
+import com.example.yuxuehai.medicalassistan.presenter.impl.DailycarePreseterDaoImpl;
 import com.example.yuxuehai.medicalassistan.utlis.ToastUtil;
+import com.example.yuxuehai.medicalassistan.view.DailycareView;
 
 /**
  * Created by yuxuehai on 17-2-23.
  */
 
-public class DailycareDetailActivity extends BaseActivity {
+public class DailycareDetailActivity extends BaseActivity implements DailycareView{
 
 
     private Toolbar mToolbar;
+    private DailycarePreseterDaoImpl mPreseterDao;
 
     @Override
     protected int getContentLayoutId() {
@@ -61,7 +64,7 @@ public class DailycareDetailActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-
+        mPreseterDao = new DailycarePreseterDaoImpl(this,this);
     }
 
 }
