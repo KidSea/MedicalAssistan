@@ -28,10 +28,12 @@ public class DailycareDetailActivity extends BaseActivity {
         super.setupActionBar();
         setSupportActionBar(mToolbar);
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        // 设置返回按钮可以点击
-        actionBar.setHomeButtonEnabled(true);
-        actionBar.setTitle(R.string.str_daily);
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            // 设置返回按钮可以点击
+            actionBar.setHomeButtonEnabled(true);
+            actionBar.setTitle(R.string.str_daily);
+        }
     }
 
     @Override
