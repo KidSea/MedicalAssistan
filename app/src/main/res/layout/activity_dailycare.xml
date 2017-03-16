@@ -20,5 +20,13 @@
     </android.support.design.widget.AppBarLayout>
 
 
+    <com.example.yuxuehai.medicalassistan.widget.PtrSwipeMenuRecyclerView
+        android:id="@+id/rc_dailyview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <include layout="@layout/dailycare_no_data"/>
+
+    <include layout="@layout/dailycare_loading"/>
 
 </LinearLayout>

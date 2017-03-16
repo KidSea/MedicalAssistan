@@ -4,12 +4,15 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.RelativeLayout;
 
 import com.example.yuxuehai.medicalassistan.R;
 import com.example.yuxuehai.medicalassistan.base.BaseActivity;
 import com.example.yuxuehai.medicalassistan.presenter.impl.DailycarePreseterDaoImpl;
 import com.example.yuxuehai.medicalassistan.utlis.ToastUtil;
 import com.example.yuxuehai.medicalassistan.view.DailycareView;
+import com.example.yuxuehai.medicalassistan.widget.PtrSwipeMenuRecyclerView;
 
 /**
  * Created by yuxuehai on 17-2-23.
@@ -19,11 +22,25 @@ public class DailycareDetailActivity extends BaseActivity implements DailycareVi
 
 
     private Toolbar mToolbar;
+    private RelativeLayout mProgress;
+    private PtrSwipeMenuRecyclerView mRecyclerView;
+
     private DailycarePreseterDaoImpl mPreseterDao;
+
+
+    public <T extends View> T $(int id) {
+        return (T) findViewById(id);
+    }
 
     @Override
     protected int getContentLayoutId() {
         return R.layout.activity_dailycare;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 
     @Override
@@ -42,7 +59,6 @@ public class DailycareDetailActivity extends BaseActivity implements DailycareVi
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.dailycare_activity_menu,menu);
-
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -59,7 +75,9 @@ public class DailycareDetailActivity extends BaseActivity implements DailycareVi
 
     @Override
     protected void initView() {
-        mToolbar = (Toolbar) findViewById(R.id.tb_mytb);
+        mToolbar = $(R.id.tb_mytb);
+        mProgress = $(R.id.pb_loding);
+        mRecyclerView = $(R.id.rc_dailyview);
     }
 
     @Override

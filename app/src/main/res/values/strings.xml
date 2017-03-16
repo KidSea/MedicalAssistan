@@ -130,4 +130,10 @@
     <string name="nfc_reader">信息读取</string>
     <string name="hint">请选择类型</string>
     <string name="query">查询详情</string>
+
+
+    <!-- dailycare-->
+    <string name="dailycare_loding">正在加载…</string>
+    <string name="dailycare_nodata">没有记录</string>
+
 </resources>
