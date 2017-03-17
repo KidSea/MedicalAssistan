@@ -105,7 +105,7 @@ public class PatientsInfoActivity extends BaseActivity implements InformationVie
                 //分割线宽1dp
                 UIUtils.dip2px(1),
                 //分割线颜色#DDDDDD
-                 UIUtils.getColor(R.color.graywhite),
+                 UIUtils.getColor(R.color.divider),
                 false,
                 //分割线左侧留出20dp的空白，不绘制
                 UIUtils.dip2px(0), 0, 0, 0));

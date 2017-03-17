@@ -1,7 +1,6 @@
 package com.example.yuxuehai.medicalassistan.adapter;
 
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -38,7 +37,7 @@ public abstract class SwipeMenuAdapter<V extends PtrSwipeMenuRecyclerView.ViewHo
 
     @Override
     public final RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        Log.d(TAG, "onCreateViewHolder.. viewType = " + viewType + "  HT:" + HeaderType + "  FT:" + FooterType);
+       // Log.d(TAG, "onCreateViewHolder.. viewType = " + viewType + "  HT:" + HeaderType + "  FT:" + FooterType);
         if (viewType == HeaderType) {
             headerView = headerView == null ? new DefaultHeaderView(parent.getContext()) : headerView;
             headerViewHolder = new HeaderFooterViewHolder(headerView);

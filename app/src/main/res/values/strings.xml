@@ -135,5 +135,7 @@
     <!-- dailycare-->
     <string name="dailycare_loding">正在加载…</string>
     <string name="dailycare_nodata">没有记录</string>
+    <string name="edit">编辑</string>
+    <string name="delete">删除</string>
 
 </resources>

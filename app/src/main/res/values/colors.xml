@@ -49,4 +49,6 @@
 
     <color name="color_border">#66666666</color>
 
+    <color name="divider">#e2e3e3</color>
+
 </resources>

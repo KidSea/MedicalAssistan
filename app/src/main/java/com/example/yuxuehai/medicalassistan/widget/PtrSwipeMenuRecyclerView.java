@@ -188,7 +188,7 @@ public class PtrSwipeMenuRecyclerView extends RecyclerView {
                 break;
             case MotionEvent.ACTION_MOVE:
 
-                Log.d(TAG, "computeVerticalScrollOffset() = " + computeVerticalScrollOffset());
+                //Log.d(TAG, "computeVerticalScrollOffset() = " + computeVerticalScrollOffset());
                 //理论上应该computeVerticalScrollOffset == 0 但是因为隐藏header的缘故，这里的判断距离增加一个item的高度
                 if (getChildAt(1) != null && computeVerticalScrollOffset() <= getChildAt(1).getHeight()) {//recyclerviwe已滑动到顶部
                     if (refreshing || !pullToRefreshEnable)

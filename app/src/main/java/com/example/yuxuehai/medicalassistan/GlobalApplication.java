@@ -6,10 +6,8 @@ import android.os.Handler;
 
 import com.example.yuxuehai.medicalassistan.utlis.Constants;
 
-import cn.bmob.push.BmobPush;
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.BmobConfig;
-import cn.bmob.v3.BmobInstallation;
 
 /**
  * 自定义Application，进行全局化
@@ -51,10 +49,10 @@ public class GlobalApplication extends Application {
                     .build();
             Bmob.initialize(config);
 
-            // 使用推送服务时的初始化操作
-            BmobInstallation.getCurrentInstallation().save();
-            // 启动推送服务
-            BmobPush.startWork(this);
+//            // 使用推送服务时的初始化操作
+//            BmobInstallation.getCurrentInstallation().save();
+//            // 启动推送服务
+//            BmobPush.startWork(this);
         }
 
 

@@ -5,4 +5,8 @@ package com.example.yuxuehai.medicalassistan.view;
  */
 
 public interface DailycareView {
+
+
+    public void showPrograss();
+    public void hidePrograss();
 }

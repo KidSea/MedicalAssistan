@@ -2,7 +2,6 @@ package com.example.yuxuehai.medicalassistan.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -72,7 +71,7 @@ public class SwipeMenuLayout extends FrameLayout {
                 //点击停止滚动，或者开始下一轮滚动的数据设置
                 if (!mScroller.computeScrollOffset()) { // 滚动已经结束
 
-                    Log.i(TAG, "ACTION_DOWN..");
+                    //Log.i(TAG, "ACTION_DOWN..");
                     preTouchX = event.getX();
                     preTouchY = event.getY();
                     return true;
@@ -103,13 +102,13 @@ public class SwipeMenuLayout extends FrameLayout {
 
                     //菜单已被完全拉出，往右可滑
                     if (currX >= menuView.getWidth() && distanceX > 0) {
-                        Log.i(TAG, "currX = " + currX + "  ,distanceX = " + distanceX + "  ,menuView.getWidth() = " + menuView.getWidth());
+                        //Log.i(TAG, "currX = " + currX + "  ,distanceX = " + distanceX + "  ,menuView.getWidth() = " + menuView.getWidth());
                         return doScroll(distanceX);
                     }
 
                     //菜单未被拉出，往左可滑
                     if (currX <= 0 && distanceX < 0) {
-                        Log.v(TAG, "currX = " + currX + "  ,distanceX = " + distanceX + "  ,menuView.getWidth() = " + menuView.getWidth());
+                        //Log.v(TAG, "currX = " + currX + "  ,distanceX = " + distanceX + "  ,menuView.getWidth() = " + menuView.getWidth());
                         return doScroll(distanceX);
                     }
 
@@ -118,7 +117,7 @@ public class SwipeMenuLayout extends FrameLayout {
                 }
                 break;
             case MotionEvent.ACTION_UP:
-                Log.i(TAG, "ACTION_UP..");
+                //Log.i(TAG, "ACTION_UP..");
                 if (null != menuView)
                     startAutoScroll();
                 break;
@@ -129,7 +128,7 @@ public class SwipeMenuLayout extends FrameLayout {
 
     private void startAutoScroll() {
         int scrollX = getScrollX();
-        Log.i(TAG, "startAutoScroll..scrollX = " + scrollX);
+        //Log.i(TAG, "startAutoScroll..scrollX = " + scrollX);
         if (scrollX >= menuView.getWidth() * 0.5) {
             smoothOpenMenu();
         } else {
