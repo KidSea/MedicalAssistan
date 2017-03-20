@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="48dp"
+              android:layout_marginLeft="@dimen/space_16"
+              android:layout_marginRight="@dimen/space_16"
+              android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@drawable/ic_location_big"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.example.yuxuehai.medicalassistan.widget.ClearEditText
+            android:id="@+id/et_phone"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="@dimen/space_16"
+            android:layout_marginRight="@dimen/space_16"
+            android:background="@null"
+            android:hint="@string/dailycare_location"
+            android:textColor="@color/black"
+            android:textCursorDrawable="@drawable/cursor"
+            android:textSize="16sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/space_16"
+            android:layout_height="1dp"
+            android:background="@color/divider"/>
+    </LinearLayout>
+
+</LinearLayout>

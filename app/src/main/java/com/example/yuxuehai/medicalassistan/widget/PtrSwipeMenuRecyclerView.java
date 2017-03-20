@@ -24,7 +24,7 @@ public class PtrSwipeMenuRecyclerView extends RecyclerView {
     private static final String TAG = "PSMRecyclerView";
     private boolean isVerticalScroll = true;
     private Context context;
-    private SwipeMenuAdapter<ViewHolder> adapter;
+    private SwipeMenuAdapter<Object,ViewHolder> adapter;
     //最新的touch Y坐标点
     private float touchCurrY;
     //是否正在刷新、是否正在加载更多
@@ -60,7 +60,7 @@ public class PtrSwipeMenuRecyclerView extends RecyclerView {
     public void setAdapter(Adapter adapter) {
         super.setAdapter(adapter);
         if (adapter instanceof SwipeMenuAdapter) {
-            this.adapter = (SwipeMenuAdapter<ViewHolder>) adapter;
+            this.adapter = (SwipeMenuAdapter<Object,ViewHolder>) adapter;
         } else {
             try {
                 throw new InvalidClassException("所使用Adapter并非SwipeMenuAdapter的子类");

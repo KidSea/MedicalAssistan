@@ -12,15 +12,25 @@ import com.example.yuxuehai.medicalassistan.widget.HeaderView;
 import com.example.yuxuehai.medicalassistan.widget.PtrSwipeMenuRecyclerView;
 import com.example.yuxuehai.medicalassistan.widget.SwipeMenuLayout;
 
+import java.util.List;
+
 
 /**
  * Created by zhangyu on 2016/11/9.
  */
-public abstract class SwipeMenuAdapter<V extends PtrSwipeMenuRecyclerView.ViewHolder> extends RecyclerView.Adapter {
+public abstract class SwipeMenuAdapter<T,V extends PtrSwipeMenuRecyclerView.ViewHolder> extends RecyclerView.Adapter {
     private static final String TAG = "SwipeMenuAdapter";
     private LinearLayout menuView;
     private View contentView;
 
+    private List<T> mDatas;
+
+
+    private SwipeMenuAdapter.OnItemClickListener mListener;
+
+    public void setOnItemClickListener(SwipeMenuAdapter.OnItemClickListener li) {
+        mListener = li;
+    }
 
     private HeaderView headerView;
 
@@ -87,8 +97,21 @@ public abstract class SwipeMenuAdapter<V extends PtrSwipeMenuRecyclerView.ViewHo
 
     @Override
     public final void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+
+        //final int pos = holder.getAdapterPosition();
+
+
         if (position != 0 && position != getItemCount() - 1)
             onBindThisViewHolder((V) holder, position - 1);
+
+        if(mListener != null){
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mListener.onItemClick(holder,holder.itemView,position);
+                }
+            });
+        }
     }
 
     public abstract void onBindThisViewHolder(V holder, int position);
@@ -133,6 +156,8 @@ public abstract class SwipeMenuAdapter<V extends PtrSwipeMenuRecyclerView.ViewHo
     }
 
 
+
+
     /**
      * 获取HeaderView
      *
@@ -174,6 +199,19 @@ public abstract class SwipeMenuAdapter<V extends PtrSwipeMenuRecyclerView.ViewHo
 
     public void setFooterViewEnable(boolean enable) {
         this.footerViewEnable = enable;
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(RecyclerView.ViewHolder holder, View v,int position);
+    }
+
+    public void setDatas(List<T> datas) {
+        this.mDatas = datas;
+        notifyDataSetChanged();
+    }
+
+    public List<T> getDatas(){
+        return mDatas;
     }
 
 }

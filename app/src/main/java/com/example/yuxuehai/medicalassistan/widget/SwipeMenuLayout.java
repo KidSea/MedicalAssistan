@@ -2,6 +2,7 @@ package com.example.yuxuehai.medicalassistan.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -18,6 +19,8 @@ public class SwipeMenuLayout extends FrameLayout {
     private LinearLayout menuView;
     private Context context;
     private Scroller mScroller;
+    private boolean isMove = false;
+    private boolean isOpen = false;
 
     public SwipeMenuLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -71,13 +74,20 @@ public class SwipeMenuLayout extends FrameLayout {
                 //点击停止滚动，或者开始下一轮滚动的数据设置
                 if (!mScroller.computeScrollOffset()) { // 滚动已经结束
 
-                    //Log.i(TAG, "ACTION_DOWN..");
+                    Log.i(TAG, "ACTION_DOWN..");
                     preTouchX = event.getX();
                     preTouchY = event.getY();
-                    return true;
+                    if(isOpen){
+                        smoothCloseMenu();
+                        isOpen = false;
+                        return false;
+                    }else {
+                        return super.onTouchEvent(event);
+                    }
                 }
                 break;
             case MotionEvent.ACTION_MOVE:
+                isMove = true;
                 if (!mScroller.computeScrollOffset()) { // 滚动已结束
                     nowTouchX = event.getX();
                     nowTouchY = event.getY();
@@ -120,6 +130,10 @@ public class SwipeMenuLayout extends FrameLayout {
                 //Log.i(TAG, "ACTION_UP..");
                 if (null != menuView)
                     startAutoScroll();
+                if(isMove){
+                    isMove = false;
+                    return true;
+                }
                 break;
         }
         return super.onTouchEvent(event);
@@ -130,9 +144,12 @@ public class SwipeMenuLayout extends FrameLayout {
         int scrollX = getScrollX();
         //Log.i(TAG, "startAutoScroll..scrollX = " + scrollX);
         if (scrollX >= menuView.getWidth() * 0.5) {
+
             smoothOpenMenu();
+            isOpen = true;
         } else {
             smoothCloseMenu();
+            isOpen = false;
         }
     }
 

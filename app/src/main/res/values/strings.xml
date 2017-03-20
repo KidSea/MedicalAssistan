@@ -4,6 +4,7 @@
 
     <string name="actionbar_title_search">搜索</string>
     <string name="actionbar_title_add">添加</string>
+    <string name="actionbar_title_commit">确定</string>
 
     <string name="btn_entry">立即体验</string>
 
@@ -137,5 +138,11 @@
     <string name="dailycare_nodata">没有记录</string>
     <string name="edit">编辑</string>
     <string name="delete">删除</string>
+    <string name="new_event">新建事件</string>
+    <string name="dailycare_title">标题</string>
+    <string name="dailycare_object">对象</string>
+    <string name="dailycare_location">位置</string>
+    <string name="dailycare_time">时间</string>
+    <string name="dailycare_time_detail">2017-3-20 16:42</string>
 
 </resources>

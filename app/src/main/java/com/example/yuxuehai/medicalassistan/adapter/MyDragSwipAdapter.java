@@ -9,15 +9,12 @@ import android.widget.TextView;
 import com.example.yuxuehai.medicalassistan.R;
 import com.example.yuxuehai.medicalassistan.widget.PtrSwipeMenuRecyclerView;
 
-import java.util.List;
-
 /**
  * Created by yuxuehai on 17-3-17.
  */
 
-public class MyDragSwipAdapter extends SwipeMenuAdapter<MyDragSwipAdapter.MyViewHolder> {
+public class MyDragSwipAdapter extends SwipeMenuAdapter<Integer,MyDragSwipAdapter.MyViewHolder> {
 
-    private List<Integer> mDatas;
 
     @Override
     protected View createContentView(ViewGroup parent, int viewType) {
@@ -47,7 +44,7 @@ public class MyDragSwipAdapter extends SwipeMenuAdapter<MyDragSwipAdapter.MyView
 
     @Override
     public int getThisItemCount() {
-        return mDatas == null ? 0 : mDatas.size();
+        return getDatas() == null ? 0 : getDatas().size();
     }
 
     public class MyViewHolder extends PtrSwipeMenuRecyclerView.ViewHolder {
@@ -60,9 +57,5 @@ public class MyDragSwipAdapter extends SwipeMenuAdapter<MyDragSwipAdapter.MyView
         }
     }
 
-    public void setDatas(List<Integer> datas) {
-        this.mDatas = datas;
-        notifyDataSetChanged();
-    }
 
 }
