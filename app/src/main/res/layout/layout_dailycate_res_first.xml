@@ -17,7 +17,7 @@
         android:orientation="vertical">
 
         <com.example.yuxuehai.medicalassistan.widget.ClearEditText
-            android:id="@+id/et_phone"
+            android:id="@+id/et_object"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginLeft="@dimen/space_16"

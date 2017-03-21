@@ -1,5 +1,6 @@
 package com.example.yuxuehai.medicalassistan.model.impl;
 
+import com.example.yuxuehai.medicalassistan.bean.Event;
 import com.example.yuxuehai.medicalassistan.bean.Patient;
 import com.example.yuxuehai.medicalassistan.bean.Ward;
 import com.example.yuxuehai.medicalassistan.model.DataModelDao;
@@ -13,6 +14,7 @@ import cn.bmob.v3.datatype.BmobPointer;
 import cn.bmob.v3.listener.FindListener;
 import cn.bmob.v3.listener.LogInListener;
 import cn.bmob.v3.listener.QueryListener;
+import cn.bmob.v3.listener.SaveListener;
 import cn.bmob.v3.listener.UpdateListener;
 
 /**
@@ -25,10 +27,12 @@ public class DataModelDaoImpl implements DataModelDao {
 
 
 
-    public static synchronized DataModelDaoImpl getInstance() {
+    public static  DataModelDaoImpl getInstance() {
 
         if (mDataDao == null) {
-            mDataDao = new DataModelDaoImpl();
+            synchronized (DataModelDaoImpl.class){
+                mDataDao = new DataModelDaoImpl();
+            }
         }
 
         return mDataDao;
@@ -83,7 +87,10 @@ public class DataModelDaoImpl implements DataModelDao {
         return null;
     }
 
-
+    @Override
+    public void saveEvent(Event event, SaveListener listener) {
+        event.save(listener);
+    }
 
 
 }

@@ -1,0 +1,46 @@
+<resources>
+
+    <attr name="timeAmPmBackgroundColor" format="reference|color" />
+    <attr name="timeAmPmSelectBackgroundColor" format="reference|color" />
+    <attr name="timeAmPmTextColor" format="reference|color" />
+
+    <!-- Attrs Switch Time -->
+    <declare-styleable name="SwitchTimeCircleColor">
+        <attr name="timeCircleColor" format="reference|color" />
+        <attr name="timeCenterColor" format="reference|color" />
+    </declare-styleable>
+
+    <declare-styleable name="SwitchTimeSelectorColor">
+        <attr name="timeSelectorColor" format="reference|color" />
+    </declare-styleable>
+
+    <declare-styleable name="SwitchTimeCircularNumbersColor">
+        <attr name="timeCircularNumbersColor" format="reference|color" />
+    </declare-styleable>
+
+    <declare-styleable name="SwitchTimeAMPMColor">
+        <attr name="amPmBackgroundColor" format="reference|color" />
+        <attr name="amPmSelectBackgroundColor" format="reference|color" />
+        <attr name="amPmTextColor" format="reference|color" />
+    </declare-styleable>
+
+    <!-- Attrs Years -->
+    <declare-styleable name="ListPickerYearView">
+        <attr name="minYear" format="reference|integer" />
+        <attr name="maxYear" format="reference|integer" />
+        <attr name="defaultYear" format="reference|integer" />
+    </declare-styleable>
+
+    <!-- Attrs Year Text Indicator -->
+    <declare-styleable name="YearTextIndicator">
+        <attr name="yearSelectBackgroundColor" format="reference|color" />
+        <attr name="yearSelectTextColor" format="reference|color" />
+    </declare-styleable>
+
+    <declare-styleable name="TextCircularIndicatorView">
+        <!-- Change color of circle background TODO javadoc-->
+        <attr name="colorCircleIndicator" format="reference|color" />
+    </declare-styleable>
+
+</resources>
+

@@ -143,6 +143,14 @@
     <string name="dailycare_object">对象</string>
     <string name="dailycare_location">位置</string>
     <string name="dailycare_time">时间</string>
+    <string name="dailycare_remind">提醒</string>
     <string name="dailycare_time_detail">2017-3-20 16:42</string>
+    <string name="dailycare_remind_detail">无</string>
+    <string name="dailycare_detail">详情</string>
+    <string name="none">无</string>
 
+    <!--date time picker-->
+    <string name="label_datetime_dialog">时间选择</string>
+    <string name="positive_button_datetime_picker">确定</string>
+    <string name="negative_button_datetime_picker">取消</string>
 </resources>

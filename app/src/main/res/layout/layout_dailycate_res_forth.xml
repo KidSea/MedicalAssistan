@@ -9,8 +9,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginLeft="@dimen/space_2"
-        android:src="@drawable/ic_time"/>
+        android:src="@drawable/ic_remind"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +17,7 @@
         android:orientation="vertical">
 
         <RelativeLayout
-            android:id="@+id/rl_time"
+            android:id="@+id/rl_remind_time"
             android:layout_width="match_parent"
             android:layout_marginLeft="@dimen/space_16"
             android:layout_height="match_parent">
@@ -26,19 +25,18 @@
             <TextView
                 android:gravity="center_vertical"
                 android:layout_width="wrap_content"
-                android:layout_marginLeft="@dimen/space_2"
                 android:layout_height="match_parent"
-                android:text="@string/dailycare_time"
+                android:text="@string/dailycare_remind"
                 android:textColor="@color/black"
                 android:textSize="16sp"/>
 
             <TextView
-                android:id="@+id/tv_time"
+                android:id="@+id/tv_remind"
                 android:gravity="center_vertical"
                 android:layout_alignParentRight="true"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="@string/dailycare_time_detail"
+                android:text="@string/dailycare_remind_detail"
                 android:drawablePadding="@dimen/space_2"
                 android:drawableEnd="@drawable/ic_more"
                 android:textColor="@color/gray"
