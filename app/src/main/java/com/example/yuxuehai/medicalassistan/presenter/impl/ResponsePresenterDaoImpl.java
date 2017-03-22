@@ -36,7 +36,8 @@ public class ResponsePresenterDaoImpl extends BasePresenter implements ResponseP
             @Override
             public void done(String s, BmobException e) {
                 if (e == null) {
-                    ToastUtil.showShort(getContext(), "添加成功" + s);
+                    ToastUtil.showShort(getContext(), "添加成功");
+                    mDailyEventView.finishActivity();
                 } else {
                     ToastUtil.showShort(getContext(), "添加失败");
                 }
@@ -53,6 +54,8 @@ public class ResponsePresenterDaoImpl extends BasePresenter implements ResponseP
 
         return false;
     }
+
+
 
 
 }

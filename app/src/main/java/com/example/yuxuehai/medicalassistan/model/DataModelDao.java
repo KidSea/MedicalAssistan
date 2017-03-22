@@ -31,4 +31,6 @@ public interface DataModelDao {
     public Patient queryPatient (String Id, QueryListener listener);
 
     public void saveEvent(Event event , SaveListener listener);
+
+    public List<Event> getEventList(FindListener findListener);
 }

@@ -14,6 +14,7 @@ public class Event extends BmobObject {
     private BmobDate date;
     private String location;
     private String desc;
+    private int remindtime;
 
     public String getName() {
         return name;
@@ -53,6 +54,14 @@ public class Event extends BmobObject {
 
     public void setDecs(String desc) {
         this.desc = desc;
+    }
+
+    public int getRemindtime() {
+        return remindtime;
+    }
+
+    public void setRemindtime(int remindtime) {
+        this.remindtime = remindtime;
     }
 
 }

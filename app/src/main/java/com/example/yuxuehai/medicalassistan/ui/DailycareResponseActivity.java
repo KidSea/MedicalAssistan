@@ -1,35 +1,50 @@
 package com.example.yuxuehai.medicalassistan.ui;
 
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.yuxuehai.medicalassistan.R;
+import com.example.yuxuehai.medicalassistan.adapter.MyDailyCareAdapter;
+import com.example.yuxuehai.medicalassistan.adapter.MyRemindTimeAdapter;
 import com.example.yuxuehai.medicalassistan.base.BaseActivity;
 import com.example.yuxuehai.medicalassistan.bean.Event;
 import com.example.yuxuehai.medicalassistan.presenter.impl.ResponsePresenterDaoImpl;
-import com.example.yuxuehai.medicalassistan.utlis.LogUtils;
 import com.example.yuxuehai.medicalassistan.utlis.ToastUtil;
+import com.example.yuxuehai.medicalassistan.utlis.UIUtils;
 import com.example.yuxuehai.medicalassistan.view.DailyEventView;
 import com.example.yuxuehai.medicalassistan.widget.ClearEditText;
+import com.example.yuxuehai.medicalassistan.widget.MyLinearLayoutManager;
 import com.kunzisoft.switchdatetime.SwitchDateTimeDialogFragment;
+import com.xdandroid.simplerecyclerview.Divider;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
+import cn.bmob.v3.datatype.BmobDate;
+
 /**
  * Created by yuxuehai on 17-3-20.
  */
 
-public class DailycareResponseActivity extends BaseActivity implements DailyEventView , View.OnClickListener{
+public class DailycareResponseActivity extends BaseActivity implements DailyEventView, View.OnClickListener {
 
     private static final String TAG = "DailycareResponseActivity";
     private static final String TAG_DATETIME_FRAGMENT = "TAG_DATETIME_FRAGMENT";
@@ -46,6 +61,12 @@ public class DailycareResponseActivity extends BaseActivity implements DailyEven
     private SwitchDateTimeDialogFragment dateTimeFragment;
 
     private ResponsePresenterDaoImpl mPresenterDao;
+    private SimpleDateFormat mDateFormat;
+    private ArrayList<String> mList;
+    private MyRemindTimeAdapter mMyDailyCareAdapter;
+    private int selectedPosition = 0;
+    private int remindTime = 0;
+
 
 
     @Override
@@ -72,13 +93,23 @@ public class DailycareResponseActivity extends BaseActivity implements DailyEven
         event.setName(mEditTitle.getText().toString());
         event.setObjectname(mEditObject.getText().toString());
         event.setLocation(mEditLocation.getText().toString());
-//        Date date = new Date(mTime.getText().toString());
-//        BmobDate bmobDate = new BmobDate(date);
-//        event.setDate(bmobDate);
+        try {
+            Date date = mDateFormat.parse(mTime.getText().toString());
+            BmobDate bmobDate = new BmobDate(date);
+            event.setDate(bmobDate);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+        event.setRemindtime(remindTime);
         event.setDecs(mEditDetail.getText().toString().trim());
 
 
         return event;
+    }
+
+    @Override
+    public void finishActivity() {
+        finish();
     }
 
     @Override
@@ -91,11 +122,11 @@ public class DailycareResponseActivity extends BaseActivity implements DailyEven
                 String name = mEditTitle.getText().toString();
                 String object = mEditObject.getText().toString();
                 String location = mEditLocation.getText().toString();
-                LogUtils.e("submit" + name + object + location);
+
+
                 if (mPresenterDao.isEmpty(name, object, location)) {
-                    LogUtils.e("save Entry");
                     mPresenterDao.saveEvent();
-                }else {
+                } else {
                     ToastUtil.showToast(this, "所填信息不能为空");
                 }
                 break;
@@ -106,14 +137,14 @@ public class DailycareResponseActivity extends BaseActivity implements DailyEven
 
     @Override
     public void onClick(View view) {
-        int id =  view.getId();
+        int id = view.getId();
 
-        switch (id){
+        switch (id) {
             case R.id.rl_time:
                 dateTimeFragment.show(getSupportFragmentManager(), TAG_DATETIME_FRAGMENT);
                 break;
             case R.id.rl_remind_time:
-
+                showDialog();
                 break;
         }
     }
@@ -145,14 +176,20 @@ public class DailycareResponseActivity extends BaseActivity implements DailyEven
 
         initDateTime();
 
+
     }
 
     @Override
     protected void initData() {
+        String[] stringArray = UIUtils.getStringArray(R.array.remind_time_list);
+        mList = new ArrayList<String>(Arrays.asList(stringArray));
+
+
+
         mPresenterDao = new ResponsePresenterDaoImpl(this, this);
 
         // Assign values we want
-        final SimpleDateFormat myDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm", java.util.Locale.getDefault());
+        mDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
         dateTimeFragment.startAtCalendarView();
         dateTimeFragment.set24HoursMode(true);
         dateTimeFragment.setMinimumDateTime(new GregorianCalendar(2015, Calendar.JANUARY, 1).getTime());
@@ -166,12 +203,13 @@ public class DailycareResponseActivity extends BaseActivity implements DailyEven
             Log.e(TAG, e.getMessage());
         }
 
+
         // Set listener for date
         dateTimeFragment.setOnButtonClickListener(new SwitchDateTimeDialogFragment.OnButtonClickListener() {
             @Override
             public void onPositiveButtonClick(Date date) {
-                ToastUtil.showShort(getcontext(), myDateFormat.format(date));
-                mTime.setText(myDateFormat.format(date));
+                ToastUtil.showShort(getcontext(), mDateFormat.format(date));
+                mTime.setText(mDateFormat.format(date));
             }
 
             @Override
@@ -182,7 +220,7 @@ public class DailycareResponseActivity extends BaseActivity implements DailyEven
 
     }
 
-    private void bindView(){
+    private void bindView() {
         mToolbar = bindView(R.id.tb_mytb);
         mEditTitle = bindView(R.id.et_title);
         mEditObject = bindView(R.id.et_object);
@@ -194,10 +232,10 @@ public class DailycareResponseActivity extends BaseActivity implements DailyEven
         mRemindTimeLayout = bindView(R.id.rl_remind_time);
     }
 
-    private void initDateTime(){
+    private void initDateTime() {
         dateTimeFragment = (SwitchDateTimeDialogFragment) getSupportFragmentManager().findFragmentByTag(TAG_DATETIME_FRAGMENT);
 
-        if(dateTimeFragment == null) {
+        if (dateTimeFragment == null) {
             dateTimeFragment = SwitchDateTimeDialogFragment.newInstance(
                     getString(R.string.label_datetime_dialog),
                     getString(R.string.positive_button_datetime_picker),
@@ -207,4 +245,56 @@ public class DailycareResponseActivity extends BaseActivity implements DailyEven
 
 
     }
+
+    private void showDialog() {
+
+        LayoutInflater inflater = LayoutInflater.from(this);
+        LinearLayout inflate = (LinearLayout) inflater.inflate(R.layout.dialog_select_time, null);
+
+        AlertDialog builder = new AlertDialog.Builder(this).create();
+        builder.show();
+
+        Window window = builder.getWindow();
+        window.setContentView(inflate); // 修改整个dialog窗口的显示
+
+        RecyclerView mRemindTimeView = (RecyclerView) builder.findViewById(R.id.rc_seclect_time);
+
+
+        // 创建一个线性布局管理器
+        MyLinearLayoutManager layoutManager = new MyLinearLayoutManager(this);
+        layoutManager.setScrollEnabled(true);
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        mRemindTimeView.setLayoutManager(layoutManager);
+        mRemindTimeView.addItemDecoration(new Divider(
+                //分割线宽1dp
+                UIUtils.dip2px(1),
+                //分割线颜色#DDDDDD
+                UIUtils.getColor(R.color.divider),
+                false,
+                //分割线左侧留出20dp的空白，不绘制
+                UIUtils.dip2px(0), 0, 0, 0));
+        mMyDailyCareAdapter = new MyRemindTimeAdapter(this, mList,selectedPosition);
+
+
+        mMyDailyCareAdapter.setOnItemClickListener(new MyDailyCareAdapter.OnItemClickListener<String>() {
+            @Override
+            public void onItemClick(int position, String data) {
+                showClick(position);
+                selectedPosition = position;
+                builder.dismiss();
+                mRemindTime.setText(mList.get(position));
+                remindTime = position;
+            }
+
+        });
+
+        mRemindTimeView.setAdapter(mMyDailyCareAdapter);
+    }
+
+
+    private void showClick(int position) {
+        ToastUtil.showToast(this, "第" + position + "个Item被点击了");
+    }
+
+
 }

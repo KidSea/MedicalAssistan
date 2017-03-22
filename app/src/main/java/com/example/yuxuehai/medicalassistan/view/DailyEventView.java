@@ -10,4 +10,6 @@ public interface DailyEventView {
 
 
     public Event getEvent();
+
+    public void finishActivity();
 }

@@ -23,7 +23,7 @@ public abstract class SwipeMenuAdapter<T,V extends PtrSwipeMenuRecyclerView.View
     private LinearLayout menuView;
     private View contentView;
 
-    private List<T> mDatas;
+    protected List<T> mDatas;
 
 
     private SwipeMenuAdapter.OnItemClickListener mListener;

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 点击之后的图标 -->
+    <item
+        android:state_checked="true"
+        android:drawable="@drawable/ic_time_selected"
+    />
+    <!-- 点击之前的图标 -->
+    <item
+        android:state_checked="false"
+        android:drawable="@drawable/ic_time_unselected"
+    />
+</selector>

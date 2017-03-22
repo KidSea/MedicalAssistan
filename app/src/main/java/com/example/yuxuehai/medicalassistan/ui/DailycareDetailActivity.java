@@ -14,6 +14,7 @@ import com.example.yuxuehai.medicalassistan.R;
 import com.example.yuxuehai.medicalassistan.adapter.MyDragSwipAdapter;
 import com.example.yuxuehai.medicalassistan.adapter.SwipeMenuAdapter;
 import com.example.yuxuehai.medicalassistan.base.BaseActivity;
+import com.example.yuxuehai.medicalassistan.bean.Event;
 import com.example.yuxuehai.medicalassistan.dao.OnMenuClickListener;
 import com.example.yuxuehai.medicalassistan.presenter.impl.DailycarePreseterDaoImpl;
 import com.example.yuxuehai.medicalassistan.utlis.ToastUtil;
@@ -36,8 +37,6 @@ public class DailycareDetailActivity extends BaseActivity implements DailycareVi
 
     private DailycarePreseterDaoImpl mPreseterDao;
     private MyDragSwipAdapter mAdapter;
-
-    private List<Integer> mList;
 
 
     public <T extends View> T $(int id) {
@@ -78,6 +77,11 @@ public class DailycareDetailActivity extends BaseActivity implements DailycareVi
     @Override
     public void hidePrograss() {
         mProgress.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void setList(List<Event> list) {
+        mAdapter.setDatas(list);
     }
 
     @Override
@@ -122,11 +126,7 @@ public class DailycareDetailActivity extends BaseActivity implements DailycareVi
 
         mPreseterDao = new DailycarePreseterDaoImpl(this, this);
 
-        mList = mPreseterDao.getDataFromServer();
-
-        hidePrograss();
-
-        mAdapter.setDatas(mList);
+        mPreseterDao.getDataFromServer();
 
     }
 

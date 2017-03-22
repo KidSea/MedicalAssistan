@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.example.yuxuehai.medicalassistan.R;
@@ -16,21 +16,23 @@ import java.util.ArrayList;
  * Created by yuxuehai on 17-2-20.
  */
 
-public class MyDailyCareAdapter extends BaseRecyclerAdapter<String,
-        MyDailyCareAdapter.MyViewHolder> {
+public class MyRemindTimeAdapter extends BaseRecyclerAdapter<String,
+        MyRemindTimeAdapter.MyViewHolder> {
 
 
     private Context mContext;
+    private int position;
 
-    public MyDailyCareAdapter(Context context, ArrayList<String> data) {
+    public MyRemindTimeAdapter(Context context, ArrayList<String> data, int selectedPosition) {
         this.mContext = context;
+        position = selectedPosition;
         addDatas(data);
     }
 
     @Override
     public MyViewHolder onCreate(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).
-                inflate(R.layout.rec_item_layout, parent, false);
+                inflate(R.layout.layout_remind_time, parent, false);
 
         MyViewHolder mHolder = new MyViewHolder(view);
 
@@ -39,8 +41,9 @@ public class MyDailyCareAdapter extends BaseRecyclerAdapter<String,
 
     @Override
     public void onBind(MyViewHolder viewHolder, int RealPosition, String data) {
-        (viewHolder).mImageView.setImageResource(R.drawable.ic_logo);
+
         (viewHolder).mTextView.setText(data);
+        viewHolder.mRadioButton.setChecked(RealPosition == position);
     }
 
 
@@ -51,12 +54,12 @@ public class MyDailyCareAdapter extends BaseRecyclerAdapter<String,
 
 
         public TextView mTextView;
-        public ImageView mImageView;
+        public RadioButton mRadioButton;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             mTextView = (TextView) itemView.findViewById(R.id.tv_res);
-            mImageView = (ImageView) itemView.findViewById(R.id.im_icon);
+            mRadioButton  = (RadioButton) itemView.findViewById(R.id.rb_time_checked);
         }
     }
 
