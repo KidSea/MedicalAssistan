@@ -61,12 +61,17 @@ public class PatientsPresenterDaoImpl extends BasePresenter implements Informati
         mDataModelDao.queryPatients(limit, ward, new FindListener<Patient>() {
             @Override
             public void done(List<Patient> list, BmobException e) {
-                mList.clear();
-                for (Patient patient: list) {
-                    SampleBean patientbean = new SampleBean(SampleBean.TYPE_PATIENT, patient);
-                    mList.add(patientbean);
+                if(e == null){
+                    mView.showView();
+                    mList.clear();
+                    for (Patient patient: list) {
+                        SampleBean patientbean = new SampleBean(SampleBean.TYPE_PATIENT, patient);
+                        mList.add(patientbean);
+                    }
+                    mView.setData(mList);
+                }else {
+                    mView.showEmpty();
                 }
-                mView.setData(mList);
             }
 
         });

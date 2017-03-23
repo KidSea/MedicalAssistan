@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tb_mytb"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme_PopupMenu">
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="@dimen/space_16"
+        android:layout_marginRight="@dimen/space_16"
+        android:layout_marginTop="@dimen/space_8"
+        android:background="@null"
+        android:gravity="center_vertical"
+        android:maxLength="30"
+        android:maxLines="1"
+        android:text="@string/dailycare_title"
+        android:textColor="@color/black"
+        android:textSize="18sp"/>
+
+
+    <include layout="@layout/layout_dailycate_event_first"/>
+
+    <include layout="@layout/layout_dailycate_event_second"/>
+
+    <include layout="@layout/layout_dailycate_event_third"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_8"
+        android:background="@color/graywhite"/>
+
+    <include layout="@layout/layout_dailycate_event_forth"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_8"
+        android:background="@color/graywhite"/>
+
+    <include layout="@layout/layout_dailycate_event_fifth"/>
+
+    <TextView
+        android:id="@+id/et_detail"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginBottom="@dimen/space_16"
+        android:layout_marginLeft="@dimen/space_16"
+        android:layout_marginRight="@dimen/space_16"
+        android:background="@null"
+        android:gravity="start"
+        android:maxLines="5"
+        android:paddingLeft="@dimen/space_3"
+        android:textColor="@color/black"
+        android:textSize="16sp"/>
+
+    <LinearLayout
+        android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </LinearLayout>
+
+</LinearLayout>

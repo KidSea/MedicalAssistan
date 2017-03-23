@@ -21,6 +21,7 @@ import com.example.yuxuehai.medicalassistan.adapter.MyRemindTimeAdapter;
 import com.example.yuxuehai.medicalassistan.base.BaseActivity;
 import com.example.yuxuehai.medicalassistan.bean.Event;
 import com.example.yuxuehai.medicalassistan.presenter.impl.ResponsePresenterDaoImpl;
+import com.example.yuxuehai.medicalassistan.utlis.Constants;
 import com.example.yuxuehai.medicalassistan.utlis.ToastUtil;
 import com.example.yuxuehai.medicalassistan.utlis.UIUtils;
 import com.example.yuxuehai.medicalassistan.view.DailyEventView;
@@ -110,6 +111,11 @@ public class DailycareResponseActivity extends BaseActivity implements DailyEven
     @Override
     public void finishActivity() {
         finish();
+    }
+
+    @Override
+    public void callBackResult() {
+        setResult(Constants.ADD_EVENT_SUCCESS);
     }
 
     @Override

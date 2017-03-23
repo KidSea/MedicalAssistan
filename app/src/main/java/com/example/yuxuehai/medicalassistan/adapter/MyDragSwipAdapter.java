@@ -3,12 +3,11 @@ package com.example.yuxuehai.medicalassistan.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.yuxuehai.medicalassistan.R;
+import com.example.yuxuehai.medicalassistan.base.BaseRecyclerAdapter;
 import com.example.yuxuehai.medicalassistan.bean.Event;
-import com.example.yuxuehai.medicalassistan.widget.PtrSwipeMenuRecyclerView;
 
 import java.util.Calendar;
 
@@ -18,7 +17,7 @@ import cn.bmob.v3.datatype.BmobDate;
  * Created by yuxuehai on 17-3-17.
  */
 
-public class MyDragSwipAdapter extends SwipeMenuAdapter<Event,MyDragSwipAdapter.MyViewHolder> {
+public class MyDragSwipAdapter extends BaseRecyclerAdapter<Event,MyDragSwipAdapter.MyViewHolder> {
 
 
     private final Calendar mCalendar;
@@ -29,29 +28,17 @@ public class MyDragSwipAdapter extends SwipeMenuAdapter<Event,MyDragSwipAdapter.
 
 
     @Override
-    protected View createContentView(ViewGroup parent, int viewType) {
-        View contentView = LayoutInflater.from(parent.getContext()).
+    public MyViewHolder onCreate(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).
                 inflate(R.layout.content_view, parent, false);
-        return contentView;
+
+        MyViewHolder mHolder = new MyViewHolder(view);
+
+        return mHolder;
     }
 
     @Override
-    protected LinearLayout createMenuView(ViewGroup parent, int viewType) {
-        LinearLayout menuView = (LinearLayout) LayoutInflater.from(parent.getContext()).
-                inflate(R.layout.menu_view, parent, false);
-        return menuView;
-    }
-
-    @Override
-    public MyViewHolder onCreateThisViewHolder(ViewGroup contentView, int viewType) {
-        return new MyViewHolder(contentView);
-    }
-
-    @Override
-    public void onBindThisViewHolder(MyViewHolder holder, int position) {
-        if (null != mDatas && position < mDatas.size()){
-
-            Event event = mDatas.get(position);
+    public void onBind(MyViewHolder holder, int RealPosition, Event event) {
             holder.mEvent.setText(event.getName());
             holder.mObject.setText(event.getObjectname());
             holder.mLocation.setText(event.getLocation());
@@ -66,16 +53,9 @@ public class MyDragSwipAdapter extends SwipeMenuAdapter<Event,MyDragSwipAdapter.
                 holder.mTimeMode.setText("下午");
             }
 
-        }
-
     }
 
-    @Override
-    public int getThisItemCount() {
-        return getDatas() == null ? 0 : getDatas().size();
-    }
-
-    public class MyViewHolder extends PtrSwipeMenuRecyclerView.ViewHolder {
+    public class MyViewHolder extends BaseRecyclerAdapter.Holder {
 
         public TextView mEvent;
         public TextView mObject;

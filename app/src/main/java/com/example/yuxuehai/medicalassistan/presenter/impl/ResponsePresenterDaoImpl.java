@@ -37,6 +37,7 @@ public class ResponsePresenterDaoImpl extends BasePresenter implements ResponseP
             public void done(String s, BmobException e) {
                 if (e == null) {
                     ToastUtil.showShort(getContext(), "添加成功");
+                    mDailyEventView.callBackResult();
                     mDailyEventView.finishActivity();
                 } else {
                     ToastUtil.showShort(getContext(), "添加失败");

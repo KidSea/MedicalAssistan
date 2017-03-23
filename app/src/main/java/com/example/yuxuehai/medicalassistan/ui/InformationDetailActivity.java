@@ -13,6 +13,7 @@ import com.example.yuxuehai.medicalassistan.bean.Ward;
 import com.example.yuxuehai.medicalassistan.presenter.impl.InformationPresenterDaoImpl;
 import com.example.yuxuehai.medicalassistan.utlis.ToastUtil;
 import com.example.yuxuehai.medicalassistan.view.InformationView;
+import com.example.yuxuehai.medicalassistan.widget.EmptyLayout;
 import com.example.yuxuehai.medicalassistan.widget.MyGridLayoutManager;
 import com.xdandroid.simplerecyclerview.SimpleRecyclerView;
 import com.xdandroid.simplerecyclerview.SimpleSwipeRefreshLayout;
@@ -33,6 +34,7 @@ public class InformationDetailActivity extends BaseActivity implements Informati
     private ArrayList<SampleBean> mList;
 
     private InformationPresenterDaoImpl mPresenterDao;
+    private EmptyLayout mEmptyView;
 
 
     public <T extends View> T $(int id) {
@@ -45,6 +47,19 @@ public class InformationDetailActivity extends BaseActivity implements Informati
         mSwipeRefreshLayout.setRefreshing(false);
         ((MyGridLayoutManager)mRecyclerView.getLayoutManager()).setScrollEnabled(true);
         mRecyclerView.getLayoutManager().scrollToPosition(0);
+    }
+
+    @Override
+    public void showEmpty() {
+        mSwipeRefreshLayout.setRefreshing(false);
+        mSwipeRefreshLayout.setVisibility(View.GONE);
+        mEmptyView.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void showView() {
+        mSwipeRefreshLayout.setVisibility(View.VISIBLE);
+        mEmptyView.setVisibility(View.GONE);
     }
 
 
@@ -79,9 +94,18 @@ public class InformationDetailActivity extends BaseActivity implements Informati
         mToolbar = $(R.id.tb_mytb);
         mSwipeRefreshLayout = $(R.id.swipe_container);
         mRecyclerView = $(R.id.recycler_view);
+        mEmptyView = $(R.id.layout_empty);
+
+        mEmptyView.setOnLayoutClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mPresenterDao.getListFromServer();
+            }
+        });
 
         mSwipeRefreshLayout.setOnRefreshListener(this::refreshData);
         mSwipeRefreshLayout.setRefreshing(true);
+
 
         MyGridLayoutManager gm = new MyGridLayoutManager(this, 2);
         mRecyclerView.setLayoutManager(gm);

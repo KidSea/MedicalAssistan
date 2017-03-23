@@ -19,7 +19,7 @@
 
             <TextView
                 android:id="@+id/tv_event"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_event"
                 android:layout_marginTop="@dimen/space_8"
@@ -29,7 +29,7 @@
 
             <TextView
                 android:id="@+id/tv_object"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/space_8"
                 android:drawablePadding="@dimen/space_2"
@@ -49,7 +49,7 @@
 
             <TextView
                 android:id="@+id/tv_location"
-                android:paddingLeft="@dimen/space_24"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_location"

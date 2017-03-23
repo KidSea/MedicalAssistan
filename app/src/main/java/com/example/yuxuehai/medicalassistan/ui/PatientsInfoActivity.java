@@ -18,6 +18,7 @@ import com.example.yuxuehai.medicalassistan.presenter.impl.PatientsPresenterDaoI
 import com.example.yuxuehai.medicalassistan.utlis.ToastUtil;
 import com.example.yuxuehai.medicalassistan.utlis.UIUtils;
 import com.example.yuxuehai.medicalassistan.view.InformationView;
+import com.example.yuxuehai.medicalassistan.widget.EmptyLayout;
 import com.xdandroid.simplerecyclerview.Divider;
 import com.xdandroid.simplerecyclerview.SimpleRecyclerView;
 import com.xdandroid.simplerecyclerview.SimpleSwipeRefreshLayout;
@@ -34,6 +35,7 @@ public class PatientsInfoActivity extends BaseActivity implements InformationVie
     private Ward mWard;
 
     private Toolbar mToolbar;
+    private EmptyLayout mEmptyView;
     private SimpleSwipeRefreshLayout mSwipeRefreshLayout;
     private SimpleRecyclerView mRecyclerView;
 
@@ -58,6 +60,18 @@ public class PatientsInfoActivity extends BaseActivity implements InformationVie
         mRecyclerView.getLayoutManager().scrollToPosition(0);
     }
 
+    @Override
+    public void showEmpty() {
+        mSwipeRefreshLayout.setRefreshing(false);
+        mSwipeRefreshLayout.setVisibility(View.GONE);
+        mEmptyView.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void showView() {
+        mSwipeRefreshLayout.setVisibility(View.VISIBLE);
+        mEmptyView.setVisibility(View.GONE);
+    }
 
 
     @Override
@@ -99,6 +113,15 @@ public class PatientsInfoActivity extends BaseActivity implements InformationVie
 
         mSwipeRefreshLayout.setOnRefreshListener(() -> refreshData());
         mSwipeRefreshLayout.setRefreshing(true);
+
+        mEmptyView = $(R.id.layout_empty);
+
+        mEmptyView.setOnLayoutClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mPresenterDao.getPatientsFromServer(mWard);
+            }
+        });
 
         //添加Divider
         mRecyclerView.addItemDecoration(new Divider(

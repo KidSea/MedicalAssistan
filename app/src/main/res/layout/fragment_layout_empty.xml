@@ -3,7 +3,7 @@
     android:id="@+id/pageerrLayout"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/window_background" >
+    android:background="@color/white" >
 
     <RelativeLayout
         android:layout_width="fill_parent"
@@ -24,10 +24,10 @@
                     android:id="@+id/img_error_layout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/pagefailed_bg"
-                    android:visibility="gone" />
+                    android:background="@drawable/pagefailed_bg"/>
 
                 <ProgressBar
+                    android:visibility="gone"
                     android:id="@+id/animProgress"
                     android:layout_width="30dip"
                     android:layout_height="30dip"
@@ -43,7 +43,7 @@
                 android:lines="2"
                 android:gravity="center"
                 android:text="@string/error_view_click_to_refresh"
-                android:textColor="@color/main_gray"
+                android:textColor="@color/black"
                 android:textSize="@dimen/text_size_16" />
         </LinearLayout>
     </RelativeLayout>
