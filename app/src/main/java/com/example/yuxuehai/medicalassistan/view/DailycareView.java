@@ -15,4 +15,6 @@ public interface DailycareView {
     public void hidePrograss();
 
     public void setList(List<Event> list);
+
+    public void showNodata();
 }

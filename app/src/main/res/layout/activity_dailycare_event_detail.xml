@@ -20,60 +20,151 @@
         </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
 
-    <TextView
-        android:id="@+id/tv_title"
+    <com.example.yuxuehai.medicalassistan.widget.CustomerScrollView
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginLeft="@dimen/space_16"
-        android:layout_marginRight="@dimen/space_16"
-        android:layout_marginTop="@dimen/space_8"
-        android:background="@null"
-        android:gravity="center_vertical"
-        android:maxLength="30"
-        android:maxLines="1"
-        android:text="@string/dailycare_title"
-        android:textColor="@color/black"
-        android:textSize="18sp"/>
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="@dimen/space_16"
+                android:layout_marginRight="@dimen/space_16"
+                android:layout_marginTop="@dimen/space_8"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:maxLength="30"
+                android:maxLines="1"
+                android:text="@string/dailycare_title"
+                android:textColor="@color/black"
+                android:textSize="18sp"/>
 
 
-    <include layout="@layout/layout_dailycate_event_first"/>
+            <include layout="@layout/layout_dailycate_event_first"/>
 
-    <include layout="@layout/layout_dailycate_event_second"/>
+            <include layout="@layout/layout_dailycate_event_second"/>
 
-    <include layout="@layout/layout_dailycate_event_third"/>
+            <include layout="@layout/layout_dailycate_event_third"/>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/space_8"
-        android:background="@color/graywhite"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_8"
+                android:background="@color/graywhite"/>
 
-    <include layout="@layout/layout_dailycate_event_forth"/>
+            <include layout="@layout/layout_dailycate_event_forth"/>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/space_8"
-        android:background="@color/graywhite"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_8"
+                android:background="@color/graywhite"/>
 
-    <include layout="@layout/layout_dailycate_event_fifth"/>
+            <include layout="@layout/layout_dailycate_event_fifth"/>
 
-    <TextView
-        android:id="@+id/et_detail"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginBottom="@dimen/space_16"
-        android:layout_marginLeft="@dimen/space_16"
-        android:layout_marginRight="@dimen/space_16"
-        android:background="@null"
-        android:gravity="start"
-        android:maxLines="5"
-        android:paddingLeft="@dimen/space_3"
-        android:textColor="@color/black"
-        android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/tv_detail"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginBottom="@dimen/space_16"
+                android:layout_marginLeft="@dimen/space_16"
+                android:layout_marginRight="@dimen/space_16"
+                android:background="@null"
+                android:gravity="start"
+                android:maxLines="5"
+                android:paddingLeft="@dimen/space_3"
+                android:textColor="@color/black"
+                android:textSize="16sp"/>
+
+
+        </LinearLayout>
+
+    </com.example.yuxuehai.medicalassistan.widget.CustomerScrollView>
 
     <LinearLayout
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
         android:layout_gravity="center_horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_marginBottom="@dimen/space_16"
+        android:background="@drawable/linearlayout_bg"
+        android:gravity="center_vertical"
+        android:elevation="@dimen/space_2">
+
+        <LinearLayout
+            android:id="@+id/event_edit"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:src="@drawable/ic_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/event_edit"
+                android:textColor="@color/gray"
+                android:textSize="10sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/event_share"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:src="@drawable/ic_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/event_share"
+                android:textColor="@color/gray"
+                android:textSize="10sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/event_delete"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:src="@drawable/ic_event_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/event_delete"
+                android:textColor="@color/gray"
+                android:textSize="10sp"/>
+
+        </LinearLayout>
+
 
     </LinearLayout>
 

@@ -7,7 +7,9 @@ import android.widget.ImageView;
 
 import com.example.yuxuehai.medicalassistan.R;
 import com.example.yuxuehai.medicalassistan.base.BasePresenter;
+import com.example.yuxuehai.medicalassistan.bean.Event;
 import com.example.yuxuehai.medicalassistan.bean.ItemData;
+import com.example.yuxuehai.medicalassistan.model.impl.DataModelDaoImpl;
 import com.example.yuxuehai.medicalassistan.presenter.HomePresenterDao;
 import com.example.yuxuehai.medicalassistan.ui.DailycareDetailActivity;
 import com.example.yuxuehai.medicalassistan.ui.InformationDetailActivity;
@@ -15,6 +17,10 @@ import com.example.yuxuehai.medicalassistan.utlis.UIUtils;
 import com.example.yuxuehai.medicalassistan.view.HomeView;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.FindListener;
 
 /**
  * Created by yuxuehai on 17-2-20.
@@ -23,14 +29,18 @@ import java.util.ArrayList;
 public class HomePresenterDaoImpl extends BasePresenter implements HomePresenterDao {
 
 
+    private DataModelDaoImpl mDataModelDao = DataModelDaoImpl.getInstance();
+
+    private HomeView mHomeView;
+
     /**
      * 首页轮播的界面的资源
      */
     private int[] resId;
-    private HomeView mHomeView;
     private ArrayList<View> allListView;
     private String[] mTitles;
     private int[] mIcons;
+
 
 
     public HomePresenterDaoImpl(Context context, HomeView view) {
@@ -124,5 +134,47 @@ public class HomePresenterDaoImpl extends BasePresenter implements HomePresenter
                 break;
 
         }
+    }
+
+    @Override
+    public void getEventFromServer() {
+        mHomeView.showRefresh();
+        mDataModelDao.getEventList(new FindListener<Event>() {
+            @Override
+            public void done(List<Event> list, BmobException e) {
+                if (e == null){
+                    List<Event> events = list.subList(0, 5);
+                    if(events.size() > 0){
+                        mHomeView.setEventData(events);
+                        mHomeView.setRefreshFinish();
+                    }else {
+
+                    }
+                }else {
+
+                }
+            }
+        });
+    }
+
+    @Override
+    public void getNewEvent() {
+
+        mDataModelDao.getEventList(new FindListener<Event>() {
+            @Override
+            public void done(List<Event> list, BmobException e) {
+                if (e == null){
+                    List<Event> events = list.subList(0, 5);
+                    if(events.size() > 0){
+                        mHomeView.setEventData(events);
+                        mHomeView.setRefreshFinish();
+                    }else {
+
+                    }
+                }else {
+
+                }
+            }
+        });
     }
 }

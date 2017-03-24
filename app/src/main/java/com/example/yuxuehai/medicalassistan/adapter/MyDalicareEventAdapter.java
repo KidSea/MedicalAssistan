@@ -17,12 +17,12 @@ import cn.bmob.v3.datatype.BmobDate;
  * Created by yuxuehai on 17-3-17.
  */
 
-public class MyDragSwipAdapter extends BaseRecyclerAdapter<Event,MyDragSwipAdapter.MyViewHolder> {
+public class MyDalicareEventAdapter extends BaseRecyclerAdapter<Event,MyDalicareEventAdapter.MyViewHolder> {
 
 
     private final Calendar mCalendar;
 
-    public MyDragSwipAdapter(){
+    public MyDalicareEventAdapter(){
         mCalendar = Calendar.getInstance();
     }
 

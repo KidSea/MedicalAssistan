@@ -43,6 +43,10 @@ public abstract class BaseRecyclerAdapter<T, D extends RecyclerView.ViewHolder>
         notifyDataSetChanged();
     }
 
+    public List<T> getDatas() {
+       return mDatas;
+    }
+
     @Override
     public int getItemViewType(int position) {
         if(mHeaderView == null) return TYPE_NORMAL;

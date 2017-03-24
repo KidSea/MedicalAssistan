@@ -38,8 +38,14 @@ public class DailycarePreseterDaoImpl extends BasePresenter implements Dailycare
             @Override
             public void done(List<Event> list, BmobException e) {
                 if(e == null){
-                    mDailycareView.setList(list);
-                    mDailycareView.hidePrograss();
+
+                    if(list.size() > 0){
+                        mDailycareView.hidePrograss();
+                        mDailycareView.setList(list);
+                    }else {
+                        mDailycareView.hidePrograss();
+                        mDailycareView.showNodata();
+                    }
                 }else {
                     ToastUtil.showShort(getContext(), "查询数据失败");
                 }

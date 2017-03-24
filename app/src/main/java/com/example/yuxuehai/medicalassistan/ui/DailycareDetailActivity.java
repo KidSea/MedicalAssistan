@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.RelativeLayout;
 
 import com.example.yuxuehai.medicalassistan.R;
-import com.example.yuxuehai.medicalassistan.adapter.MyDragSwipAdapter;
+import com.example.yuxuehai.medicalassistan.adapter.MyDalicareEventAdapter;
 import com.example.yuxuehai.medicalassistan.base.BaseActivity;
 import com.example.yuxuehai.medicalassistan.base.BaseRecyclerAdapter;
 import com.example.yuxuehai.medicalassistan.bean.Event;
@@ -34,7 +34,9 @@ public class DailycareDetailActivity extends BaseActivity implements DailycareVi
     private RecyclerView mRecyclerView;
 
     private DailycarePreseterDaoImpl mPreseterDao;
-    private MyDragSwipAdapter mAdapter;
+    private MyDalicareEventAdapter mAdapter;
+
+    private boolean isOncreate = false;
 
 
     public <T extends View> T $(int id) {
@@ -48,6 +50,19 @@ public class DailycareDetailActivity extends BaseActivity implements DailycareVi
         finish();
     }
 
+    @Override
+    protected void onResume() {
+        if(isOncreate){
+            mPreseterDao.getDataFromServer();
+        }
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        isOncreate = true;
+        super.onPause();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -69,17 +84,26 @@ public class DailycareDetailActivity extends BaseActivity implements DailycareVi
 
     @Override
     public void showPrograss() {
+        mRecyclerView.setVisibility(View.GONE);
         mProgress.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void hidePrograss() {
         mProgress.setVisibility(View.GONE);
+        mRecyclerView.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void setList(List<Event> list) {
+
         mAdapter.addDatas(list);
+    }
+
+    @Override
+    public void showNodata() {
+        mRecyclerView.setVisibility(View.GONE);
+        mNoData.setVisibility(View.VISIBLE);
     }
 
 
@@ -96,12 +120,12 @@ public class DailycareDetailActivity extends BaseActivity implements DailycareVi
     @Override
     protected void initData() {
 
-        mAdapter = new MyDragSwipAdapter();
+        mAdapter = new MyDalicareEventAdapter();
         mAdapter.setOnItemClickListener(new BaseRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position, Object data) {
-
                 Intent intent = new Intent(DailycareDetailActivity.this, ShowDailyEventActivity.class);
+                intent.putExtra("event", mAdapter.getDatas().get(position));
                 startActivity(intent);
             }
         });

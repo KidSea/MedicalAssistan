@@ -149,6 +149,9 @@
     <string name="dailycare_detail">详情</string>
     <string name="none">无</string>
     <string name="event_detail">护理详情</string>
+    <string name="event_delete">删除</string>
+    <string name="event_share">分享</string>
+    <string name="event_edit">编辑</string>
 
     <!--date time picker-->
     <string name="label_datetime_dialog">时间选择</string>
