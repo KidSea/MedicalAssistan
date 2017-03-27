@@ -123,7 +123,7 @@ public class HomePresenterDaoImpl extends BasePresenter implements HomePresenter
         int id = view.getId();
         switch (id){
             case R.id.tv_daily_more:
-                mHomeView.showClick(id);
+                mHomeView.jumptoActivity(DailycareDetailActivity.class);
                 break;
             case R.id.tv_news_more:
                 mHomeView.showClick(id);

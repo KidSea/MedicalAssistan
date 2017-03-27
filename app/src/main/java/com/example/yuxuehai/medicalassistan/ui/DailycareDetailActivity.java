@@ -49,20 +49,20 @@ public class DailycareDetailActivity extends BaseActivity implements DailycareVi
         super.onBackPressed();
         finish();
     }
-
-    @Override
-    protected void onResume() {
-        if(isOncreate){
-            mPreseterDao.getDataFromServer();
-        }
-        super.onResume();
-    }
-
-    @Override
-    protected void onPause() {
-        isOncreate = true;
-        super.onPause();
-    }
+//
+//    @Override
+//    protected void onResume() {
+//        if(isOncreate){
+//            mPreseterDao.getDataFromServer();
+//        }
+//        super.onResume();
+//    }
+//
+//    @Override
+//    protected void onPause() {
+//        isOncreate = true;
+//        super.onPause();
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

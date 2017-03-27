@@ -2,6 +2,7 @@ package com.example.yuxuehai.medicalassistan.ui;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
@@ -15,6 +16,7 @@ import com.example.yuxuehai.medicalassistan.utlis.ToastUtil;
 import com.example.yuxuehai.medicalassistan.view.InformationView;
 import com.example.yuxuehai.medicalassistan.widget.EmptyLayout;
 import com.example.yuxuehai.medicalassistan.widget.MyGridLayoutManager;
+import com.xdandroid.simplerecyclerview.OnItemClickListener;
 import com.xdandroid.simplerecyclerview.SimpleRecyclerView;
 import com.xdandroid.simplerecyclerview.SimpleSwipeRefreshLayout;
 
@@ -121,14 +123,16 @@ public class InformationDetailActivity extends BaseActivity implements Informati
             }
         };
         mRecyclerView.setAdapter(mAdapter);
-        mAdapter.setOnItemClickListener((holder, v, position, viewType) -> {
-            ToastUtil.showToast(getcontext(),"第"+position+"个item被点击了");
-            Ward ward = mAdapter.getBean(position);
-            Intent intent = new Intent(this, PatientsInfoActivity.class);
-            intent.putExtra("ward", ward);
-            startActivity(intent);
+        mAdapter.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(RecyclerView.ViewHolder holder, View v, int position, int viewType) {
+                ToastUtil.showToast(getcontext(),"第"+position+"个item被点击了");
+                Ward ward = mAdapter.getBean(position);
+                Intent intent = new Intent(InformationDetailActivity.this, PatientsInfoActivity.class);
+                intent.putExtra("ward", ward);
+                startActivity(intent);
+            }
         });
-
 
     }
 

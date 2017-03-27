@@ -130,20 +130,6 @@ public class HomeFragment extends BaseFragment implements HomeView,
     }
 
 
-//    @Override
-//    public void onResume() {
-//        super.onResume();
-//        if(isResume) {
-//            mHomePresenterDao.getEventFromServer();
-//        }
-//    }
-//
-//    @Override
-//    public void onPause() {
-//        super.onPause();
-//        isResume = true;
-//    }
-
     @Override
     protected View createView(LayoutInflater inflater, ViewGroup container,
                               Bundle savedInstanceState) {
