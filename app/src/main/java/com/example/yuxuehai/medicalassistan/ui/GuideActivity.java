@@ -113,7 +113,7 @@ public class GuideActivity extends BaseActivity implements View.OnClickListener 
                                 .removeOnGlobalLayoutListener(this);
                         mPonitWidth = mPointLayout.getChildAt(1).getLeft()
                                 - mPointLayout.getChildAt(0).getLeft();
-                        System.out.println("圆点距离 :" + mPonitWidth);
+                        //System.out.println("圆点距离 :" + mPonitWidth);
 
                     }
                 });
