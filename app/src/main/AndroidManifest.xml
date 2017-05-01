@@ -129,10 +129,10 @@
 
         <activity
             android:name=".ui.NfcReaderActivity"
-            android:parentActivityName=".ui.MainActivity"
+            android:launchMode="singleInstance"
             android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.nfc.action.TECH_DISCOVERED"/>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
                 <!-- 添加这一条默认设置，能拦截当前页面所有扫描NFC的配置 -->
                 <category android:name="android.intent.category.DEFAULT"/>
                 <data android:mimeType="text/plain"></data>
