@@ -151,6 +151,10 @@
                   android:parentActivityName=".ui.DailycareDetailActivity"
                   android:screenOrientation="portrait"/>
 
+        <activity android:name=".ui.AboutActivity"
+                  android:parentActivityName=".ui.SettingsActivity"
+                  android:screenOrientation="portrait"/>
+
 
         <!-- BmobPush start -->
         <service
