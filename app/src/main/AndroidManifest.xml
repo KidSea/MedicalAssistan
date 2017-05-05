@@ -71,7 +71,7 @@
         <activity
             android:name=".ui.MainActivity"
             android:alwaysRetainTaskState="true"
-            android:launchMode="singleTask"
+            android:launchMode="singleInstance"
             android:screenOrientation="portrait"/>
 
         <activity

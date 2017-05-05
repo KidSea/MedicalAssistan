@@ -97,6 +97,7 @@
 
     <!--dialog exit-->
     <string name="dialog_message">确定退出?</string>
+    <string name="dialog_del_message">确定删除?</string>
     <string name="dialog_confirm">确定</string>
     <string name="dialog_cancel">取消</string>
 

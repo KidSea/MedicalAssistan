@@ -36,7 +36,9 @@ public class Constants {
     public static final int REQUEST_BLUETOOTH_PERMISSION = 10;
 
     //RESULT
-    public final static int RESULT_UPDATE_INFO = 1;
+    public final static int REQUEST_INFO = 1;
     //RESULT
-    public final static int RESULT_UPDATE_EXIT_INFO = 2;
+    public final static int RESULT_UPDATE_INFO = 2;
+    //RESULT
+    public final static int RESULT_DELETE_INFO = 3;
 }

@@ -121,15 +121,15 @@ public class DailycareDetailActivity extends BaseActivity implements DailycareVi
     protected void initData() {
 
         mAdapter = new MyDalicareEventAdapter();
+
         mAdapter.setOnItemClickListener(new BaseRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position, Object data) {
                 Intent intent = new Intent(DailycareDetailActivity.this, ShowDailyEventActivity.class);
                 intent.putExtra("event", mAdapter.getDatas().get(position));
-                startActivity(intent);
+                startActivityForResult(intent, Constants.REQUEST_INFO);
             }
         });
-
 
         mRecyclerView.setAdapter(mAdapter);
 
@@ -155,6 +155,9 @@ public class DailycareDetailActivity extends BaseActivity implements DailycareVi
 
         switch (requestCode){
             case Constants.ADD_EVENT_SUCCESS: // 添加数据回调
+                mPreseterDao.getDataFromServer();
+                break;
+            case Constants.RESULT_DELETE_INFO:
                 mPreseterDao.getDataFromServer();
                 break;
         }

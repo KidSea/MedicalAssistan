@@ -95,11 +95,13 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
 
     @Override
     protected void onNewIntent(Intent intent) {
-        mNotification = intent.getStringExtra("Notification");
-        if (mNotification.equals("notification")){
-            mCotentPager.setCurrentItem(1);
-        }
         super.onNewIntent(intent);
+        if(intent != null){
+            mNotification = intent.getStringExtra("Notification");
+            if (mNotification.equals("notification")){
+                mCotentPager.setCurrentItem(1);
+            }
+        }
     }
 
 
