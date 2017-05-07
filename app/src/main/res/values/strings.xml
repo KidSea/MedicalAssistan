@@ -140,6 +140,7 @@
     <string name="edit">编辑</string>
     <string name="delete">删除</string>
     <string name="new_event">新建事件</string>
+    <string name="update_event">编辑事件</string>
     <string name="dailycare_title">标题</string>
     <string name="dailycare_object">对象</string>
     <string name="dailycare_location">位置</string>

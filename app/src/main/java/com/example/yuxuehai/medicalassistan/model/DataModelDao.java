@@ -32,5 +32,7 @@ public interface DataModelDao {
 
     public void saveEvent(Event event , SaveListener listener);
 
+    public void updateEvent(Event event, String id , UpdateListener listener);
+
     public List<Event> getEventList(FindListener findListener);
 }

@@ -62,12 +62,30 @@ public class ShowDailyEventActivity extends BaseActivity implements View.OnClick
 
         switch (id){
             case R.id.event_edit:
-            
+                Intent intent = new Intent(this, DailycareUpdateActivity.class);
+                intent.putExtra("event", mEvent);
+                startActivityForResult(intent, Constants.UPDATE_EVENT_SUCCESS);
+                finish();
                 break;
             case R.id.event_delete:
                 OnDeleteDialog();
                 break;
         }
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        switch (requestCode){
+            case Constants.UPDATE_EVENT_SUCCESS:
+                setResult(Constants.RESULT_UPDATE_INFO);
+                finish();
+                break;
+        }
+
+
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override

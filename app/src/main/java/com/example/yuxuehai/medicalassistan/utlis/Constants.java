@@ -24,6 +24,7 @@ public class Constants {
     public final static int READ_NFC_FAILE = 0;
 
     public final static int ADD_EVENT_SUCCESS = 1;
+    public final static int UPDATE_EVENT_SUCCESS = 2;
 
     //Bmob应用appID
     public final static String BMOB_APP_ID = "2c1c69227537786e8b5495cc96419057";

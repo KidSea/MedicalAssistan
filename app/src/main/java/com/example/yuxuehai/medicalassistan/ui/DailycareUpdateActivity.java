@@ -1,5 +1,8 @@
 package com.example.yuxuehai.medicalassistan.ui;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
@@ -42,12 +45,12 @@ import java.util.Locale;
 import cn.bmob.v3.datatype.BmobDate;
 
 /**
- * Created by yuxuehai on 17-3-20.
+ * Created by yuxuehai on 17-5-5.
  */
 
-public class DailycareResponseActivity extends BaseActivity implements DailyEventView, View.OnClickListener {
+public class DailycareUpdateActivity extends BaseActivity implements DailyEventView, View.OnClickListener {
 
-    private static final String TAG = "DailycareResponseActivity";
+    private static final String TAG = "DailycareUpdateActivity";
     private static final String TAG_DATETIME_FRAGMENT = "TAG_DATETIME_FRAGMENT";
 
     private Toolbar mToolbar;
@@ -63,6 +66,8 @@ public class DailycareResponseActivity extends BaseActivity implements DailyEven
 
     private ResponsePresenterDaoImpl mPresenterDao;
     private SimpleDateFormat mDateFormat;
+    private Event mEvent;
+    private boolean isOncreate = false;
     private ArrayList<String> mList;
     private MyRemindTimeAdapter mMyDailyCareAdapter;
     private int selectedPosition = 0;
@@ -76,6 +81,7 @@ public class DailycareResponseActivity extends BaseActivity implements DailyEven
         finish();
     }
 
+
     public <T extends View> T bindView(int id) {
         return (T) findViewById(id);
     }
@@ -85,6 +91,11 @@ public class DailycareResponseActivity extends BaseActivity implements DailyEven
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.dailycare_res_activity_menu, menu);
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public String getId() {
+        return mEvent.getObjectId();
     }
 
     @Override
@@ -115,13 +126,9 @@ public class DailycareResponseActivity extends BaseActivity implements DailyEven
 
     @Override
     public void callBackResult() {
-        setResult(Constants.ADD_EVENT_SUCCESS);
+        setResult(Constants.UPDATE_EVENT_SUCCESS);
     }
 
-    @Override
-    public String getId() {
-        return null;
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -136,7 +143,7 @@ public class DailycareResponseActivity extends BaseActivity implements DailyEven
 
 
                 if (mPresenterDao.isEmpty(name, object, location)) {
-                    mPresenterDao.saveEvent();
+                    mPresenterDao.UpdateEvent();
                 } else {
                     ToastUtil.showToast(this, "所填信息不能为空");
                 }
@@ -161,6 +168,37 @@ public class DailycareResponseActivity extends BaseActivity implements DailyEven
     }
 
     @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        Intent intent = getIntent();
+        if (intent != null){
+            if(intent.getSerializableExtra("event")!= null){
+                mEvent = (Event) intent.getSerializableExtra("event");
+            }
+        }
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(isOncreate){
+            Intent intent = getIntent();
+            if (intent != null){
+                if(intent.getSerializableExtra("event")!= null){
+                    mEvent = (Event) intent.getSerializableExtra("event");
+                }
+            }
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        isOncreate = true;
+    }
+
+
+    @Override
     protected int getContentLayoutId() {
         return R.layout.activity_dailycare_respond;
     }
@@ -174,7 +212,7 @@ public class DailycareResponseActivity extends BaseActivity implements DailyEven
             actionBar.setDisplayHomeAsUpEnabled(true);
             // 设置返回按钮可以点击
             actionBar.setHomeButtonEnabled(true);
-            actionBar.setTitle(R.string.new_event);
+            actionBar.setTitle(R.string.update_event);
         }
     }
 
@@ -228,6 +266,14 @@ public class DailycareResponseActivity extends BaseActivity implements DailyEven
 
             }
         });
+
+        mEditTitle.setText(mEvent.getName());
+        mEditObject.setText(mEvent.getObjectname());
+        mEditLocation.setText(mEvent.getLocation());
+        String date = mEvent.getDate().getDate();
+        mTime.setText(date.substring(0, date.length()-3));
+        mRemindTime.setText(getRemindTime(mEvent.getRemindtime()));
+        mEditDetail.setText(mEvent.getDecs());
 
     }
 
@@ -307,5 +353,32 @@ public class DailycareResponseActivity extends BaseActivity implements DailyEven
         ToastUtil.showToast(this, "第" + position + "个Item被点击了");
     }
 
+
+    private String getRemindTime(int remindtime) {
+
+        String name = "";
+        switch (remindtime){
+            case 0:
+                name = "无";
+                break;
+            case 1:
+                name = "准时";
+                break;
+            case 2:
+                name = "5分钟前";
+                break;
+            case 3:
+                name = "10分钟前";
+                break;
+            case 4:
+                name = "30分钟前";
+                break;
+            case 5:
+                name = "1小时前";
+                break;
+        }
+
+        return name;
+    }
 
 }

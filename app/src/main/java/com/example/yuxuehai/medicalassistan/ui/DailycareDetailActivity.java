@@ -138,7 +138,6 @@ public class DailycareDetailActivity extends BaseActivity implements DailycareVi
         mRecyclerView.setLayoutManager(layoutManager);
 
 
-
         mPreseterDao = new DailycarePreseterDaoImpl(this, this);
 
         mPreseterDao.getDataFromServer();
@@ -158,6 +157,9 @@ public class DailycareDetailActivity extends BaseActivity implements DailycareVi
                 mPreseterDao.getDataFromServer();
                 break;
             case Constants.RESULT_DELETE_INFO:
+                mPreseterDao.getDataFromServer();
+                break;
+            case Constants.RESULT_UPDATE_INFO:
                 mPreseterDao.getDataFromServer();
                 break;
         }

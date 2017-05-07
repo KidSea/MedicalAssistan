@@ -14,4 +14,6 @@ public interface DailyEventView {
     public void finishActivity();
 
     public void callBackResult();
+
+    public String getId();
 }

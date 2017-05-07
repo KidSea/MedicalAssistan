@@ -10,4 +10,6 @@ public interface ResponsePresenterDao {
 
     public boolean isEmpty(String name, String location, String object);
 
+    public void UpdateEvent();
+
 }

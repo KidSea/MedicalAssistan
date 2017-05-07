@@ -93,12 +93,20 @@ public class DataModelDaoImpl implements DataModelDao {
     }
 
     @Override
+    public void updateEvent(Event event, String id, UpdateListener listener) {
+        event.update(id, listener);
+    }
+
+
+    @Override
     public List<Event> getEventList(FindListener findListener) {
         BmobQuery<Event> query = new BmobQuery<>();
         query.order("-createdAt");
         query.findObjects(findListener);
         return null;
     }
+
+
 
 
 }
