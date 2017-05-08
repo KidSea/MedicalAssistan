@@ -6,6 +6,8 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.support.v7.app.NotificationCompat;
 import android.util.Log;
 import android.widget.Toast;
@@ -17,6 +19,7 @@ import com.example.yuxuehai.medicalassistan.utlis.UIUtils;
 import cn.bmob.push.PushConstants;
 
 public class MyPushMessageReceiver extends BroadcastReceiver {
+
 
 
     @Override
@@ -34,6 +37,8 @@ public class MyPushMessageReceiver extends BroadcastReceiver {
             NotificationCompat.Builder builder = new NotificationCompat.Builder(UIUtils.
                     getContext());
 
+
+
             Intent activityIntent =  new Intent(context, MainActivity.class);
             activityIntent.putExtra("Notification", "notification");
             activityIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -41,14 +46,15 @@ public class MyPushMessageReceiver extends BroadcastReceiver {
                     PendingIntent.FLAG_UPDATE_CURRENT);
 
             builder.setContentTitle("收到通知啦")
-                    .setSmallIcon(R.drawable.ic_logo)
+                    .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_logo_no))
+                    .setSmallIcon(R.drawable.ic_logo_no)
+                    .setWhen(System.currentTimeMillis())
                     .setContentIntent(pendingIntent)
                     .setContentText(intent.getStringExtra(PushConstants.
                             EXTRA_PUSH_MESSAGE_STRING))
-                    .setTicker("通知来啦")
+                    .setColor(Color.parseColor("#3bc06b"))
                     .setAutoCancel(true)
-                    .setPriority(Notification.PRIORITY_DEFAULT)
-                    .setOngoing(true);
+                    .setPriority(Notification.PRIORITY_DEFAULT);
             nm.notify(1, builder.build());
         }
     }
