@@ -38,7 +38,7 @@ public class MyPushMessageReceiver extends BroadcastReceiver {
                     getContext());
 
 
-
+            
             Intent activityIntent =  new Intent(context, MainActivity.class);
             activityIntent.putExtra("Notification", "notification");
             activityIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
