@@ -17,7 +17,6 @@ import com.example.yuxuehai.medicalassistan.bean.Patient;
 import com.example.yuxuehai.medicalassistan.bean.SampleBean;
 import com.example.yuxuehai.medicalassistan.bean.Ward;
 import com.example.yuxuehai.medicalassistan.presenter.impl.PatientsPresenterDaoImpl;
-import com.example.yuxuehai.medicalassistan.utlis.ToastUtil;
 import com.example.yuxuehai.medicalassistan.utlis.UIUtils;
 import com.example.yuxuehai.medicalassistan.view.InformationView;
 import com.example.yuxuehai.medicalassistan.widget.EmptyLayout;
@@ -160,7 +159,7 @@ public class PatientsInfoActivity extends BaseActivity implements InformationVie
         mAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(RecyclerView.ViewHolder holder, View v, int position, int viewType) {
-                ToastUtil.showToast(getcontext(),"第"+position+"个item被点击了");
+                //ToastUtil.showToast(getcontext(),"第"+position+"个item被点击了");
                 Patient patient = mAdapter.getBean(position);
                 Intent intent = new Intent(PatientsInfoActivity.this, PatientsDetailActivity.class);
                 intent.putExtra("patient", patient);

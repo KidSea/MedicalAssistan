@@ -15,18 +15,15 @@ import com.example.yuxuehai.medicalassistan.utlis.UIUtils;
 public class MessageFragment extends BaseViewPagerframent {
 
 
-
-
-
     @Override
     protected void addPagetoAdapter(ViewPageFragmentAdapter fragmentAdapter) {
         String[] titles = UIUtils.getStringArray(R.array.mes_viewpage_arrays);
 
         // 紧急消息
-        fragmentAdapter.addTab(titles[0], Constants.ENGENCY_MES, DefaultFragment.class,
+        fragmentAdapter.addTab(titles[0], Constants.ENGENCY_MES, EmerMesFragment.class,
                 getBundle(1));
         // 普通消息
-        fragmentAdapter.addTab(titles[1], Constants.NORMAL_MES, DefaultFragment.class,
+        fragmentAdapter.addTab(titles[1], Constants.NORMAL_MES, CommonMesFragment.class,
                 getBundle(2));
 
     }

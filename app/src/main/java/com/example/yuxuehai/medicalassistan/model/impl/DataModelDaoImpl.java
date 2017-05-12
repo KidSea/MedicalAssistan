@@ -1,6 +1,7 @@
 package com.example.yuxuehai.medicalassistan.model.impl;
 
 import com.example.yuxuehai.medicalassistan.bean.Event;
+import com.example.yuxuehai.medicalassistan.bean.Notifications;
 import com.example.yuxuehai.medicalassistan.bean.Patient;
 import com.example.yuxuehai.medicalassistan.bean.Ward;
 import com.example.yuxuehai.medicalassistan.model.DataModelDao;
@@ -74,6 +75,24 @@ public class DataModelDaoImpl implements DataModelDao {
         query.order("num");
         query.findObjects(findListener);
 
+        return null;
+    }
+
+    @Override
+    public List<Notifications> queryCommonMes(int limit, FindListener findListener) {
+        BmobQuery<Patient> query = new BmobQuery<>();
+        query.addWhereEqualTo("category", "普通");
+        query.order("-createdAt");
+        query.findObjects(findListener);
+        return null;
+    }
+
+    @Override
+    public List<Notifications> queryMergMes(int limit, FindListener findListener) {
+        BmobQuery<Patient> query = new BmobQuery<>();
+        query.addWhereEqualTo("category", "紧急");
+        query.order("-createdAt");
+        query.findObjects(findListener);
         return null;
     }
 
