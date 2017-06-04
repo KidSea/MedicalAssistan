@@ -82,7 +82,19 @@ public class HomeFragment extends BaseFragment implements HomeView,
         mPlayView.setOnItemClickListener(new AbOnItemClickListener() {
             @Override
             public void onClick(int position) {
-                ToastUtil.showToast(UIUtils.getContext(), "第" + position + "个页面被点击了");
+//                switch (position){
+//                    case 0:
+//                        break;
+//                    case 1:
+//                        break;
+//                    case 2:
+//                        break;
+//                    case 3:
+//                        break;
+//                    case 4:
+//                        break;
+//                }
+                ToastUtil.showToast(UIUtils.getContext(), "第" + position + "个广告页被点击了");
             }
         });
 

@@ -13,6 +13,7 @@ import com.example.yuxuehai.medicalassistan.model.impl.DataModelDaoImpl;
 import com.example.yuxuehai.medicalassistan.presenter.HomePresenterDao;
 import com.example.yuxuehai.medicalassistan.ui.DailycareDetailActivity;
 import com.example.yuxuehai.medicalassistan.ui.InformationDetailActivity;
+import com.example.yuxuehai.medicalassistan.utlis.ToastUtil;
 import com.example.yuxuehai.medicalassistan.utlis.UIUtils;
 import com.example.yuxuehai.medicalassistan.view.HomeView;
 
@@ -95,22 +96,22 @@ public class HomePresenterDaoImpl extends BasePresenter implements HomePresenter
                 mHomeView.jumptoActivity(DailycareDetailActivity.class);
                 break;
             case 2:
-                mHomeView.showClick(position);
+                ToastUtil.showToast(getContext(), "待开发");
                 break;
             case 3:
-                mHomeView.showClick(position);
+                ToastUtil.showToast(getContext(), "待开发");
                 break;
             case 4:
-                mHomeView.showClick(position);
+                ToastUtil.showToast(getContext(), "待开发");
                 break;
             case 5:
-                mHomeView.showClick(position);
+                ToastUtil.showToast(getContext(), "待开发");
                 break;
             case 6:
-                mHomeView.showClick(position);
+                ToastUtil.showToast(getContext(), "待开发");
                 break;
             case 7:
-                mHomeView.showClick(position);
+                ToastUtil.showToast(getContext(), "待开发");
                 break;
             default:
                 break;
