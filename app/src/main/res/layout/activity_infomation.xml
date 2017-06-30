@@ -20,6 +20,7 @@
         </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
 
+
     <com.xdandroid.simplerecyclerview.SimpleSwipeRefreshLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -39,7 +40,14 @@
             android:layout_height="match_parent"/>
 
 
+
     </com.xdandroid.simplerecyclerview.SimpleSwipeRefreshLayout>
+
+    <com.example.yuxuehai.medicalassistan.widget.EmptyLayout
+        android:id="@+id/layout_empty"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 
 </LinearLayout>

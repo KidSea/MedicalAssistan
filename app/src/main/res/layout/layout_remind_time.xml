@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/layout_root"
+              android:layout_width="match_parent"
+              android:layout_height="48dp">
+
+
+    <TextView
+        android:id="@+id/tv_res"
+        android:text="@string/about_me"
+        android:layout_gravity="center_vertical"
+        android:textColor="@color/black"
+        android:textSize="@dimen/space_18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+
+    <LinearLayout
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/space_5"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/rb_time_checked"
+            style="@style/w_wrap_h_wrap"
+            android:clickable="false"
+            android:layout_marginRight="@dimen/space_8"
+            android:button="@drawable/checkbox_remind_time"
+            android:layout_gravity="end"/>
+    </LinearLayout>
+
+
+</LinearLayout>

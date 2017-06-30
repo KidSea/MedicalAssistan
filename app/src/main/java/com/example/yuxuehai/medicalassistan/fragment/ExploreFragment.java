@@ -57,17 +57,17 @@ public class ExploreFragment extends BaseFragment implements View.OnClickListene
         int id = view.getId();
         switch (id){
             case R.id.rl_active:
-                showClick(id);
+                ToastUtil.showToast(getContext(), "护士圈待开发");
                 break;
             case R.id.rl_activities:
-                showClick(id);
+                ToastUtil.showToast(getContext(), "活动待开发");
                 break;
             case R.id.rl_find_osc:
-                showClick(id);
+                ToastUtil.showToast(getContext(), "找人待开发");
             case R.id.rl_scan:
-                showClick(id);
+                ToastUtil.showToast(getContext(), "扫一扫待开发");
             case R.id.rl_shake:
-                showClick(id);
+                ToastUtil.showToast(getContext(), "摇一摇待开发");
             default:
                 break;
 

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="48dp"
+              android:layout_marginLeft="@dimen/space_16"
+              android:layout_marginRight="@dimen/space_16"
+              android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/space_2"
+        android:src="@drawable/ic_time"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_time"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/space_16"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="@dimen/space_2"
+                android:layout_height="match_parent"
+                android:text="@string/dailycare_time"
+                android:textColor="@color/black"
+                android:textSize="16sp"/>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

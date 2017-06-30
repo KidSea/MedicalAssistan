@@ -1,7 +1,9 @@
 package com.example.yuxuehai.medicalassistan.ui;
 
 import android.content.Intent;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
@@ -11,9 +13,10 @@ import com.example.yuxuehai.medicalassistan.base.BaseActivity;
 import com.example.yuxuehai.medicalassistan.bean.SampleBean;
 import com.example.yuxuehai.medicalassistan.bean.Ward;
 import com.example.yuxuehai.medicalassistan.presenter.impl.InformationPresenterDaoImpl;
-import com.example.yuxuehai.medicalassistan.utlis.ToastUtil;
 import com.example.yuxuehai.medicalassistan.view.InformationView;
+import com.example.yuxuehai.medicalassistan.widget.EmptyLayout;
 import com.example.yuxuehai.medicalassistan.widget.MyGridLayoutManager;
+import com.xdandroid.simplerecyclerview.OnItemClickListener;
 import com.xdandroid.simplerecyclerview.SimpleRecyclerView;
 import com.xdandroid.simplerecyclerview.SimpleSwipeRefreshLayout;
 
@@ -33,6 +36,7 @@ public class InformationDetailActivity extends BaseActivity implements Informati
     private ArrayList<SampleBean> mList;
 
     private InformationPresenterDaoImpl mPresenterDao;
+    private EmptyLayout mEmptyView;
 
 
     public <T extends View> T $(int id) {
@@ -45,6 +49,19 @@ public class InformationDetailActivity extends BaseActivity implements Informati
         mSwipeRefreshLayout.setRefreshing(false);
         ((MyGridLayoutManager)mRecyclerView.getLayoutManager()).setScrollEnabled(true);
         mRecyclerView.getLayoutManager().scrollToPosition(0);
+    }
+
+    @Override
+    public void showEmpty() {
+        mSwipeRefreshLayout.setRefreshing(false);
+        mSwipeRefreshLayout.setVisibility(View.GONE);
+        mEmptyView.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void showView() {
+        mSwipeRefreshLayout.setVisibility(View.VISIBLE);
+        mEmptyView.setVisibility(View.GONE);
     }
 
 
@@ -79,9 +96,23 @@ public class InformationDetailActivity extends BaseActivity implements Informati
         mToolbar = $(R.id.tb_mytb);
         mSwipeRefreshLayout = $(R.id.swipe_container);
         mRecyclerView = $(R.id.recycler_view);
+        mEmptyView = $(R.id.layout_empty);
 
-        mSwipeRefreshLayout.setOnRefreshListener(this::refreshData);
+        mEmptyView.setOnLayoutClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mPresenterDao.getListFromServer();
+            }
+        });
+
+        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                refreshData();
+            }
+        });
         mSwipeRefreshLayout.setRefreshing(true);
+
 
         MyGridLayoutManager gm = new MyGridLayoutManager(this, 2);
         mRecyclerView.setLayoutManager(gm);
@@ -97,14 +128,16 @@ public class InformationDetailActivity extends BaseActivity implements Informati
             }
         };
         mRecyclerView.setAdapter(mAdapter);
-        mAdapter.setOnItemClickListener((holder, v, position, viewType) -> {
-            ToastUtil.showToast(getcontext(),"第"+position+"个item被点击了");
-            Ward ward = mAdapter.getBean(position);
-            Intent intent = new Intent(this, PatientsInfoActivity.class);
-            intent.putExtra("ward", ward);
-            startActivity(intent);
+        mAdapter.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(RecyclerView.ViewHolder holder, View v, int position, int viewType) {
+                //ToastUtil.showToast(getcontext(),"第"+position+"个item被点击了");
+                Ward ward = mAdapter.getBean(position);
+                Intent intent = new Intent(InformationDetailActivity.this, PatientsInfoActivity.class);
+                intent.putExtra("ward", ward);
+                startActivity(intent);
+            }
         });
-
 
     }
 

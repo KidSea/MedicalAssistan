@@ -111,18 +111,20 @@ public class NfcReaderActivity extends BaseActivity implements View.OnClickListe
     protected void onResume() {
         super.onResume();
         enableForegroundDispatch();
-        if (!isFirst){
-            mNfcId.setText("");
-            mCategory.setText("");
-        }
+//        if (!isFirst){
+//            mNfcId.setText("");
+//            mCategory.setText("");}
+}
 
-    }
 
     @Override
     protected void onPause() {
         super.onPause();
         disableForegroundDispatch();
-        isFirst = false;
+//        isFirst = false;
+        mWriteBean = null;
+        mNfcId.setText("");
+        mCategory.setText("");
     }
 
     @Override

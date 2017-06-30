@@ -1,5 +1,7 @@
 package com.example.yuxuehai.medicalassistan.model.impl;
 
+import com.example.yuxuehai.medicalassistan.bean.Event;
+import com.example.yuxuehai.medicalassistan.bean.Notifications;
 import com.example.yuxuehai.medicalassistan.bean.Patient;
 import com.example.yuxuehai.medicalassistan.bean.Ward;
 import com.example.yuxuehai.medicalassistan.model.DataModelDao;
@@ -13,6 +15,7 @@ import cn.bmob.v3.datatype.BmobPointer;
 import cn.bmob.v3.listener.FindListener;
 import cn.bmob.v3.listener.LogInListener;
 import cn.bmob.v3.listener.QueryListener;
+import cn.bmob.v3.listener.SaveListener;
 import cn.bmob.v3.listener.UpdateListener;
 
 /**
@@ -25,10 +28,12 @@ public class DataModelDaoImpl implements DataModelDao {
 
 
 
-    public static synchronized DataModelDaoImpl getInstance() {
+    public static  DataModelDaoImpl getInstance() {
 
         if (mDataDao == null) {
-            mDataDao = new DataModelDaoImpl();
+            synchronized (DataModelDaoImpl.class){
+                mDataDao = new DataModelDaoImpl();
+            }
         }
 
         return mDataDao;
@@ -74,12 +79,49 @@ public class DataModelDaoImpl implements DataModelDao {
     }
 
     @Override
+    public List<Notifications> queryCommonMes(int limit, FindListener findListener) {
+        BmobQuery<Patient> query = new BmobQuery<>();
+        query.addWhereEqualTo("category", "普通");
+        query.order("-createdAt");
+        query.findObjects(findListener);
+        return null;
+    }
+
+    @Override
+    public List<Notifications> queryMergMes(int limit, FindListener findListener) {
+        BmobQuery<Patient> query = new BmobQuery<>();
+        query.addWhereEqualTo("category", "紧急");
+        query.order("-createdAt");
+        query.findObjects(findListener);
+        return null;
+    }
+
+    @Override
     public Patient queryPatient(String Id, QueryListener listener) {
 
         BmobQuery<Patient> query = new BmobQuery<>();
         query.include("mWard");
         query.getObject(Id, listener);
 
+        return null;
+    }
+
+    @Override
+    public void saveEvent(Event event, SaveListener listener) {
+        event.save(listener);
+    }
+
+    @Override
+    public void updateEvent(Event event, String id, UpdateListener listener) {
+        event.update(id, listener);
+    }
+
+
+    @Override
+    public List<Event> getEventList(FindListener findListener) {
+        BmobQuery<Event> query = new BmobQuery<>();
+        query.order("-createdAt");
+        query.findObjects(findListener);
         return null;
     }
 

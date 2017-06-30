@@ -11,14 +11,13 @@ import android.view.View;
 import android.widget.RelativeLayout;
 
 import com.example.yuxuehai.medicalassistan.R;
-import com.example.yuxuehai.medicalassistan.adapter.MyDragSwipAdapter;
-import com.example.yuxuehai.medicalassistan.adapter.SwipeMenuAdapter;
+import com.example.yuxuehai.medicalassistan.adapter.MyDalicareEventAdapter;
 import com.example.yuxuehai.medicalassistan.base.BaseActivity;
-import com.example.yuxuehai.medicalassistan.dao.OnMenuClickListener;
+import com.example.yuxuehai.medicalassistan.base.BaseRecyclerAdapter;
+import com.example.yuxuehai.medicalassistan.bean.Event;
 import com.example.yuxuehai.medicalassistan.presenter.impl.DailycarePreseterDaoImpl;
-import com.example.yuxuehai.medicalassistan.utlis.ToastUtil;
+import com.example.yuxuehai.medicalassistan.utlis.Constants;
 import com.example.yuxuehai.medicalassistan.view.DailycareView;
-import com.example.yuxuehai.medicalassistan.widget.PtrSwipeMenuRecyclerView;
 
 import java.util.List;
 
@@ -26,18 +25,18 @@ import java.util.List;
  * Created by yuxuehai on 17-2-23.
  */
 
-public class DailycareDetailActivity extends BaseActivity implements DailycareView, OnMenuClickListener{
+public class DailycareDetailActivity extends BaseActivity implements DailycareView{
 
 
     private Toolbar mToolbar;
     private RelativeLayout mProgress;
     private RelativeLayout mNoData;
-    private PtrSwipeMenuRecyclerView mRecyclerView;
+    private RecyclerView mRecyclerView;
 
     private DailycarePreseterDaoImpl mPreseterDao;
-    private MyDragSwipAdapter mAdapter;
+    private MyDalicareEventAdapter mAdapter;
 
-    private List<Integer> mList;
+    private boolean isOncreate = false;
 
 
     public <T extends View> T $(int id) {
@@ -50,7 +49,20 @@ public class DailycareDetailActivity extends BaseActivity implements DailycareVi
         super.onBackPressed();
         finish();
     }
-
+//
+//    @Override
+//    protected void onResume() {
+//        if(isOncreate){
+//            mPreseterDao.getDataFromServer();
+//        }
+//        super.onResume();
+//    }
+//
+//    @Override
+//    protected void onPause() {
+//        isOncreate = true;
+//        super.onPause();
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -64,7 +76,7 @@ public class DailycareDetailActivity extends BaseActivity implements DailycareVi
         switch (id) {
             case R.id.item_add:
                 Intent intent = new Intent(this, DailycareResponseActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, Constants.ADD_EVENT_SUCCESS);
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -72,21 +84,28 @@ public class DailycareDetailActivity extends BaseActivity implements DailycareVi
 
     @Override
     public void showPrograss() {
+        mRecyclerView.setVisibility(View.GONE);
         mProgress.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void hidePrograss() {
         mProgress.setVisibility(View.GONE);
+        mRecyclerView.setVisibility(View.VISIBLE);
     }
 
     @Override
-    public void onMenuClick(View view, int position) {
-        if (view.getId() == R.id.tv_edit)
-            ToastUtil.showToast(this,"position:" + position + ",menu1");
-        if (view.getId() == R.id.tv_delete)
-            ToastUtil.showToast(this,"position:" + position + ",menu2");
+    public void setList(List<Event> list) {
+
+        mAdapter.addDatas(list);
     }
+
+    @Override
+    public void showNodata() {
+        mRecyclerView.setVisibility(View.GONE);
+        mNoData.setVisibility(View.VISIBLE);
+    }
+
 
     @Override
     protected void initView() {
@@ -96,43 +115,57 @@ public class DailycareDetailActivity extends BaseActivity implements DailycareVi
         mNoData = $(R.id.layout_empty);
     }
 
+
+
     @Override
     protected void initData() {
 
-        mAdapter = new MyDragSwipAdapter();
-        mAdapter.setOnItemClickListener(new SwipeMenuAdapter.OnItemClickListener() {
+        mAdapter = new MyDalicareEventAdapter();
+
+        mAdapter.setOnItemClickListener(new BaseRecyclerAdapter.OnItemClickListener() {
             @Override
-            public void onItemClick(RecyclerView.ViewHolder holder, View v, int position) {
-                ToastUtil.showToast(getcontext(), "第" + position + "个Item被点击了");
+            public void onItemClick(int position, Object data) {
+                Intent intent = new Intent(DailycareDetailActivity.this, ShowDailyEventActivity.class);
+                intent.putExtra("event", mAdapter.getDatas().get(position));
+                startActivityForResult(intent, Constants.REQUEST_INFO);
             }
         });
-
 
         mRecyclerView.setAdapter(mAdapter);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this,
                 LinearLayoutManager.VERTICAL, false);
         mRecyclerView.setLayoutManager(layoutManager);
-        mRecyclerView.setPullToRefreshEnable(false);
-        mRecyclerView.setPullLoadMoreEnable(false);
-        //添加菜单点击事件
-        mRecyclerView.setOnMenuClickListener(this);
-
 
 
         mPreseterDao = new DailycarePreseterDaoImpl(this, this);
 
-        mList = mPreseterDao.getDataFromServer();
-
-        hidePrograss();
-
-        mAdapter.setDatas(mList);
+        mPreseterDao.getDataFromServer();
 
     }
 
     @Override
     protected int getContentLayoutId() {
         return R.layout.activity_dailycare;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        switch (requestCode){
+            case Constants.ADD_EVENT_SUCCESS: // 添加数据回调
+                mPreseterDao.getDataFromServer();
+                break;
+            case Constants.RESULT_DELETE_INFO:
+                mPreseterDao.getDataFromServer();
+                break;
+            case Constants.RESULT_UPDATE_INFO:
+                mPreseterDao.getDataFromServer();
+                break;
+        }
+
+
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override

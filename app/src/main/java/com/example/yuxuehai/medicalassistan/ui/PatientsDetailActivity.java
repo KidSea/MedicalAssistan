@@ -55,20 +55,28 @@ public class PatientsDetailActivity extends BaseActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        if (!isOncreate){
-            Intent intent = getIntent();
-            mPatient = (Patient) intent.getSerializableExtra("patient");
-        }
+        Intent intent = getIntent();
+        mPatient = (Patient) intent.getSerializableExtra("patient");
+
         super.onCreate(savedInstanceState);
-        isOncreate = true;
+
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Intent intent = getIntent();
-        mPatient = (Patient) intent.getSerializableExtra("patient");
 
+        if (isOncreate){
+            Intent intent = getIntent();
+            mPatient = (Patient) intent.getSerializableExtra("patient");
+        }
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        isOncreate = true;
     }
 
     @Override

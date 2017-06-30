@@ -34,9 +34,6 @@ public class MyDailyCareAdapter extends BaseRecyclerAdapter<String,
 
         MyViewHolder mHolder = new MyViewHolder(view);
 
-
-
-
         return mHolder;
     }
 
@@ -62,9 +59,6 @@ public class MyDailyCareAdapter extends BaseRecyclerAdapter<String,
             mImageView = (ImageView) itemView.findViewById(R.id.im_icon);
         }
     }
-
-
-
 
 
 

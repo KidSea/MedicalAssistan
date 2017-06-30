@@ -6,63 +6,68 @@
               android:orientation="vertical">
 
 
-    <ScrollView
+    <com.xdandroid.simplerecyclerview.SimpleSwipeRefreshLayout
+        android:id="@+id/refresh_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
+        android:layout_height="match_parent">
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <com.example.yuxuehai.medicalassistan.widget.AbSlidingPlayView
-                android:id="@+id/viewPager_menu"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:background="#00000000"
-            />
-            <com.example.yuxuehai.medicalassistan.widget.MyGridView
-                android:id="@+id/my_gridview"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/content_layout"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:horizontalSpacing="8dp"
-                android:numColumns="4"
-                android:verticalSpacing="8dp"
-            />
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="10dp"
-                android:background="@color/graywhite"/>
+                android:orientation="vertical">
+                <com.example.yuxuehai.medicalassistan.widget.AbSlidingPlayView
+                    android:id="@+id/viewPager_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:background="#00000000"
+                />
+                <com.example.yuxuehai.medicalassistan.widget.MyGridView
+                    android:id="@+id/my_gridview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:horizontalSpacing="8dp"
+                    android:numColumns="4"
+                    android:verticalSpacing="8dp"
+                />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/graywhite"/>
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recycler_dailycare"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_dailycare"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="10dp"
-                android:background="@color/graywhite"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/graywhite"/>
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recycler_topnews"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_topnews"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="10dp"
-                android:background="@color/graywhite"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/graywhite"/>
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recycler_recommend"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_recommend"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
-        </LinearLayout>
+            </LinearLayout>
 
 
-    </ScrollView>
-
+        </ScrollView>
+    </com.xdandroid.simplerecyclerview.SimpleSwipeRefreshLayout>
     <!--<View-->
     <!---->
     <!--android:id="@+id/divide_line"-->

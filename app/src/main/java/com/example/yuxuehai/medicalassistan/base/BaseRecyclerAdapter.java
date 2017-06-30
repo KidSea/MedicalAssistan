@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by yuxuehai on 17-2-21.
@@ -18,7 +19,7 @@ public abstract class BaseRecyclerAdapter<T, D extends RecyclerView.ViewHolder>
     public static final int TYPE_HEADER = 0;
     public static final int TYPE_NORMAL = 1;
 
-    private ArrayList<T> mDatas = new ArrayList<>();
+    private List<T> mDatas = new ArrayList<>();
 
     private View mHeaderView;
 
@@ -37,9 +38,13 @@ public abstract class BaseRecyclerAdapter<T, D extends RecyclerView.ViewHolder>
         return mHeaderView;
     }
 
-    public void addDatas(ArrayList<T> datas) {
+    public void addDatas(List<T> datas) {
         mDatas = datas;
         notifyDataSetChanged();
+    }
+
+    public List<T> getDatas() {
+       return mDatas;
     }
 
     @Override

@@ -81,6 +81,7 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
     private TextView mTv_mine_selected;
 
     private ArrayList<BaseFragment> mViews;
+    private String mNotification = "";
 
     @Override
     protected int getContentLayoutId() {
@@ -91,6 +92,20 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        if(intent != null){
+            if(intent.getStringExtra("Notification") != null){
+                mNotification = intent.getStringExtra("Notification");
+                if (mNotification.equals("notification")){
+                    mCotentPager.setCurrentItem(1);
+                }
+            }
+        }
+    }
+
 
     @Override
     protected void initView() {

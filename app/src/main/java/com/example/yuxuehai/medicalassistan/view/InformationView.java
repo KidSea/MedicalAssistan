@@ -13,4 +13,7 @@ public interface InformationView {
     public void refreshData();
     public void setData(ArrayList<SampleBean> mList);
 
+    public void showEmpty();
+    public void showView();
+
 }

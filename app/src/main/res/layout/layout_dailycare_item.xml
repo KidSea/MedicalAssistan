@@ -18,7 +18,8 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/tv_event"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_event"
                 android:layout_marginTop="@dimen/space_8"
@@ -27,7 +28,8 @@
                 android:textSize="@dimen/text_size_16"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/tv_object"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/space_8"
                 android:drawablePadding="@dimen/space_2"
@@ -42,12 +44,12 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:gravity="bottom"
+            android:paddingLeft="24dp"
             android:layout_weight="2"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/content_tv"
-                android:paddingLeft="@dimen/space_24"
+                android:id="@+id/tv_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_location"
@@ -66,6 +68,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tv_time_mode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/space_8"
@@ -74,6 +77,7 @@
                 android:textSize="@dimen/text_size_14"/>
 
             <TextView
+                android:id="@+id/tv_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/space_8"

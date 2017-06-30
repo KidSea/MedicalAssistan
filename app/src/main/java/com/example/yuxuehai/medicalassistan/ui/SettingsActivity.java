@@ -35,6 +35,12 @@ public class SettingsActivity extends BaseActivity implements View.OnClickListen
     }
 
     @Override
+    public void onBackPressed() {
+        finish();
+        super.onBackPressed();
+    }
+
+    @Override
     public void onClick(View view) {
         int id = view.getId();
 
@@ -44,6 +50,9 @@ public class SettingsActivity extends BaseActivity implements View.OnClickListen
                 break;
             case R.id.rl_change:
                 startActivity(new Intent(this, ChangePasswdActivity.class));
+                break;
+            case R.id.rl_about:
+                startActivity(new Intent(this, AboutActivity.class));
                 break;
         }
     }

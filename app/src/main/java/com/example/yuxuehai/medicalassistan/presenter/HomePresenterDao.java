@@ -18,4 +18,7 @@ public interface HomePresenterDao {
     public void onclickCall(int position);
     public void onmoreclickCall(View view);
 
+    public void getEventFromServer();
+
+    public void getNewEvent();
 }

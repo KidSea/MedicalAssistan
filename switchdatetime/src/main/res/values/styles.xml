@@ -1,0 +1,75 @@
+<resources>
+    <!-- Theme for SwitchDateTime -->
+    <style name="Theme.SwitchDateTime" parent="Theme.AppCompat.Light.DarkActionBar">
+    </style>
+
+    <!-- Header Background -->
+    <style name="Theme.SwitchDateTime.HeaderBackground">
+        <item name="android:background">#32b3e3</item>
+    </style>
+
+    <!-- Content Background -->
+    <style name="Theme.SwitchDateTime.ContentBackground">
+        <item name="android:background">#00ffffff</item>
+    </style>
+
+    <!-- Title -->
+    <style name="Theme.SwitchDateTime.TitleDateTimeLabelText">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Icon -->
+    <style name="Theme.SwitchDateTime.IconDateTimeSwitch">
+        <item name="android:src">@drawable/ic_view_carousel_black_32dp</item>
+        <item name="android:tint">#fff</item>
+    </style>
+
+    <!-- Time  -->
+    <style name="Theme.SwitchDateTime.Time">
+        <item name="timeCircleColor">#e1e1e1</item>
+        <item name="timeCenterColor">#32b3e3</item>
+        <item name="timeAmPmBackgroundColor">#32b3e3</item>
+        <item name="timeAmPmSelectBackgroundColor">#32b3e3</item> <!-- Alpha is apply-->
+        <item name="timeAmPmTextColor">#c2c2c2</item>
+        <item name="timeSelectorColor">#32b3e3</item>
+        <item name="timeCircularNumbersColor">#494949</item>
+    </style>
+
+    <!-- Time Label -->
+    <style name="Theme.SwitchDateTime.TimeLabelText">
+        <item name="android:textSize">@dimen/time_label_text</item>
+        <item name="android:textColor">#e1e1e1</item>
+    </style>
+
+    <style name="Theme.SwitchDateTime.TimeLabelAmPm">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#e1e1e1</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Date -->
+    <style name="Theme.SwitchDateTime.Date">
+        <item name="mcv_selectionColor">#32b3e3</item>
+    </style>
+
+    <!-- Date Label -->
+    <style name="Theme.SwitchDateTime.DateLabelMonthAndDay">
+        <item name="android:textSize">26sp</item>
+        <item name="android:textColor">#e1e1e1</item>
+    </style>
+
+    <!-- Year Selected-->
+    <style name="Theme.SwitchDateTime.Year">
+        <item name="colorCircleIndicator">#32b3e3</item>
+        <item name="android:textColor">#e6e6e6</item>
+    </style>
+
+    <!-- Year Label -->
+    <style name="Theme.SwitchDateTime.DateLabelYear">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#e1e1e1</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

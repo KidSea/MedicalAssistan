@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tb_mytb"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme_PopupMenu">
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="96dp"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/space_8"
+            android:src="@drawable/ic_myschool"
+            android:layout_height="96dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_5"
+            android:background="@color/graywhite"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_4"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24dp"
+                android:layout_marginLeft="@dimen/space_8"
+                android:text="@string/author"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/space_20"
+                android:layout_marginLeft="@dimen/space_4"
+                android:text="@string/name"
+                android:textColor="@color/gray"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_1"
+            android:background="@color/graywhite"/>
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/space_4"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginLeft="@dimen/space_8"
+            android:text="@string/school"
+            android:textSize="24dp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_marginLeft="@dimen/space_4"
+            android:text="@string/school_name"
+            android:textSize="@dimen/space_20"
+            android:textColor="@color/gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_1"
+            android:background="@color/graywhite"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/space_4"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginLeft="@dimen/space_8"
+                android:text="@string/academy"
+                android:textSize="24dp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_marginLeft="@dimen/space_4"
+                android:text="@string/academy_name"
+                android:textSize="@dimen/space_20"
+                android:textColor="@color/gray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_1"
+            android:background="@color/graywhite"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/space_4"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginLeft="@dimen/space_8"
+                android:text="@string/email"
+                android:textSize="24dp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_marginLeft="@dimen/space_4"
+                android:text="@string/email_name"
+                android:textSize="@dimen/space_20"
+                android:textColor="@color/gray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_1"
+            android:background="@color/graywhite"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/space_4"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginLeft="@dimen/space_8"
+                android:text="@string/blog"
+                android:textSize="24dp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_marginLeft="@dimen/space_4"
+                android:text="@string/blog_address"
+                android:textSize="@dimen/space_20"
+                android:textColor="@color/gray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_1"
+            android:background="@color/graywhite"/>
+    </LinearLayout>
+
+
+</LinearLayout>

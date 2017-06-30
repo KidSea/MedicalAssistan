@@ -1,5 +1,7 @@
 package com.example.yuxuehai.medicalassistan.presenter;
 
+import com.example.yuxuehai.medicalassistan.bean.Event;
+
 import java.util.List;
 
 /**
@@ -8,5 +10,5 @@ import java.util.List;
 
 public interface DailycarePreseterDao {
 
-    public List<Integer> getDataFromServer();
+    public List<Event> getDataFromServer();
 }

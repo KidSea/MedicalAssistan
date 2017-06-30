@@ -97,6 +97,7 @@
 
     <!--dialog exit-->
     <string name="dialog_message">确定退出?</string>
+    <string name="dialog_del_message">确定删除?</string>
     <string name="dialog_confirm">确定</string>
     <string name="dialog_cancel">取消</string>
 
@@ -139,10 +140,37 @@
     <string name="edit">编辑</string>
     <string name="delete">删除</string>
     <string name="new_event">新建事件</string>
+    <string name="update_event">编辑事件</string>
     <string name="dailycare_title">标题</string>
     <string name="dailycare_object">对象</string>
     <string name="dailycare_location">位置</string>
     <string name="dailycare_time">时间</string>
+    <string name="dailycare_remind">提醒</string>
     <string name="dailycare_time_detail">2017-3-20 16:42</string>
+    <string name="dailycare_remind_detail">无</string>
+    <string name="dailycare_detail">详情</string>
+    <string name="none">无</string>
+    <string name="event_detail">护理详情</string>
+    <string name="event_delete">删除</string>
+    <string name="event_share">分享</string>
+    <string name="event_edit">编辑</string>
+
+    <!--date time picker-->
+    <string name="label_datetime_dialog">时间选择</string>
+    <string name="positive_button_datetime_picker">确定</string>
+    <string name="negative_button_datetime_picker">取消</string>
+    <string name="dialog_title">添加提醒</string>
+
+    <!-- abount me -->
+    <string name="author">作者：</string>
+    <string name="name">余学海</string>
+    <string name="school">学校：</string>
+    <string name="school_name">重庆邮电大学</string>
+    <string name="academy">学院：</string>
+    <string name="academy_name">自动化学院</string>
+    <string name="email">邮件：</string>
+    <string name="email_name">594643219@qq.com</string>
+    <string name="blog">个人主页：</string>
+    <string name="blog_address">kidsea.github.io</string>
 
 </resources>

@@ -71,7 +71,7 @@
         <activity
             android:name=".ui.MainActivity"
             android:alwaysRetainTaskState="true"
-            android:launchMode="singleTask"
+            android:launchMode="singleInstance"
             android:screenOrientation="portrait"/>
 
         <activity
@@ -119,7 +119,7 @@
 
         <activity
             android:name=".ui.PatientsDetailActivity"
-            android:launchMode="singleTop"
+            android:launchMode="singleInstance"
             android:parentActivityName=".ui.PatientsInfoActivity"
             android:screenOrientation="portrait"/>
         <activity
@@ -129,10 +129,10 @@
 
         <activity
             android:name=".ui.NfcReaderActivity"
-            android:parentActivityName=".ui.MainActivity"
+            android:launchMode="singleInstance"
             android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.nfc.action.TECH_DISCOVERED"/>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
                 <!-- 添加这一条默认设置，能拦截当前页面所有扫描NFC的配置 -->
                 <category android:name="android.intent.category.DEFAULT"/>
                 <data android:mimeType="text/plain"></data>
@@ -144,6 +144,18 @@
             android:screenOrientation="portrait"/>
 
         <activity android:name=".ui.DailycareResponseActivity"
+                  android:parentActivityName=".ui.DailycareDetailActivity"
+                  android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui.ShowDailyEventActivity"
+                  android:parentActivityName=".ui.DailycareDetailActivity"
+                  android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui.AboutActivity"
+                  android:parentActivityName=".ui.SettingsActivity"
+                  android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui.DailycareUpdateActivity"
                   android:parentActivityName=".ui.DailycareDetailActivity"
                   android:screenOrientation="portrait"/>
 
@@ -159,7 +171,8 @@
             </intent-filter>
         </service>
 
-        <receiver android:name="cn.bmob.push.PushReceiver">
+        <receiver android:name="cn.bmob.push.PushReceiver"
+                  android:process="cn.bmob.push">
             <intent-filter android:priority="2147483647"><!--优先级加最高-->
                 <!-- 系统启动完成后会调用 -->
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>

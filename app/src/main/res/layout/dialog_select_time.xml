@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:paddingLeft="@dimen/space_16"
+        android:text="@string/dialog_title"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/space_16"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/space_16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/divider"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rc_seclect_time"
+        android:layout_marginTop="@dimen/space_8"
+        android:layout_marginLeft="@dimen/space_16"
+        android:layout_marginRight="@dimen/space_16"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+    </android.support.v7.widget.RecyclerView>
+
+
+
+</LinearLayout>

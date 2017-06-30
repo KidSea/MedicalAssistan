@@ -23,6 +23,9 @@ public class Constants {
     public final static int READ_NFC_SUCCESS = 1;
     public final static int READ_NFC_FAILE = 0;
 
+    public final static int ADD_EVENT_SUCCESS = 1;
+    public final static int UPDATE_EVENT_SUCCESS = 2;
+
     //Bmob应用appID
     public final static String BMOB_APP_ID = "2c1c69227537786e8b5495cc96419057";
 
@@ -34,7 +37,9 @@ public class Constants {
     public static final int REQUEST_BLUETOOTH_PERMISSION = 10;
 
     //RESULT
-    public final static int RESULT_UPDATE_INFO = 1;
+    public final static int REQUEST_INFO = 1;
     //RESULT
-    public final static int RESULT_UPDATE_EXIT_INFO = 2;
+    public final static int RESULT_UPDATE_INFO = 2;
+    //RESULT
+    public final static int RESULT_DELETE_INFO = 3;
 }
