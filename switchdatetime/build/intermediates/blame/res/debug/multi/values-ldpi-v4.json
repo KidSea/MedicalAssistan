@@ -1,0 +1,216 @@
+[
+    {
+        "outputFile": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ldpi-v4/values-ldpi-v4.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 58,
+                    "endOffset": 109
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-ldpi/dimens.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 605,
+                        "endColumn": 58,
+                        "endOffset": 659
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 114,
+                    "endColumn": 61,
+                    "endOffset": 171
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-ldpi/dimens.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 375,
+                        "endColumn": 61,
+                        "endOffset": 432
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 176,
+                    "endColumn": 54,
+                    "endOffset": 226
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-ldpi/dimens.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 550,
+                        "endColumn": 54,
+                        "endOffset": 600
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 231,
+                    "endColumn": 59,
+                    "endOffset": 286
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-ldpi/dimens.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 315,
+                        "endColumn": 59,
+                        "endOffset": 370
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 291,
+                    "endColumn": 56,
+                    "endOffset": 343
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-ldpi/dimens.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 493,
+                        "endColumn": 56,
+                        "endOffset": 545
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 348,
+                    "endColumn": 61,
+                    "endOffset": 405
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-ldpi/dimens.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 253,
+                        "endColumn": 61,
+                        "endOffset": 310
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 410,
+                    "endColumn": 55,
+                    "endOffset": 461
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-ldpi/dimens.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 437,
+                        "endColumn": 55,
+                        "endOffset": 488
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 466,
+                    "endColumn": 59,
+                    "endOffset": 521
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-ldpi/dimens.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 193,
+                        "endColumn": 59,
+                        "endOffset": 248
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 526,
+                    "endColumn": 44,
+                    "endOffset": 566
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-ldpi/dimens.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 75,
+                        "endColumn": 44,
+                        "endOffset": 115
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 571,
+                    "endColumn": 49,
+                    "endOffset": 616
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-ldpi/dimens.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 142,
+                        "endColumn": 49,
+                        "endOffset": 187
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 621,
+                    "endColumn": 42,
+                    "endOffset": 659
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-ldpi/dimens.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 665,
+                        "endColumn": 42,
+                        "endOffset": 703
+                    }
+                }
+            }
+        ]
+    }
+]

@@ -1,0 +1,368 @@
+[
+    {
+        "outputFile": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 68,
+                    "endOffset": 119
+                },
+                "from": {
+                    "file": "/home/yuxuehai/.android/build-cache/2354dee84e78e12d7b0c4adf47ce1ba8ed8e4292/output/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 68,
+                        "endOffset": 119
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 124,
+                    "endColumn": 68,
+                    "endOffset": 188
+                },
+                "from": {
+                    "file": "/home/yuxuehai/.android/build-cache/2354dee84e78e12d7b0c4adf47ce1ba8ed8e4292/output/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 124,
+                        "endColumn": 68,
+                        "endOffset": 188
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 193,
+                    "endColumn": 69,
+                    "endOffset": 258
+                },
+                "from": {
+                    "file": "/home/yuxuehai/.android/build-cache/2354dee84e78e12d7b0c4adf47ce1ba8ed8e4292/output/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 193,
+                        "endColumn": 69,
+                        "endOffset": 258
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 263,
+                    "endColumn": 73,
+                    "endOffset": 332
+                },
+                "from": {
+                    "file": "/home/yuxuehai/.android/build-cache/2354dee84e78e12d7b0c4adf47ce1ba8ed8e4292/output/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 263,
+                        "endColumn": 73,
+                        "endOffset": 332
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 337,
+                    "endColumn": 75,
+                    "endOffset": 408
+                },
+                "from": {
+                    "file": "/home/yuxuehai/.android/build-cache/2354dee84e78e12d7b0c4adf47ce1ba8ed8e4292/output/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 337,
+                        "endColumn": 75,
+                        "endOffset": 408
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 413,
+                    "endColumn": 58,
+                    "endOffset": 467
+                },
+                "from": {
+                    "file": "/home/yuxuehai/.android/build-cache/2354dee84e78e12d7b0c4adf47ce1ba8ed8e4292/output/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 413,
+                        "endColumn": 58,
+                        "endOffset": 467
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 472,
+                    "endColumn": 70,
+                    "endOffset": 538
+                },
+                "from": {
+                    "file": "/home/yuxuehai/.android/build-cache/2354dee84e78e12d7b0c4adf47ce1ba8ed8e4292/output/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 472,
+                        "endColumn": 70,
+                        "endOffset": 538
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 543,
+                    "endColumn": 67,
+                    "endOffset": 606
+                },
+                "from": {
+                    "file": "/home/yuxuehai/.android/build-cache/2354dee84e78e12d7b0c4adf47ce1ba8ed8e4292/output/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 543,
+                        "endColumn": 67,
+                        "endOffset": 606
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 611,
+                    "endColumn": 58,
+                    "endOffset": 665
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 608,
+                        "endColumn": 58,
+                        "endOffset": 662
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 670,
+                    "endColumn": 62,
+                    "endOffset": 728
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 375,
+                        "endColumn": 62,
+                        "endOffset": 433
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 733,
+                    "endColumn": 55,
+                    "endOffset": 784
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 552,
+                        "endColumn": 55,
+                        "endOffset": 603
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 789,
+                    "endColumn": 59,
+                    "endOffset": 844
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 315,
+                        "endColumn": 59,
+                        "endOffset": 370
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 849,
+                    "endColumn": 57,
+                    "endOffset": 902
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 494,
+                        "endColumn": 57,
+                        "endOffset": 547
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 907,
+                    "endColumn": 61,
+                    "endOffset": 964
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 253,
+                        "endColumn": 61,
+                        "endOffset": 310
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 969,
+                    "endColumn": 55,
+                    "endOffset": 1020
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 438,
+                        "endColumn": 55,
+                        "endOffset": 489
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1025,
+                    "endColumn": 59,
+                    "endOffset": 1080
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 193,
+                        "endColumn": 59,
+                        "endOffset": 248
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 1085,
+                    "endColumn": 44,
+                    "endOffset": 1125
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 75,
+                        "endColumn": 44,
+                        "endOffset": 115
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 1130,
+                    "endColumn": 49,
+                    "endOffset": 1175
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 142,
+                        "endColumn": 49,
+                        "endOffset": 187
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1180,
+                    "endColumn": 43,
+                    "endOffset": 1219
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 668,
+                        "endColumn": 43,
+                        "endOffset": 707
+                    }
+                }
+            }
+        ]
+    }
+]

@@ -1,0 +1,216 @@
+[
+    {
+        "outputFile": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw720dp-v13/values-sw720dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 59,
+                    "endOffset": 110
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw720dp/dimens.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 609,
+                        "endColumn": 59,
+                        "endOffset": 664
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 115,
+                    "endColumn": 63,
+                    "endOffset": 174
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw720dp/dimens.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 376,
+                        "endColumn": 63,
+                        "endOffset": 435
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 179,
+                    "endColumn": 54,
+                    "endOffset": 229
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw720dp/dimens.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 554,
+                        "endColumn": 54,
+                        "endOffset": 604
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 234,
+                    "endColumn": 59,
+                    "endOffset": 289
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw720dp/dimens.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 316,
+                        "endColumn": 59,
+                        "endOffset": 371
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 294,
+                    "endColumn": 56,
+                    "endOffset": 346
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw720dp/dimens.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 497,
+                        "endColumn": 56,
+                        "endOffset": 549
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 351,
+                    "endColumn": 61,
+                    "endOffset": 408
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw720dp/dimens.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 254,
+                        "endColumn": 61,
+                        "endOffset": 311
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 413,
+                    "endColumn": 56,
+                    "endOffset": 465
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw720dp/dimens.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 440,
+                        "endColumn": 56,
+                        "endOffset": 492
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 470,
+                    "endColumn": 60,
+                    "endOffset": 526
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw720dp/dimens.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 193,
+                        "endColumn": 60,
+                        "endOffset": 249
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 531,
+                    "endColumn": 44,
+                    "endOffset": 571
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw720dp/dimens.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 75,
+                        "endColumn": 44,
+                        "endOffset": 115
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 576,
+                    "endColumn": 49,
+                    "endOffset": 621
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw720dp/dimens.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 142,
+                        "endColumn": 49,
+                        "endOffset": 187
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 626,
+                    "endColumn": 43,
+                    "endOffset": 665
+                },
+                "from": {
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw720dp/dimens.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 670,
+                        "endColumn": 43,
+                        "endOffset": 709
+                    }
+                }
+            }
+        ]
+    }
+]

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <attr format="reference|color" name="timeAmPmBackgroundColor"/>
+    <attr format="reference|color" name="timeAmPmSelectBackgroundColor"/>
+    <attr format="reference|color" name="timeAmPmTextColor"/>
+    <declare-styleable name="ListPickerYearView"><attr format="reference|integer" name="minYear"/><attr format="reference|integer" name="maxYear"/><attr format="reference|integer" name="defaultYear"/></declare-styleable>
+    <declare-styleable name="SwitchTimeAMPMColor"><attr format="reference|color" name="amPmBackgroundColor"/><attr format="reference|color" name="amPmSelectBackgroundColor"/><attr format="reference|color" name="amPmTextColor"/></declare-styleable>
+    <declare-styleable name="SwitchTimeCircleColor"><attr format="reference|color" name="timeCircleColor"/><attr format="reference|color" name="timeCenterColor"/></declare-styleable>
+    <declare-styleable name="SwitchTimeCircularNumbersColor"><attr format="reference|color" name="timeCircularNumbersColor"/></declare-styleable>
+    <declare-styleable name="SwitchTimeSelectorColor"><attr format="reference|color" name="timeSelectorColor"/></declare-styleable>
+    <declare-styleable name="TextCircularIndicatorView"><attr format="reference|color" name="colorCircleIndicator"/></declare-styleable>
+    <declare-styleable name="YearTextIndicator"><attr format="reference|color" name="yearSelectBackgroundColor"/><attr format="reference|color" name="yearSelectTextColor"/></declare-styleable>
+    <dimen name="ampm_label_size">16sp</dimen>
+    <dimen name="ampm_left_padding">6dip</dimen>
+    <dimen name="calendar_margin_bottom_land">62dp</dimen>
+    <dimen name="calendar_margin_bottom_portrait">54dp</dimen>
+    <dimen name="calendar_margin_end_land">0dp</dimen>
+    <dimen name="calendar_margin_end_portrait">18dp</dimen>
+    <dimen name="calendar_margin_start_land">0dp</dimen>
+    <dimen name="calendar_margin_start_portrait">18dp</dimen>
+    <dimen name="calendar_margin_top_land">62dp</dimen>
+    <dimen name="calendar_margin_top_portrait">54dp</dimen>
+    <dimen name="date_picker_view_animator_height">270dip</dimen>
+    <dimen name="extra_time_label_margin">-30dp</dimen>
+    <dimen name="header_width">200dp</dimen>
+    <dimen name="separator_padding">4dip</dimen>
+    <dimen name="time_circle_width">320dp</dimen>
+    <dimen name="time_label_height">32dip</dimen>
+    <dimen name="time_label_min_width">170dp</dimen>
+    <dimen name="time_label_text">24sp</dimen>
+    <dimen name="time_label_width">128dip</dimen>
+    <dimen name="year_label_height">64dip</dimen>
+    <dimen name="year_padding">24dp</dimen>
+    <item format="float" name="ampm_circle_radius_multiplier" type="string">0.19</item>
+    <string name="app_name">Switch DateTime Picker</string>
+    <item format="float" name="circle_radius_multiplier" type="string">0.82</item>
+    <item format="float" name="circle_radius_multiplier_24HourMode" type="string">0.85</item>
+    <string name="deleted_key"><ns1:g example="4" id="key">%1$s</ns1:g> deleted</string>
+    <string name="hour_picker_description">Hours circular slider</string>
+    <string name="img_datetime">Image datetime</string>
+    <string name="label_datetime_dialog">DateTime</string>
+    <string name="minute_picker_description">Minutes circular slider</string>
+    <string name="negative_button_datetime_picker">Cancel</string>
+    <item format="float" name="numbers_radius_multiplier_inner" type="string">0.60</item>
+    <item format="float" name="numbers_radius_multiplier_normal" type="string">0.81</item>
+    <item format="float" name="numbers_radius_multiplier_outer" type="string">0.83</item>
+    <string name="positive_button_datetime_picker">OK</string>
+    <string name="radial_numbers_typeface" translatable="false">sans-serif</string>
+    <string name="sans_serif" translatable="false">sans-serif</string>
+    <string name="select_hours">Select hours</string>
+    <string name="select_minutes">Select minutes</string>
+    <item format="float" name="selection_radius_multiplier" type="string">0.16</item>
+    <string name="simple_date_format" translatable="false">yyyy-MM-dd \'at\' HH:mm</string>
+    <item format="float" name="text_size_multiplier_inner" type="string">0.14</item>
+    <item format="float" name="text_size_multiplier_normal" type="string">0.17</item>
+    <item format="float" name="text_size_multiplier_outer" type="string">0.11</item>
+    <string name="time_placeholder" translatable="false">--</string>
+    <string name="time_separator" translatable="false">:</string>
+    <style name="Theme.SwitchDateTime" parent="Theme.AppCompat.Light.DarkActionBar">
+    </style>
+    <style name="Theme.SwitchDateTime.ContentBackground">
+        <item name="android:background">#00ffffff</item>
+    </style>
+    <style name="Theme.SwitchDateTime.Date">
+        <item name="mcv_selectionColor">#32b3e3</item>
+    </style>
+    <style name="Theme.SwitchDateTime.DateLabelMonthAndDay">
+        <item name="android:textSize">26sp</item>
+        <item name="android:textColor">#e1e1e1</item>
+    </style>
+    <style name="Theme.SwitchDateTime.DateLabelYear">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#e1e1e1</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="Theme.SwitchDateTime.HeaderBackground">
+        <item name="android:background">#32b3e3</item>
+    </style>
+    <style name="Theme.SwitchDateTime.IconDateTimeSwitch">
+        <item name="android:src">@drawable/ic_view_carousel_black_32dp</item>
+        <item name="android:tint">#fff</item>
+    </style>
+    <style name="Theme.SwitchDateTime.Time">
+        <item name="timeCircleColor">#e1e1e1</item>
+        <item name="timeCenterColor">#32b3e3</item>
+        <item name="timeAmPmBackgroundColor">#32b3e3</item>
+        <item name="timeAmPmSelectBackgroundColor">#32b3e3</item> <!-- Alpha is apply-->
+        <item name="timeAmPmTextColor">#c2c2c2</item>
+        <item name="timeSelectorColor">#32b3e3</item>
+        <item name="timeCircularNumbersColor">#494949</item>
+    </style>
+    <style name="Theme.SwitchDateTime.TimeLabelAmPm">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#e1e1e1</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="Theme.SwitchDateTime.TimeLabelText">
+        <item name="android:textSize">@dimen/time_label_text</item>
+        <item name="android:textColor">#e1e1e1</item>
+    </style>
+    <style name="Theme.SwitchDateTime.TitleDateTimeLabelText">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="Theme.SwitchDateTime.Year">
+        <item name="colorCircleIndicator">#32b3e3</item>
+        <item name="android:textColor">#e6e6e6</item>
+    </style>
+</resources>
