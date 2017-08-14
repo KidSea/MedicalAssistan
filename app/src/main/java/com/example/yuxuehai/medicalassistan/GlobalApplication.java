@@ -50,7 +50,6 @@ public class GlobalApplication extends Application {
                     .setFileExpiration(2500)// 文件的过期时间(单位为秒)：默认1800s
                     .build();
             Bmob.initialize(config);
-
             // 使用推送服务时的初始化操作
             BmobInstallation.getCurrentInstallation().save();
             // 启动推送服务
