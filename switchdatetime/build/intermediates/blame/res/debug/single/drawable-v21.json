@@ -1,18 +1,18 @@
 [
     {
-        "merged": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
-        "source": "/home/yuxuehai/.android/build-cache/2354dee84e78e12d7b0c4adf47ce1ba8ed8e4292/output/res/drawable-v21/notification_action_background.xml"
+        "merged": "E:\\android\\MedicalAssistan\\switchdatetime\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\yuxuehai\\.android\\build-cache\\88113b68af19147b794b88d20f3be380051312d2\\output\\res\\drawable-v21\\abc_edit_text_material.xml"
     },
     {
-        "merged": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
-        "source": "/home/yuxuehai/.android/build-cache/2354dee84e78e12d7b0c4adf47ce1ba8ed8e4292/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
+        "merged": "E:\\android\\MedicalAssistan\\switchdatetime\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
+        "source": "C:\\Users\\yuxuehai\\.android\\build-cache\\88113b68af19147b794b88d20f3be380051312d2\\output\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
     },
     {
-        "merged": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
-        "source": "/home/yuxuehai/.android/build-cache/2354dee84e78e12d7b0c4adf47ce1ba8ed8e4292/output/res/drawable-v21/abc_edit_text_material.xml"
+        "merged": "E:\\android\\MedicalAssistan\\switchdatetime\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\notification_action_background.xml",
+        "source": "C:\\Users\\yuxuehai\\.android\\build-cache\\88113b68af19147b794b88d20f3be380051312d2\\output\\res\\drawable-v21\\notification_action_background.xml"
     },
     {
-        "merged": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
-        "source": "/home/yuxuehai/.android/build-cache/2354dee84e78e12d7b0c4adf47ce1ba8ed8e4292/output/res/drawable-v21/abc_btn_colored_material.xml"
+        "merged": "E:\\android\\MedicalAssistan\\switchdatetime\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\yuxuehai\\.android\\build-cache\\88113b68af19147b794b88d20f3be380051312d2\\output\\res\\drawable-v21\\abc_btn_colored_material.xml"
     }
 ]

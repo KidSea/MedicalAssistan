@@ -22,17 +22,15 @@ import static com.example.yuxuehai.medicalassistan.utlis.UIUtils.getString;
  * Created by yuxuehai on 17-2-28.
  */
 
-public class FindPsPresenterDaoImpl extends BasePresenter implements FindPsPresenterDao {
+public class FindPsPresenterDaoImpl extends BasePresenter<FindPasswdView> implements FindPsPresenterDao {
 
     private Context mContext;
-    private FindPasswdView mPasswdView;
     private MyCountTimer timer;
     private DataModelDaoImpl mDataModelDao = DataModelDaoImpl.getInstance();
 
-    public FindPsPresenterDaoImpl(Context context, FindPasswdView view) {
+    public FindPsPresenterDaoImpl(Context context) {
         super(context);
         this.mContext = context;
-        this.mPasswdView = view;
     }
 
     @Override
@@ -66,7 +64,7 @@ public class FindPsPresenterDaoImpl extends BasePresenter implements FindPsPrese
                     public void done(BmobException e) {
                         if(e==null){
                             ToastUtil.showShort(mContext, getString(R.string.reset_successfully));
-                            mPasswdView.finishAc();
+                            getView().finishAc();
                         }else{
                             ToastUtil.showShort(mContext,
                                     getString(R.string.reset_failed)+"+:code ="
@@ -96,12 +94,12 @@ public class FindPsPresenterDaoImpl extends BasePresenter implements FindPsPrese
 
         @Override
         public void onTick(long millisUntilFinished) {
-            mPasswdView.setResend(millisUntilFinished);
+            getView().setResend(millisUntilFinished);
         }
 
         @Override
         public void onFinish() {
-            mPasswdView.setTvText();
+            getView().setTvText();
         }
     }
 }

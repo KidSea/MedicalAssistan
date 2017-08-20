@@ -9,7 +9,7 @@ import android.view.View;
 
 import com.example.yuxuehai.medicalassistan.R;
 import com.example.yuxuehai.medicalassistan.adapter.MyInformationAdapter;
-import com.example.yuxuehai.medicalassistan.base.BaseActivity;
+import com.example.yuxuehai.medicalassistan.base.BasePresenterActivity;
 import com.example.yuxuehai.medicalassistan.bean.SampleBean;
 import com.example.yuxuehai.medicalassistan.bean.Ward;
 import com.example.yuxuehai.medicalassistan.presenter.impl.InformationPresenterDaoImpl;
@@ -26,7 +26,8 @@ import java.util.ArrayList;
  * Created by yuxuehai on 17-2-23.
  */
 
-public class InformationDetailActivity extends BaseActivity implements InformationView{
+public class InformationDetailActivity extends BasePresenterActivity<InformationView
+        , InformationPresenterDaoImpl> implements InformationView{
 
 
     private Toolbar mToolbar;
@@ -35,7 +36,6 @@ public class InformationDetailActivity extends BaseActivity implements Informati
     private MyInformationAdapter mAdapter;
     private ArrayList<SampleBean> mList;
 
-    private InformationPresenterDaoImpl mPresenterDao;
     private EmptyLayout mEmptyView;
 
 
@@ -67,7 +67,7 @@ public class InformationDetailActivity extends BaseActivity implements Informati
 
     @Override
     public void refreshData() {
-        mPresenterDao.getListFromServer();
+        mPresenter.getListFromServer();
         ((MyGridLayoutManager)mRecyclerView.getLayoutManager()).setScrollEnabled(false);
     }
 
@@ -91,7 +91,6 @@ public class InformationDetailActivity extends BaseActivity implements Informati
 
     @Override
     protected void initView() {
-        mPresenterDao = new InformationPresenterDaoImpl(this,this);
 
         mToolbar = $(R.id.tb_mytb);
         mSwipeRefreshLayout = $(R.id.swipe_container);
@@ -101,7 +100,7 @@ public class InformationDetailActivity extends BaseActivity implements Informati
         mEmptyView.setOnLayoutClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mPresenterDao.getListFromServer();
+                mPresenter.getListFromServer();
             }
         });
 
@@ -145,8 +144,13 @@ public class InformationDetailActivity extends BaseActivity implements Informati
 
     @Override
     protected void initData() {
-        mPresenterDao.getListFromServer();
+        mPresenter.getListFromServer();
         //mSwipeRefreshLayout.setRefreshing(false);
+    }
+
+    @Override
+    protected InformationPresenterDaoImpl createPresenter() {
+        return new InformationPresenterDaoImpl(this);
     }
 
 }

@@ -21,7 +21,7 @@ import android.widget.TextView;
 import com.example.yuxuehai.medicalassistan.R;
 import com.example.yuxuehai.medicalassistan.adapter.MyDailyCareAdapter;
 import com.example.yuxuehai.medicalassistan.adapter.MyRemindTimeAdapter;
-import com.example.yuxuehai.medicalassistan.base.BaseActivity;
+import com.example.yuxuehai.medicalassistan.base.BasePresenterActivity;
 import com.example.yuxuehai.medicalassistan.bean.Event;
 import com.example.yuxuehai.medicalassistan.presenter.impl.ResponsePresenterDaoImpl;
 import com.example.yuxuehai.medicalassistan.utlis.Constants;
@@ -48,7 +48,7 @@ import cn.bmob.v3.datatype.BmobDate;
  * Created by yuxuehai on 17-5-5.
  */
 
-public class DailycareUpdateActivity extends BaseActivity implements DailyEventView, View.OnClickListener {
+public class DailycareUpdateActivity extends BasePresenterActivity<DailyEventView, ResponsePresenterDaoImpl> implements DailyEventView, View.OnClickListener {
 
     private static final String TAG = "DailycareUpdateActivity";
     private static final String TAG_DATETIME_FRAGMENT = "TAG_DATETIME_FRAGMENT";
@@ -64,7 +64,6 @@ public class DailycareUpdateActivity extends BaseActivity implements DailyEventV
     private RelativeLayout mRemindTimeLayout;
     private SwitchDateTimeDialogFragment dateTimeFragment;
 
-    private ResponsePresenterDaoImpl mPresenterDao;
     private SimpleDateFormat mDateFormat;
     private Event mEvent;
     private boolean isOncreate = false;
@@ -142,8 +141,8 @@ public class DailycareUpdateActivity extends BaseActivity implements DailyEventV
                 String location = mEditLocation.getText().toString();
 
 
-                if (mPresenterDao.isEmpty(name, object, location)) {
-                    mPresenterDao.UpdateEvent();
+                if (mPresenter.isEmpty(name, object, location)) {
+                    mPresenter.UpdateEvent();
                 } else {
                     ToastUtil.showToast(this, "所填信息不能为空");
                 }
@@ -176,6 +175,11 @@ public class DailycareUpdateActivity extends BaseActivity implements DailyEventV
             }
         }
         super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    protected ResponsePresenterDaoImpl createPresenter() {
+        return  new ResponsePresenterDaoImpl(this);
     }
 
     @Override
@@ -232,10 +236,6 @@ public class DailycareUpdateActivity extends BaseActivity implements DailyEventV
     protected void initData() {
         String[] stringArray = UIUtils.getStringArray(R.array.remind_time_list);
         mList = new ArrayList<String>(Arrays.asList(stringArray));
-
-
-
-        mPresenterDao = new ResponsePresenterDaoImpl(this, this);
 
         // Assign values we want
         mDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());

@@ -19,16 +19,14 @@ import cn.bmob.v3.listener.LogInListener;
  * Created by yuxuehai on 17-2-28.
  */
 
-public class LoginPresenterImpl extends BasePresenter implements LoginPresenterDao {
+public class LoginPresenterImpl extends BasePresenter<LoginView> implements LoginPresenterDao {
 
-    private LoginView mLoginView;
     private Context mContext;
     private DataModelDaoImpl mDataModelDao = DataModelDaoImpl.getInstance();
 
-    public LoginPresenterImpl(Context context, LoginView view) {
+    public LoginPresenterImpl(Context context) {
         super(context);
         mContext = context;
-        mLoginView = view;
     }
 
 
@@ -36,24 +34,24 @@ public class LoginPresenterImpl extends BasePresenter implements LoginPresenterD
     @Override
     public void isChecked() {
         boolean iskeep = SharePrefUtil.getBoolean(mContext, Constants.IsKeepWord, false);
-        mLoginView.setCheckBox(iskeep);
+        getView().setCheckBox(iskeep);
 
         String phone = SharePrefUtil.getString(mContext, Constants.sPHONE, "");
         String password = SharePrefUtil.getString(mContext, Constants.sPASSWORD, "");
 
         if (iskeep) {
-            mLoginView.setLoginInfo(phone, password);
+            getView().setLoginInfo(phone, password);
         }
     }
 
     @Override
     public void login(final String phone, final String password) {
         if (!TextUtils.isEmpty(phone) & !TextUtils.isEmpty(password)) {
-            mLoginView.openDialog();
+            getView().openDialog();
             mDataModelDao.checkLogin(phone, password, new LogInListener<UserBean>() {
                 @Override
                 public void done(UserBean userBean, BmobException e) {
-                    mLoginView.closeDialog();
+                    getView().closeDialog();
                     if(userBean != null){
                         // 记住用户名和密码
                         boolean iskeep = SharePrefUtil.getBoolean(mContext, Constants.IsKeepWord, false);
@@ -63,7 +61,7 @@ public class LoginPresenterImpl extends BasePresenter implements LoginPresenterD
                             SharePrefUtil.setString(mContext, Constants.sPASSWORD, password);
                         }
 
-                        mLoginView.jumptoMain();
+                        getView().jumptoMain();
                     }else {
                         ToastUtil.showShort(mContext, "登录失败" + e.toString());
                     }

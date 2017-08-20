@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.yuxuehai.medicalassistan.R;
-import com.example.yuxuehai.medicalassistan.base.BaseActivity;
+import com.example.yuxuehai.medicalassistan.base.BasePresenterActivity;
 import com.example.yuxuehai.medicalassistan.presenter.impl.FindPsPresenterDaoImpl;
 import com.example.yuxuehai.medicalassistan.view.FindPasswdView;
 import com.example.yuxuehai.medicalassistan.widget.ClearEditText;
@@ -16,7 +16,7 @@ import com.example.yuxuehai.medicalassistan.widget.RoundButton;
  * Created by yuxuehai on 17-2-28.
  */
 
-public class FindPasswdActivity extends BaseActivity implements View.OnClickListener, FindPasswdView {
+public class FindPasswdActivity extends BasePresenterActivity<FindPasswdView, FindPsPresenterDaoImpl> implements View.OnClickListener, FindPasswdView {
 
     private Toolbar mToolbar;
     private ClearEditText mPhone;
@@ -25,7 +25,6 @@ public class FindPasswdActivity extends BaseActivity implements View.OnClickList
     private ClearEditText mConfirmPasswd;
     private TextView mVerifcode_tv;
     private RoundButton mButton;
-    private FindPsPresenterDaoImpl mPresenterDao = null;
 
     public <T extends View> T $(int id) {
         return (T) findViewById(id);
@@ -37,14 +36,14 @@ public class FindPasswdActivity extends BaseActivity implements View.OnClickList
         switch (id) {
             case R.id.tv_code:
                 String phoneNum = mPhone.getText().toString().trim();
-                mPresenterDao.cofirmSMS(phoneNum);
+                mPresenter.cofirmSMS(phoneNum);
                 break;
             case R.id.btn_reset_password:
                 String code = mVerifcode.getText().toString().trim();
                 String newPass = mPasswd.getText().toString().trim();
                 String newPassword = mConfirmPasswd.getText().toString().trim();
 
-                mPresenterDao.resetPassword(code, newPass, newPassword);
+                mPresenter.resetPassword(code, newPass, newPassword);
                 break;
         }
     }
@@ -98,7 +97,11 @@ public class FindPasswdActivity extends BaseActivity implements View.OnClickList
 
     @Override
     protected void initData() {
-        mPresenterDao = new FindPsPresenterDaoImpl(this, this);
+    }
+
+    @Override
+    protected FindPsPresenterDaoImpl createPresenter() {
+        return new FindPsPresenterDaoImpl(this);
     }
 
 

@@ -12,7 +12,7 @@ import android.view.View;
 
 import com.example.yuxuehai.medicalassistan.R;
 import com.example.yuxuehai.medicalassistan.adapter.MyPatientsInformationAdapter;
-import com.example.yuxuehai.medicalassistan.base.BaseActivity;
+import com.example.yuxuehai.medicalassistan.base.BasePresenterActivity;
 import com.example.yuxuehai.medicalassistan.bean.Patient;
 import com.example.yuxuehai.medicalassistan.bean.SampleBean;
 import com.example.yuxuehai.medicalassistan.bean.Ward;
@@ -31,7 +31,8 @@ import java.util.ArrayList;
  * Created by yuxuehai on 17-3-6.
  */
 
-public class PatientsInfoActivity extends BaseActivity implements InformationView {
+public class PatientsInfoActivity extends BasePresenterActivity<InformationView,
+        PatientsPresenterDaoImpl> implements InformationView {
 
 
     private Ward mWard;
@@ -41,8 +42,6 @@ public class PatientsInfoActivity extends BaseActivity implements InformationVie
     private SimpleSwipeRefreshLayout mSwipeRefreshLayout;
     private SimpleRecyclerView mRecyclerView;
 
-
-    private PatientsPresenterDaoImpl mPresenterDao;
     private MyPatientsInformationAdapter mAdapter;
 
 
@@ -52,7 +51,7 @@ public class PatientsInfoActivity extends BaseActivity implements InformationVie
 
     @Override
     public void refreshData() {
-        mPresenterDao.getPatientsFromServer(mWard);
+        mPresenter.getPatientsFromServer(mWard);
     }
 
     @Override
@@ -80,8 +79,12 @@ public class PatientsInfoActivity extends BaseActivity implements InformationVie
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         Intent intent = getIntent();
         mWard = (Ward) intent.getSerializableExtra("ward");
-        mPresenterDao = new PatientsPresenterDaoImpl(this,this);
         super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    protected PatientsPresenterDaoImpl createPresenter() {
+        return new PatientsPresenterDaoImpl(this);
     }
 
     @Override
@@ -126,7 +129,7 @@ public class PatientsInfoActivity extends BaseActivity implements InformationVie
         mEmptyView.setOnLayoutClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mPresenterDao.getPatientsFromServer(mWard);
+                mPresenter.getPatientsFromServer(mWard);
             }
         });
 
@@ -170,7 +173,7 @@ public class PatientsInfoActivity extends BaseActivity implements InformationVie
 
     @Override
     protected void initData() {
-        mPresenterDao.getPatientsFromServer(mWard);
+        mPresenter.getPatientsFromServer(mWard);
     }
 
 }

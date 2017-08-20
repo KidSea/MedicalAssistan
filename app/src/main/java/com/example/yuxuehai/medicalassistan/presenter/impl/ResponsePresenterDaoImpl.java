@@ -18,28 +18,26 @@ import cn.bmob.v3.listener.UpdateListener;
  * Created by yuxuehai on 17-3-21.
  */
 
-public class ResponsePresenterDaoImpl extends BasePresenter implements ResponsePresenterDao {
+public class ResponsePresenterDaoImpl extends BasePresenter<DailyEventView> implements ResponsePresenterDao {
 
-    private DailyEventView mDailyEventView;
     private DataModelDaoImpl mDataModelDao = DataModelDaoImpl.getInstance();
 
-    public ResponsePresenterDaoImpl(Context context, DailyEventView view) {
+    public ResponsePresenterDaoImpl(Context context) {
         super(context);
-        this.mDailyEventView = view;
     }
 
     @Override
     public synchronized void saveEvent() {
 
-        Event event = mDailyEventView.getEvent();
+        Event event = getView().getEvent();
         mDataModelDao.saveEvent(event, new SaveListener<String>() {
 
             @Override
             public void done(String s, BmobException e) {
                 if (e == null) {
                     ToastUtil.showShort(getContext(), "添加成功");
-                    mDailyEventView.callBackResult();
-                    mDailyEventView.finishActivity();
+                    getView().callBackResult();
+                    getView().finishActivity();
                 } else {
                     ToastUtil.showShort(getContext(), "添加失败");
                 }
@@ -51,15 +49,15 @@ public class ResponsePresenterDaoImpl extends BasePresenter implements ResponseP
     @Override
     public synchronized void UpdateEvent() {
 
-        Event event = mDailyEventView.getEvent();
-        String id = mDailyEventView.getId();
+        Event event = getView().getEvent();
+        String id = getView().getId();
         mDataModelDao.updateEvent(event, id, new UpdateListener() {
             @Override
             public void done(BmobException e) {
                 if (e == null) {
                     ToastUtil.showShort(getContext(), "修改成功");
-                    mDailyEventView.callBackResult();
-                    mDailyEventView.finishActivity();
+                    getView().callBackResult();
+                    getView().finishActivity();
                 } else {
                     ToastUtil.showShort(getContext(), "修改失败");
                 }

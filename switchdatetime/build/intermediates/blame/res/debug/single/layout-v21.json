@@ -1,18 +1,18 @@
 [
     {
-        "merged": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
-        "source": "/home/yuxuehai/.android/build-cache/2354dee84e78e12d7b0c4adf47ce1ba8ed8e4292/output/res/layout-v21/notification_template_icon_group.xml"
+        "merged": "E:\\android\\MedicalAssistan\\switchdatetime\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\yuxuehai\\.android\\build-cache\\88113b68af19147b794b88d20f3be380051312d2\\output\\res\\layout-v21\\notification_action.xml"
     },
     {
-        "merged": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
-        "source": "/home/yuxuehai/.android/build-cache/2354dee84e78e12d7b0c4adf47ce1ba8ed8e4292/output/res/layout-v21/notification_action_tombstone.xml"
+        "merged": "E:\\android\\MedicalAssistan\\switchdatetime\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\yuxuehai\\.android\\build-cache\\88113b68af19147b794b88d20f3be380051312d2\\output\\res\\layout-v21\\notification_template_custom_big.xml"
     },
     {
-        "merged": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
-        "source": "/home/yuxuehai/.android/build-cache/2354dee84e78e12d7b0c4adf47ce1ba8ed8e4292/output/res/layout-v21/notification_template_custom_big.xml"
+        "merged": "E:\\android\\MedicalAssistan\\switchdatetime\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\yuxuehai\\.android\\build-cache\\88113b68af19147b794b88d20f3be380051312d2\\output\\res\\layout-v21\\notification_action_tombstone.xml"
     },
     {
-        "merged": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
-        "source": "/home/yuxuehai/.android/build-cache/2354dee84e78e12d7b0c4adf47ce1ba8ed8e4292/output/res/layout-v21/notification_action.xml"
+        "merged": "E:\\android\\MedicalAssistan\\switchdatetime\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\yuxuehai\\.android\\build-cache\\88113b68af19147b794b88d20f3be380051312d2\\output\\res\\layout-v21\\notification_template_icon_group.xml"
     }
 ]

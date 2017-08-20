@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.example.yuxuehai.medicalassistan.AppManager;
 import com.example.yuxuehai.medicalassistan.R;
 import com.example.yuxuehai.medicalassistan.base.BaseActivity;
+import com.example.yuxuehai.medicalassistan.base.BasePresenterActivity;
 import com.example.yuxuehai.medicalassistan.presenter.impl.LoginPresenterImpl;
 import com.example.yuxuehai.medicalassistan.utlis.Constants;
 import com.example.yuxuehai.medicalassistan.utlis.SharePrefUtil;
@@ -23,7 +24,8 @@ import com.example.yuxuehai.medicalassistan.widget.CustomDialog;
  * Created by yuxuehai on 17-2-27.
  */
 
-public class LoginActivity extends BaseActivity implements View.OnClickListener, LoginView {
+public class LoginActivity extends BasePresenterActivity<LoginView,
+        LoginPresenterImpl> implements View.OnClickListener, LoginView {
 
 
     private Toolbar mToolbar;
@@ -34,7 +36,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
     private TextView mFrogetPassWd;
     private CustomDialog mDialog;
 
-    private LoginPresenterImpl mLoginPresenter;
 
 
     @Override
@@ -49,7 +50,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
                 String password = mPassWd.getText().toString().trim();
                 // 保存状态
                 SharePrefUtil.setBoolean(this, Constants.IsKeepWord, mIsKeepWd.isChecked());
-                mLoginPresenter.login(phone, password);
+                mPresenter.login(phone, password);
                 break;
             default:
                 break;
@@ -127,9 +128,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
     @Override
     protected void initData() {
         AppManager.getAppManager().addActivity(this);
-        mLoginPresenter = new LoginPresenterImpl(this, this);
 
-        mLoginPresenter.isChecked();
+        mPresenter.isChecked();
 
         String phone = SharePrefUtil.getString(this, Constants.sPHONE, "");
         String password = SharePrefUtil.getString(this, Constants.sPASSWORD, "");
@@ -138,6 +138,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
             mPassWd.setText(password);
         }
 
+    }
+
+    @Override
+    protected LoginPresenterImpl createPresenter() {
+        return new LoginPresenterImpl(this);
     }
 
     /**

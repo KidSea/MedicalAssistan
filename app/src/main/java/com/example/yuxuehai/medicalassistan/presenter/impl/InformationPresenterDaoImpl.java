@@ -21,18 +21,16 @@ import cn.bmob.v3.listener.FindListener;
  * Created by yuxuehai on 17-3-4.
  */
 
-public class InformationPresenterDaoImpl extends BasePresenter implements InformationPresenterDao {
+public class InformationPresenterDaoImpl extends BasePresenter<InformationView> implements InformationPresenterDao {
 
-    private InformationView mView;
     private DataModelDaoImpl mDataModelDao = DataModelDaoImpl.getInstance();
 
     private ArrayList<SampleBean> mList;
 
     private int limit = 50;
 
-    public InformationPresenterDaoImpl(Context context, InformationView view) {
+    public InformationPresenterDaoImpl(Context context) {
         super(context);
-        this.mView = view;
         mList = new ArrayList<>();
     }
 
@@ -44,7 +42,7 @@ public class InformationPresenterDaoImpl extends BasePresenter implements Inform
             @Override
             public void done(List<Ward> list, BmobException e) {
                 if(e == null){
-                    mView.showView();
+                    getView().showView();
                     mList.clear();
                     for (Ward ward : list) {
                         if (ward.getUser().getUsername().equals(BmobUser.getCurrentUser().getUsername())) {
@@ -52,10 +50,10 @@ public class InformationPresenterDaoImpl extends BasePresenter implements Inform
                             mList.add(wardbean);
                         }
                     }
-                    mView.setData(mList);
+                    getView().setData(mList);
                 }else {
 
-                    mView.showEmpty();
+                    getView().showEmpty();
                 }
             }
         });
@@ -68,15 +66,15 @@ public class InformationPresenterDaoImpl extends BasePresenter implements Inform
             @Override
             public void done(List<Patient> list, BmobException e) {
                 if(e == null){
-                    mView.showView();
+                    getView().showView();
                     mList.clear();
                     for (Patient patient: list) {
                         SampleBean patientbean = new SampleBean(SampleBean.TYPE_PATIENT, patient);
                         mList.add(patientbean);
                     }
-                    mView.setData(mList);
+                    getView().setData(mList);
                 }else {
-                    mView.showEmpty();
+                    getView().showEmpty();
                 }
 
             }

@@ -18,20 +18,18 @@ import cn.bmob.v3.listener.FindListener;
  * Created by yuxuehai on 17-3-15.
  */
 
-public class DailycarePreseterDaoImpl extends BasePresenter implements DailycarePreseterDao {
+public class DailycarePreseterDaoImpl extends BasePresenter<DailycareView> implements DailycarePreseterDao {
 
-    private DailycareView mDailycareView;
     private DataModelDaoImpl mDataModelDao = DataModelDaoImpl.getInstance();
 
-    public DailycarePreseterDaoImpl(Context context, DailycareView view) {
+    public DailycarePreseterDaoImpl(Context context) {
         super(context);
-        mDailycareView = view;
     }
 
 
     public List<Event> getDataFromServer() {
 
-        mDailycareView.showPrograss();
+        getView().showPrograss();
 
         mDataModelDao.getEventList(new FindListener<Event>() {
 
@@ -40,11 +38,11 @@ public class DailycarePreseterDaoImpl extends BasePresenter implements Dailycare
                 if(e == null){
 
                     if(list.size() > 0){
-                        mDailycareView.hidePrograss();
-                        mDailycareView.setList(list);
+                        getView().hidePrograss();
+                        getView().setList(list);
                     }else {
-                        mDailycareView.hidePrograss();
-                        mDailycareView.showNodata();
+                        getView().hidePrograss();
+                        getView().showNodata();
                     }
                 }else {
                     ToastUtil.showShort(getContext(), "查询数据失败");

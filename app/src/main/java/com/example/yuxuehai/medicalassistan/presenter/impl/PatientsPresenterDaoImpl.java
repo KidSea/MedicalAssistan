@@ -21,18 +21,16 @@ import cn.bmob.v3.listener.FindListener;
  * Created by yuxuehai on 17-3-4.
  */
 
-public class PatientsPresenterDaoImpl extends BasePresenter implements InformationPresenterDao {
+public class PatientsPresenterDaoImpl extends BasePresenter<InformationView> implements InformationPresenterDao {
 
-    private InformationView mView;
     private DataModelDaoImpl mDataModelDao = DataModelDaoImpl.getInstance();
 
     private ArrayList<SampleBean> mList;
 
     private int limit = 50;
 
-    public PatientsPresenterDaoImpl(Context context, InformationView view) {
+    public PatientsPresenterDaoImpl(Context context) {
         super(context);
-        this.mView = view;
         mList = new ArrayList<>();
     }
 
@@ -50,7 +48,7 @@ public class PatientsPresenterDaoImpl extends BasePresenter implements Informati
                         mList.add(wardbean);
                     }
                 }
-                mView.setData(mList);
+                getView().setData(mList);
             }
         });
     }
@@ -62,15 +60,15 @@ public class PatientsPresenterDaoImpl extends BasePresenter implements Informati
             @Override
             public void done(List<Patient> list, BmobException e) {
                 if(e == null){
-                    mView.showView();
+                    getView().showView();
                     mList.clear();
                     for (Patient patient: list) {
                         SampleBean patientbean = new SampleBean(SampleBean.TYPE_PATIENT, patient);
                         mList.add(patientbean);
                     }
-                    mView.setData(mList);
+                    getView().setData(mList);
                 }else {
-                    mView.showEmpty();
+                    getView().showEmpty();
                 }
             }
 

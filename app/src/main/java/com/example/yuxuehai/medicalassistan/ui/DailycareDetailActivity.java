@@ -12,7 +12,7 @@ import android.widget.RelativeLayout;
 
 import com.example.yuxuehai.medicalassistan.R;
 import com.example.yuxuehai.medicalassistan.adapter.MyDalicareEventAdapter;
-import com.example.yuxuehai.medicalassistan.base.BaseActivity;
+import com.example.yuxuehai.medicalassistan.base.BasePresenterActivity;
 import com.example.yuxuehai.medicalassistan.base.BaseRecyclerAdapter;
 import com.example.yuxuehai.medicalassistan.bean.Event;
 import com.example.yuxuehai.medicalassistan.presenter.impl.DailycarePreseterDaoImpl;
@@ -25,7 +25,8 @@ import java.util.List;
  * Created by yuxuehai on 17-2-23.
  */
 
-public class DailycareDetailActivity extends BaseActivity implements DailycareView{
+public class DailycareDetailActivity extends BasePresenterActivity<DailycareView,
+        DailycarePreseterDaoImpl> implements DailycareView{
 
 
     private Toolbar mToolbar;
@@ -33,7 +34,6 @@ public class DailycareDetailActivity extends BaseActivity implements DailycareVi
     private RelativeLayout mNoData;
     private RecyclerView mRecyclerView;
 
-    private DailycarePreseterDaoImpl mPreseterDao;
     private MyDalicareEventAdapter mAdapter;
 
     private boolean isOncreate = false;
@@ -138,10 +138,14 @@ public class DailycareDetailActivity extends BaseActivity implements DailycareVi
         mRecyclerView.setLayoutManager(layoutManager);
 
 
-        mPreseterDao = new DailycarePreseterDaoImpl(this, this);
 
-        mPreseterDao.getDataFromServer();
+        mPresenter.getDataFromServer();
 
+    }
+
+    @Override
+    protected DailycarePreseterDaoImpl createPresenter() {
+        return new DailycarePreseterDaoImpl(this);
     }
 
     @Override
@@ -154,13 +158,13 @@ public class DailycareDetailActivity extends BaseActivity implements DailycareVi
 
         switch (requestCode){
             case Constants.ADD_EVENT_SUCCESS: // 添加数据回调
-                mPreseterDao.getDataFromServer();
+                mPresenter.getDataFromServer();
                 break;
             case Constants.RESULT_DELETE_INFO:
-                mPreseterDao.getDataFromServer();
+                mPresenter.getDataFromServer();
                 break;
             case Constants.RESULT_UPDATE_INFO:
-                mPreseterDao.getDataFromServer();
+                mPresenter.getDataFromServer();
                 break;
         }
 

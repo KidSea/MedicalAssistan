@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/build/intermediates/incremental/mergeDebugResources/merged.dir/values-small-v4/values-small-v4.xml",
+        "outputFile": "E:\\android\\MedicalAssistan\\switchdatetime\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-small-v4\\values-small-v4.xml",
         "map": [
             {
                 "to": {
@@ -11,13 +11,13 @@
                     "endOffset": 109
                 },
                 "from": {
-                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-small/dimens.xml",
+                    "file": "E:\\android\\MedicalAssistan\\switchdatetime\\src\\main\\res\\values-small\\dimens.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
-                        "startOffset": 651,
+                        "startOffset": 668,
                         "endColumn": 58,
-                        "endOffset": 705
+                        "endOffset": 722
                     }
                 }
             },
@@ -30,13 +30,13 @@
                     "endOffset": 171
                 },
                 "from": {
-                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-small/dimens.xml",
+                    "file": "E:\\android\\MedicalAssistan\\switchdatetime\\src\\main\\res\\values-small\\dimens.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
-                        "startOffset": 421,
+                        "startOffset": 434,
                         "endColumn": 61,
-                        "endOffset": 478
+                        "endOffset": 491
                     }
                 }
             },
@@ -49,13 +49,13 @@
                     "endOffset": 226
                 },
                 "from": {
-                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-small/dimens.xml",
+                    "file": "E:\\android\\MedicalAssistan\\switchdatetime\\src\\main\\res\\values-small\\dimens.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
-                        "startOffset": 596,
+                        "startOffset": 612,
                         "endColumn": 54,
-                        "endOffset": 646
+                        "endOffset": 662
                     }
                 }
             },
@@ -68,13 +68,13 @@
                     "endOffset": 286
                 },
                 "from": {
-                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-small/dimens.xml",
+                    "file": "E:\\android\\MedicalAssistan\\switchdatetime\\src\\main\\res\\values-small\\dimens.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
-                        "startOffset": 361,
+                        "startOffset": 373,
                         "endColumn": 59,
-                        "endOffset": 416
+                        "endOffset": 428
                     }
                 }
             },
@@ -87,13 +87,13 @@
                     "endOffset": 343
                 },
                 "from": {
-                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-small/dimens.xml",
+                    "file": "E:\\android\\MedicalAssistan\\switchdatetime\\src\\main\\res\\values-small\\dimens.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
-                        "startOffset": 539,
+                        "startOffset": 554,
                         "endColumn": 56,
-                        "endOffset": 591
+                        "endOffset": 606
                     }
                 }
             },
@@ -106,13 +106,13 @@
                     "endOffset": 405
                 },
                 "from": {
-                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-small/dimens.xml",
+                    "file": "E:\\android\\MedicalAssistan\\switchdatetime\\src\\main\\res\\values-small\\dimens.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
-                        "startOffset": 299,
+                        "startOffset": 310,
                         "endColumn": 61,
-                        "endOffset": 356
+                        "endOffset": 367
                     }
                 }
             },
@@ -125,13 +125,13 @@
                     "endOffset": 461
                 },
                 "from": {
-                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-small/dimens.xml",
+                    "file": "E:\\android\\MedicalAssistan\\switchdatetime\\src\\main\\res\\values-small\\dimens.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
-                        "startOffset": 483,
+                        "startOffset": 497,
                         "endColumn": 55,
-                        "endOffset": 534
+                        "endOffset": 548
                     }
                 }
             },
@@ -144,13 +144,13 @@
                     "endOffset": 520
                 },
                 "from": {
-                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-small/dimens.xml",
+                    "file": "E:\\android\\MedicalAssistan\\switchdatetime\\src\\main\\res\\values-small\\dimens.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
-                        "startOffset": 240,
+                        "startOffset": 250,
                         "endColumn": 58,
-                        "endOffset": 294
+                        "endOffset": 304
                     }
                 }
             },
@@ -163,13 +163,13 @@
                     "endOffset": 565
                 },
                 "from": {
-                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-small/dimens.xml",
+                    "file": "E:\\android\\MedicalAssistan\\switchdatetime\\src\\main\\res\\values-small\\dimens.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
-                        "startOffset": 75,
+                        "startOffset": 78,
                         "endColumn": 44,
-                        "endOffset": 115
+                        "endOffset": 118
                     }
                 }
             },
@@ -182,13 +182,13 @@
                     "endOffset": 615
                 },
                 "from": {
-                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-small/dimens.xml",
+                    "file": "E:\\android\\MedicalAssistan\\switchdatetime\\src\\main\\res\\values-small\\dimens.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
-                        "startOffset": 189,
+                        "startOffset": 197,
                         "endColumn": 49,
-                        "endOffset": 234
+                        "endOffset": 242
                     }
                 }
             },
@@ -201,13 +201,13 @@
                     "endOffset": 661
                 },
                 "from": {
-                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-small/dimens.xml",
+                    "file": "E:\\android\\MedicalAssistan\\switchdatetime\\src\\main\\res\\values-small\\dimens.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
-                        "startOffset": 121,
+                        "startOffset": 126,
                         "endColumn": 45,
-                        "endOffset": 162
+                        "endOffset": 167
                     }
                 }
             },
@@ -220,13 +220,13 @@
                     "endOffset": 705
                 },
                 "from": {
-                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-small/dimens.xml",
+                    "file": "E:\\android\\MedicalAssistan\\switchdatetime\\src\\main\\res\\values-small\\dimens.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
-                        "startOffset": 711,
+                        "startOffset": 730,
                         "endColumn": 43,
-                        "endOffset": 750
+                        "endOffset": 769
                     }
                 }
             }
