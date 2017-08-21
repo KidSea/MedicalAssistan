@@ -32,7 +32,9 @@ public class DataModelDaoImpl implements DataModelDao {
 
         if (mDataDao == null) {
             synchronized (DataModelDaoImpl.class){
-                mDataDao = new DataModelDaoImpl();
+                if(mDataDao == null){
+                    mDataDao = new DataModelDaoImpl();
+                }
             }
         }
 
