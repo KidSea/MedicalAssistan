@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "E:\\android\\MedicalAssistan\\switchdatetime\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw720dp-v13\\values-sw720dp-v13.xml",
+        "outputFile": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw720dp-v13/values-sw720dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,13 +11,13 @@
                     "endOffset": 110
                 },
                 "from": {
-                    "file": "E:\\android\\MedicalAssistan\\switchdatetime\\src\\main\\res\\values-sw720dp\\dimens.xml",
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw720dp/dimens.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
-                        "startOffset": 624,
+                        "startOffset": 609,
                         "endColumn": 59,
-                        "endOffset": 679
+                        "endOffset": 664
                     }
                 }
             },
@@ -30,13 +30,13 @@
                     "endOffset": 174
                 },
                 "from": {
-                    "file": "E:\\android\\MedicalAssistan\\switchdatetime\\src\\main\\res\\values-sw720dp\\dimens.xml",
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw720dp/dimens.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
-                        "startOffset": 387,
+                        "startOffset": 376,
                         "endColumn": 63,
-                        "endOffset": 446
+                        "endOffset": 435
                     }
                 }
             },
@@ -49,13 +49,13 @@
                     "endOffset": 229
                 },
                 "from": {
-                    "file": "E:\\android\\MedicalAssistan\\switchdatetime\\src\\main\\res\\values-sw720dp\\dimens.xml",
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw720dp/dimens.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
-                        "startOffset": 568,
+                        "startOffset": 554,
                         "endColumn": 54,
-                        "endOffset": 618
+                        "endOffset": 604
                     }
                 }
             },
@@ -68,13 +68,13 @@
                     "endOffset": 289
                 },
                 "from": {
-                    "file": "E:\\android\\MedicalAssistan\\switchdatetime\\src\\main\\res\\values-sw720dp\\dimens.xml",
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw720dp/dimens.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
-                        "startOffset": 326,
+                        "startOffset": 316,
                         "endColumn": 59,
-                        "endOffset": 381
+                        "endOffset": 371
                     }
                 }
             },
@@ -87,13 +87,13 @@
                     "endOffset": 346
                 },
                 "from": {
-                    "file": "E:\\android\\MedicalAssistan\\switchdatetime\\src\\main\\res\\values-sw720dp\\dimens.xml",
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw720dp/dimens.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
-                        "startOffset": 510,
+                        "startOffset": 497,
                         "endColumn": 56,
-                        "endOffset": 562
+                        "endOffset": 549
                     }
                 }
             },
@@ -106,13 +106,13 @@
                     "endOffset": 408
                 },
                 "from": {
-                    "file": "E:\\android\\MedicalAssistan\\switchdatetime\\src\\main\\res\\values-sw720dp\\dimens.xml",
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw720dp/dimens.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
-                        "startOffset": 263,
+                        "startOffset": 254,
                         "endColumn": 61,
-                        "endOffset": 320
+                        "endOffset": 311
                     }
                 }
             },
@@ -125,13 +125,13 @@
                     "endOffset": 465
                 },
                 "from": {
-                    "file": "E:\\android\\MedicalAssistan\\switchdatetime\\src\\main\\res\\values-sw720dp\\dimens.xml",
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw720dp/dimens.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
-                        "startOffset": 452,
+                        "startOffset": 440,
                         "endColumn": 56,
-                        "endOffset": 504
+                        "endOffset": 492
                     }
                 }
             },
@@ -144,13 +144,13 @@
                     "endOffset": 526
                 },
                 "from": {
-                    "file": "E:\\android\\MedicalAssistan\\switchdatetime\\src\\main\\res\\values-sw720dp\\dimens.xml",
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw720dp/dimens.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
-                        "startOffset": 201,
+                        "startOffset": 193,
                         "endColumn": 60,
-                        "endOffset": 257
+                        "endOffset": 249
                     }
                 }
             },
@@ -163,13 +163,13 @@
                     "endOffset": 571
                 },
                 "from": {
-                    "file": "E:\\android\\MedicalAssistan\\switchdatetime\\src\\main\\res\\values-sw720dp\\dimens.xml",
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw720dp/dimens.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
-                        "startOffset": 78,
+                        "startOffset": 75,
                         "endColumn": 44,
-                        "endOffset": 118
+                        "endOffset": 115
                     }
                 }
             },
@@ -182,13 +182,13 @@
                     "endOffset": 621
                 },
                 "from": {
-                    "file": "E:\\android\\MedicalAssistan\\switchdatetime\\src\\main\\res\\values-sw720dp\\dimens.xml",
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw720dp/dimens.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
-                        "startOffset": 148,
+                        "startOffset": 142,
                         "endColumn": 49,
-                        "endOffset": 193
+                        "endOffset": 187
                     }
                 }
             },
@@ -201,13 +201,13 @@
                     "endOffset": 665
                 },
                 "from": {
-                    "file": "E:\\android\\MedicalAssistan\\switchdatetime\\src\\main\\res\\values-sw720dp\\dimens.xml",
+                    "file": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/src/main/res/values-sw720dp/dimens.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
-                        "startOffset": 687,
+                        "startOffset": 670,
                         "endColumn": 43,
-                        "endOffset": 726
+                        "endOffset": 709
                     }
                 }
             }

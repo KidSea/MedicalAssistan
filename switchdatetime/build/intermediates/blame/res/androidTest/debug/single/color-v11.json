@@ -1,10 +1,10 @@
 [
     {
-        "merged": "E:\\android\\MedicalAssistan\\switchdatetime\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
-        "source": "C:\\Users\\yuxuehai\\.android\\build-cache\\88113b68af19147b794b88d20f3be380051312d2\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
+        "merged": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/build/intermediates/res/merged/androidTest/debug/color-v11/abc_background_cache_hint_selector_material_dark.xml",
+        "source": "/home/yuxuehai/.android/build-cache/a031f85e7aa815f5e300ccf961e9dd98eb6a77d0/output/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
     },
     {
-        "merged": "E:\\android\\MedicalAssistan\\switchdatetime\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
-        "source": "C:\\Users\\yuxuehai\\.android\\build-cache\\88113b68af19147b794b88d20f3be380051312d2\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
+        "merged": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/build/intermediates/res/merged/androidTest/debug/color-v11/abc_background_cache_hint_selector_material_light.xml",
+        "source": "/home/yuxuehai/.android/build-cache/a031f85e7aa815f5e300ccf961e9dd98eb6a77d0/output/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
     }
 ]

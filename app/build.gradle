@@ -8,7 +8,7 @@ android {
     defaultConfig {
         applicationId "com.example.yuxuehai.medicalassistan"
         minSdkVersion 22
-        targetSdkVersion 22
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         jackOptions.enabled true
@@ -37,7 +37,10 @@ dependencies {
     compile 'com.android.support.test.espresso:espresso-core:2.2.2'
     compile 'com.android.support:recyclerview-v7:25.2.0'
     compile 'me.srodrigo:androidhintspinner:1.0.0'
-    compile 'com.xdandroid:simplerecyclerview:1.5.10'
+    compile ('com.xdandroid:simplerecyclerview:1.5.10')
+            {
+                exclude group: 'com.android.support'
+            }
     //圆角图片CircleImageView
     compile 'de.hdodenhof:circleimageview:2.1.0'
     //图片加载库Glide

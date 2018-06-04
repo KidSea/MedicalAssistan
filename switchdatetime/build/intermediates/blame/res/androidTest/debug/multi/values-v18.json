@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "E:\\android\\MedicalAssistan\\switchdatetime\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-v18\\values-v18.xml",
+        "outputFile": "/home/yuxuehai/AndroidStudioProjects/MedicalAssistan/switchdatetime/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-v18/values-v18.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 99
                 },
                 "from": {
-                    "file": "C:\\Users\\yuxuehai\\.android\\build-cache\\88113b68af19147b794b88d20f3be380051312d2\\output\\res\\values-v18\\values-v18.xml",
+                    "file": "/home/yuxuehai/.android/build-cache/a031f85e7aa815f5e300ccf961e9dd98eb6a77d0/output/res/values-v18/values-v18.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
