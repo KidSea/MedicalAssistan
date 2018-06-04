@@ -49,6 +49,7 @@ public abstract class BasePresenterActivity<V, P extends BasePresenter<V>> exten
         onBeforeSetContentView();
 
 
+
         if(getContentLayoutId() != 0){
             setContentView(getContentLayoutId());
         }
