@@ -1,5 +1,6 @@
 package com.example.yuxuehai.medicalassistan.adapter;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,19 +40,20 @@ public class MyDalicareEventAdapter extends BaseRecyclerAdapter<Event,MyDalicare
 
     @Override
     public void onBind(MyViewHolder holder, int RealPosition, Event event) {
-            holder.mEvent.setText(event.getName());
-            holder.mObject.setText(event.getObjectname());
-            holder.mLocation.setText(event.getLocation());
-            BmobDate bmobDate = event.getDate();
-            holder.mTime.setText(bmobDate.getDate().substring(10,16));
-            long timeStamp = BmobDate.getTimeStamp(bmobDate.getDate());
-            mCalendar.setTimeInMillis(timeStamp);
-            int apm = mCalendar.get(Calendar.AM_PM);
-            if (apm == 0){
-                holder.mTimeMode.setText("上午");
-            }else {
-                holder.mTimeMode.setText("下午");
-            }
+        Log.d("MyDalicareEventAdapter", "onbind");
+        holder.mEvent.setText(event.getName());
+        holder.mObject.setText(event.getObjectname());
+        holder.mLocation.setText(event.getLocation());
+        BmobDate bmobDate = event.getDate();
+        holder.mTime.setText(bmobDate.getDate().substring(10,16));
+        long timeStamp = BmobDate.getTimeStamp(bmobDate.getDate());
+        mCalendar.setTimeInMillis(timeStamp);
+        int apm = mCalendar.get(Calendar.AM_PM);
+        if (apm == 0){
+            holder.mTimeMode.setText("上午");
+        }else {
+            holder.mTimeMode.setText("下午");
+        }
 
     }
 
