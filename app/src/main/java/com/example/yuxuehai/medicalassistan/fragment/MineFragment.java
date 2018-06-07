@@ -13,6 +13,7 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
@@ -92,9 +93,18 @@ public class MineFragment extends BaseFragment implements View.OnClickListener,M
         requestWESPermission(); // 安卓6.0以上需要申请权限
         mPhotoDialog.dismiss();
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE); // 调用系统的拍照功能
-        // 判断内存卡是否可用，可用的话就进行储存
-        intent.putExtra(MediaStore.EXTRA_OUTPUT,
-                Uri.fromFile(new File(Environment.getExternalStorageDirectory(), PHOTO_IMAGE_FILE_NAME)));
+        if (Build.VERSION.SDK_INT >= 24) {
+            File file = new File(Environment.getExternalStorageDirectory(), PHOTO_IMAGE_FILE_NAME);
+            // 判断内存卡是否可用，可用的话就进行储存
+            Uri uriForFile = FileProvider.getUriForFile(getContext(),
+                    getActivity().getPackageName() + ".fileprovider", file);
+            intent.putExtra(MediaStore.EXTRA_OUTPUT,
+                    uriForFile);
+        } else {
+            // 判断内存卡是否可用，可用的话就进行储存
+            intent.putExtra(MediaStore.EXTRA_OUTPUT,
+                    Uri.fromFile(new File(Environment.getExternalStorageDirectory(), PHOTO_IMAGE_FILE_NAME)));
+        }
         startActivityForResult(intent, CAMERA_REQUEST_CODE);
     }
 
@@ -187,7 +197,13 @@ public class MineFragment extends BaseFragment implements View.OnClickListener,M
                 break;
             case CAMERA_REQUEST_CODE: // 相机数据
                 tempFile = new File(Environment.getExternalStorageDirectory(), PHOTO_IMAGE_FILE_NAME);
-                startPhotoZoom(Uri.fromFile(tempFile));
+                if (Build.VERSION.SDK_INT >= 24) {
+                    Uri uriForFile = FileProvider.getUriForFile(getContext(),
+                            getActivity().getPackageName() + ".fileprovider", tempFile);
+                    startPhotoZoom(uriForFile);
+                } else {
+                    startPhotoZoom(Uri.fromFile(tempFile));
+                }
                 break;
             case RESULT_REQUEST_CODE: // 有可能点击舍弃
                 if (data != null) {
